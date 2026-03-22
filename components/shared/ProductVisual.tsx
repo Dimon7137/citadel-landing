@@ -21,7 +21,7 @@ export function ProductVisual() {
         className="relative w-full max-w-[340px] aspect-[9/16] animate-float"
       >
         <img
-          src="/bone-photo.png"
+          src="/citadel-landing/bone-photo.png"
           alt="Bone photo"
           className="absolute inset-0 w-full h-full object-contain"
         />

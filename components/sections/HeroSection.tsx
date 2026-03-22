@@ -121,7 +121,7 @@ export function HeroSection() {
           <div className="relative flex items-center justify-center py-8 sm:py-12">
             {/* Product image — transparent bg, glow drop-shadow */}
             <img
-              src="/bone-photo.png"
+              src="/citadel-landing/bone-photo.png"
               alt="CITadel — modular intramedullary fixator for critical long-bone defects"
               className="relative z-10 max-h-[520px] object-contain drop-shadow-[0_0_50px_rgba(14,165,169,0.2)] drop-shadow-[0_0_100px_rgba(14,165,169,0.08)]"
             />
