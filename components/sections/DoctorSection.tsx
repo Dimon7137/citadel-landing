@@ -5,6 +5,7 @@ import { GraduationCap, Stethoscope, Lightbulb, Microscope } from "lucide-react"
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const credentials = [
   {
@@ -114,7 +115,7 @@ export function DoctorSection() {
                 </p>
               </div>
 
-              <div className="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+              <div className="text-slate-600 leading-relaxed text-sm md:text-base">
                 <p>
                   Over 15 years of clinical practice in traumatology and
                   reconstructive orthopaedics, specialising in limb
@@ -122,21 +123,33 @@ export function DoctorSection() {
                   caused by blast injuries, high-energy trauma, and oncologic
                   resection.
                 </p>
-                <p>
-                  Associate Professor in the Department of Surgery,
-                  Anaesthesiology and Intensive Care at the Institute of
-                  Postgraduate Education, Bogomolets National Medical
-                  University, Kyiv, Ukraine. Active researcher in blast injury
-                  biomechanics and the development of individual antibacterial
-                  spacers and 3D-printed titanium constructs for complex
-                  reconstructive cases.
-                </p>
-                <p>
-                  CITadel was born from a direct clinical problem: the absence
-                  of a reliable internal stabilisation option for patients who
-                  needed a PMMA spacer and staged reconstruction but could not
-                  tolerate prolonged external fixation.
-                </p>
+
+                <Accordion type="single" collapsible className="mt-2">
+                  <AccordionItem value="bio-more" className="border-b-0">
+                    <AccordionTrigger className="py-3 text-sm text-teal-600 hover:text-teal-700 font-medium justify-start gap-2">
+                      Read more
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="space-y-4 text-slate-600">
+                        <p>
+                          Associate Professor in the Department of Surgery,
+                          Anaesthesiology and Intensive Care at the Institute of
+                          Postgraduate Education, Bogomolets National Medical
+                          University, Kyiv, Ukraine. Active researcher in blast injury
+                          biomechanics and the development of individual antibacterial
+                          spacers and 3D-printed titanium constructs for complex
+                          reconstructive cases.
+                        </p>
+                        <p>
+                          CITadel was born from a direct clinical problem: the absence
+                          of a reliable internal stabilisation option for patients who
+                          needed a PMMA spacer and staged reconstruction but could not
+                          tolerate prolonged external fixation.
+                        </p>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
 
               {/* Credentials grid */}

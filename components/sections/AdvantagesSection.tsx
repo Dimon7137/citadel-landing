@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Shield, Zap, Wrench, Activity, FlaskConical, BarChart3 } from "lucide-react";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/shared/AnimatedSection";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const advantages = [
   { icon: Shield, title: "Internal Stability Without External Fixation", description: "Reliable 3D fixation from within the medullary canal — no external frames, pins, or associated infection risk." },
@@ -31,24 +31,25 @@ export function AdvantagesSection() {
           />
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {advantages.map((adv, i) => (
-            <StaggerItem key={i}>
-              <motion.div
-                whileHover={{ y: -5, boxShadow: "0 16px 40px -10px rgba(14,165,169,0.12)" }}
-                transition={{ duration: 0.22 }}
-                className="group bg-white border border-slate-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 hover:border-teal-300/40 transition-all duration-300 h-full"
-              >
-                <div className="w-9 sm:w-11 h-9 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center mb-3 sm:mb-5 shadow-sm group-hover:shadow-[0_0_20px_rgba(14,165,169,0.2)] transition-shadow">
-                  <adv.icon className="w-4 sm:w-5 h-4 sm:h-5 text-white" strokeWidth={1.75} />
-                </div>
-                <h3 className="text-sm sm:text-base font-semibold text-slate-900 mb-1.5 sm:mb-2.5">{adv.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{adv.description}</p>
-                <div className="mt-5 h-px w-0 group-hover:w-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-500 ease-out rounded-full" />
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <AnimatedSection delay={0.1}>
+          <Accordion type="single" collapsible defaultValue="item-0" className="max-w-3xl mx-auto">
+            {advantages.map((adv, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-b border-slate-200/60">
+                <AccordionTrigger className="py-5 hover:text-teal-600 gap-3 text-left">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center shrink-0 shadow-sm">
+                      <adv.icon className="w-4 h-4 text-white" strokeWidth={1.75} />
+                    </div>
+                    <span className="text-sm sm:text-base font-semibold text-slate-900">{adv.title}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed pl-12">{adv.description}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </AnimatedSection>
 
         <AnimatedSection delay={0.35} className="mt-16">
           <div className="bg-[#0f172a] rounded-xl sm:rounded-2xl px-5 sm:px-8 py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 relative overflow-hidden">
