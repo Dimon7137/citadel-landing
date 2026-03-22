@@ -11,17 +11,19 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
       <Header />
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <HowItWorksSection />
-      <AdvantagesSection />
-      <PatentSection />
-      <DoctorSection />
-      <ContactSection />
-      <Footer />
-    </main>
+      <main className="relative z-0 min-h-screen bg-white">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <HowItWorksSection />
+        <AdvantagesSection />
+        <PatentSection />
+        <DoctorSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   );
 }
