@@ -11,9 +11,9 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <Header />
-      <main>
+      <main className="isolate">
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
