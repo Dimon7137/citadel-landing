@@ -50,8 +50,8 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
           <AnimatedSection direction="left" className="lg:col-span-2 space-y-6">
-            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-6">
-              <h3 className="text-sm font-semibold text-white mb-4">Who should reach out</h3>
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <h3 className="text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">Who should reach out</h3>
               <ul className="space-y-2.5">
                 {purposes.map((p) => (
                   <li key={p} className="flex items-center gap-3 text-sm text-slate-400">
@@ -62,9 +62,9 @@ export function ContactSection() {
             </div>
             <div className="space-y-3">
               {contactInfo.map((item, i) => (
-                <div key={i} className="flex items-start gap-4 bg-slate-800/30 border border-slate-700/40 rounded-xl p-4">
-                  <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
-                    <item.icon className="w-4 h-4 text-teal-400" />
+                <div key={i} className="flex items-start gap-3 sm:gap-4 bg-slate-800/30 border border-slate-700/40 rounded-lg sm:rounded-xl p-3 sm:p-4">
+                  <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
+                    <item.icon className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-teal-400" />
                   </div>
                   <div>
                     <div className="text-[10px] text-slate-500 uppercase tracking-wider font-medium mb-0.5">{item.label}</div>
@@ -77,7 +77,7 @@ export function ContactSection() {
           </AnimatedSection>
 
           <AnimatedSection direction="right" className="lg:col-span-3">
-            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-8">
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-5 sm:p-8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-16 h-16 rounded-full bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">

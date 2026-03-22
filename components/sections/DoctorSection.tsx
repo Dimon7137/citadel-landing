@@ -62,13 +62,13 @@ export function DoctorSection() {
           {/* Left: Avatar */}
           <AnimatedSection direction="left" className="lg:col-span-2">
             <div className="relative flex justify-center lg:justify-start">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-brand-sky/15" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border border-brand-blue/8" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[280px] h-[200px] sm:h-[280px] rounded-full border border-brand-sky/15" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[320px] h-[240px] sm:h-[320px] rounded-full border border-brand-blue/8" />
 
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-[240px] h-[240px] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 via-slate-100 to-sky-50 border border-slate-100 shadow-lg"
+                className="relative w-[180px] sm:w-[240px] h-[180px] sm:h-[240px] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 via-slate-100 to-sky-50 border border-slate-100 shadow-lg"
               >
                 <img
                   src="/citadel-landing/doctor-photo.png"
@@ -89,7 +89,7 @@ export function DoctorSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.4 }}
-                className="absolute top-0 right-8 lg:right-0 bg-white border border-brand-blue/15 rounded-xl px-3 py-2 shadow-md"
+                className="absolute -top-2 sm:top-0 right-0 sm:right-8 lg:right-0 bg-white border border-brand-blue/15 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 shadow-md"
               >
                 <div className="text-[10px] text-slate-400 uppercase tracking-wider">Experience</div>
                 <div className="text-sm font-bold text-slate-900">15+ years</div>
@@ -148,16 +148,16 @@ export function DoctorSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                    className="flex items-start gap-3 bg-slate-50 border border-slate-100 rounded-xl p-4"
+                    className="flex items-start gap-2 sm:gap-3 bg-slate-50 border border-slate-100 rounded-lg sm:rounded-xl p-3 sm:p-4"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                      <cred.icon className="w-4 h-4 text-brand-blue" />
+                    <div className="w-7 sm:w-8 h-7 sm:h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                      <cred.icon className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-brand-blue" />
                     </div>
-                    <div>
-                      <div className="text-[10px] text-slate-400 uppercase tracking-wider font-medium mb-0.5">
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider font-medium mb-0.5">
                         {cred.label}
                       </div>
-                      <div className="text-xs font-semibold text-slate-700">
+                      <div className="text-[11px] sm:text-xs font-semibold text-slate-700 break-words">
                         {cred.value}
                       </div>
                     </div>
@@ -166,8 +166,8 @@ export function DoctorSection() {
               </div>
 
               {/* Quote */}
-              <div className="border-l-2 border-brand-sky pl-5 py-1">
-                <p className="text-slate-500 text-sm italic leading-relaxed">
+              <div className="border-l-2 border-brand-sky pl-4 sm:pl-5 py-1">
+                <p className="text-slate-500 text-xs sm:text-sm italic leading-relaxed">
                   &ldquo;The idea for CITadel came directly from the operating
                   theatre — from patients who needed a spacer, couldn&apos;t
                   tolerate an external fixator, and had no good internal option.

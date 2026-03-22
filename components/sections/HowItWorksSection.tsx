@@ -53,8 +53,8 @@ export function HowItWorksSection() {
                 {/* Timeline node */}
                 <div className="flex justify-center mb-8 lg:mb-10 shrink-0">
                   <div className="relative">
-                    <div className="w-[72px] h-[72px] rounded-full bg-[#0f172a] border-2 border-teal-500/40 flex items-center justify-center group-hover:border-teal-400 transition-colors">
-                      <span className="text-xl font-bold text-teal-400 font-mono glow-text-teal">
+                    <div className="w-[56px] sm:w-[72px] h-[56px] sm:h-[72px] rounded-full bg-[#0f172a] border-2 border-teal-500/40 flex items-center justify-center group-hover:border-teal-400 transition-colors">
+                      <span className="text-lg sm:text-xl font-bold text-teal-400 font-mono glow-text-teal">
                         {step.number}
                       </span>
                     </div>
@@ -64,20 +64,20 @@ export function HowItWorksSection() {
                 </div>
 
                 {/* Content card */}
-                <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-5 text-center hover:border-teal-500/30 transition-all duration-300 flex-1">
-                  <span className="inline-block text-[10px] font-semibold text-teal-400 uppercase tracking-widest bg-teal-500/10 border border-teal-500/20 rounded-full px-3 py-1 mb-3">
+                <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 text-center hover:border-teal-500/30 transition-all duration-300 flex-1">
+                  <span className="inline-block text-[9px] sm:text-[10px] font-semibold text-teal-400 uppercase tracking-widest bg-teal-500/10 border border-teal-500/20 rounded-full px-2 sm:px-3 py-1 mb-2 sm:mb-3">
                     {step.detail}
                   </span>
-                  <h3 className="text-base font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{step.description}</p>
+                  <h3 className="text-sm sm:text-base font-semibold text-white mb-1.5 sm:mb-2">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{step.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        <AnimatedSection delay={0.5} className="mt-24">
-          <div className="relative bg-teal-500/5 border border-teal-500/20 rounded-2xl px-8 py-6 text-center">
+        <AnimatedSection delay={0.5} className="mt-12 sm:mt-24">
+          <div className="relative bg-teal-500/5 border border-teal-500/20 rounded-xl sm:rounded-2xl px-4 sm:px-8 py-4 sm:py-6 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inset-0 rounded-full bg-teal-400 animate-pulse-ring" />

@@ -61,7 +61,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.08 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] max-w-4xl mb-6 text-white"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] max-w-4xl mb-6 text-white"
         >
           The modular system for{" "}
           <span className="text-teal-400 glow-text-teal">critical bone defects</span>
@@ -72,7 +72,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.18 }}
-          className="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mb-10"
+          className="text-base sm:text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-10"
         >
           Temporary internal stabilisation without external fixation.
           Two-component intramedullary design with selective HA+Ag antibacterial coating.
@@ -83,7 +83,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.28 }}
-          className="flex flex-col sm:flex-row gap-3 mb-16"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-3 w-full sm:w-auto mb-16"
         >
           <Button
             size="xl"
@@ -131,17 +131,17 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.0, duration: 0.6 }}
-              className="absolute left-0 sm:left-[5%] top-[12%] z-20 flex items-center gap-0"
+              className="absolute left-2 sm:left-[5%] top-[12%] z-20 flex items-center gap-0"
             >
-              <div className="text-right pr-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-2 sm:pr-3">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Proximal
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   Nail Component
                 </div>
               </div>
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
@@ -149,17 +149,17 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.15, duration: 0.6 }}
-              className="absolute left-0 sm:left-[5%] top-[42%] z-20 flex items-center gap-0"
+              className="absolute left-2 sm:left-[5%] top-[42%] z-20 flex items-center gap-0"
             >
-              <div className="text-right pr-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-2 sm:pr-3">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Zone
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   PMMA Spacer
                 </div>
               </div>
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
@@ -168,15 +168,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.6 }}
-              className="absolute right-0 sm:right-[5%] top-[28%] z-20 flex items-center gap-0"
+              className="absolute right-2 sm:right-[5%] top-[28%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-2 sm:pl-3">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Coating
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   HA+Ag Selective
                 </div>
               </div>
@@ -186,15 +186,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.25, duration: 0.6 }}
-              className="absolute right-0 sm:right-[5%] top-[60%] z-20 flex items-center gap-0"
+              className="absolute right-2 sm:right-[5%] top-[60%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-2 sm:pl-3">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Connection
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   Modular Coupler
                 </div>
               </div>
@@ -204,15 +204,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.35, duration: 0.6 }}
-              className="absolute right-0 sm:right-[5%] top-[82%] z-20 flex items-center gap-0"
+              className="absolute right-2 sm:right-[5%] top-[82%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-2 sm:pl-3">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Distal
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white">
                   Nail Component
                 </div>
               </div>
@@ -225,7 +225,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.7 }}
-          className="mt-12 w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-3xl border-t border-slate-700/50 pt-10"
+          className="mt-8 sm:mt-12 w-full grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12 max-w-3xl border-t border-slate-700/50 pt-6 sm:pt-10"
         >
           {[
             { value: "TRL 4–5", label: "System maturity" },
@@ -234,14 +234,14 @@ export function HeroSection() {
             { value: "0", label: "Migration failures", isNumber: true },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+              <div className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tight text-white">
                 {stat.isNumber ? (
                   <AnimatedCounter value={Number(stat.value)} />
                 ) : (
                   <span className="glow-text-teal">{stat.value}</span>
                 )}
               </div>
-              <div className="text-xs text-slate-500 mt-1.5 font-medium">
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-1 sm:mt-1.5 font-medium">
                 {stat.label}
               </div>
             </div>

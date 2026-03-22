@@ -37,13 +37,13 @@ export function AdvantagesSection() {
               <motion.div
                 whileHover={{ y: -5, boxShadow: "0 16px 40px -10px rgba(14,165,169,0.12)" }}
                 transition={{ duration: 0.22 }}
-                className="group bg-white border border-slate-100 rounded-2xl p-7 hover:border-teal-300/40 transition-all duration-300 h-full"
+                className="group bg-white border border-slate-100 rounded-xl sm:rounded-2xl p-5 sm:p-7 hover:border-teal-300/40 transition-all duration-300 h-full"
               >
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center mb-5 shadow-sm group-hover:shadow-[0_0_20px_rgba(14,165,169,0.2)] transition-shadow">
-                  <adv.icon className="w-5 h-5 text-white" strokeWidth={1.75} />
+                <div className="w-9 sm:w-11 h-9 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center mb-3 sm:mb-5 shadow-sm group-hover:shadow-[0_0_20px_rgba(14,165,169,0.2)] transition-shadow">
+                  <adv.icon className="w-4 sm:w-5 h-4 sm:h-5 text-white" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-base font-semibold text-slate-900 mb-2.5">{adv.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{adv.description}</p>
+                <h3 className="text-sm sm:text-base font-semibold text-slate-900 mb-1.5 sm:mb-2.5">{adv.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{adv.description}</p>
                 <div className="mt-5 h-px w-0 group-hover:w-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-500 ease-out rounded-full" />
               </motion.div>
             </StaggerItem>
@@ -51,7 +51,7 @@ export function AdvantagesSection() {
         </StaggerContainer>
 
         <AnimatedSection delay={0.35} className="mt-16">
-          <div className="bg-[#0f172a] rounded-2xl px-8 py-8 grid grid-cols-1 sm:grid-cols-3 gap-8 relative overflow-hidden">
+          <div className="bg-[#0f172a] rounded-xl sm:rounded-2xl px-5 sm:px-8 py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 relative overflow-hidden">
             <div className="absolute inset-0 bg-surgical-grid pointer-events-none opacity-50" />
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 80% at 50% 50%, rgba(14,165,169,0.08) 0%, transparent 70%)" }} />
             {[
@@ -60,9 +60,9 @@ export function AdvantagesSection() {
               { metric: "Stable", sub: "torsional behaviour", note: "No catastrophic deformation" },
             ].map((item, i) => (
               <div key={i} className="relative text-center z-10">
-                <div className="text-xl font-bold text-white glow-text-teal">{item.metric}</div>
-                <div className="text-sm font-medium text-teal-400 mb-1">{item.sub}</div>
-                <div className="text-xs text-slate-500">{item.note}</div>
+                <div className="text-lg sm:text-xl font-bold text-white glow-text-teal">{item.metric}</div>
+                <div className="text-xs sm:text-sm font-medium text-teal-400 mb-0.5 sm:mb-1">{item.sub}</div>
+                <div className="text-[10px] sm:text-xs text-slate-500">{item.note}</div>
               </div>
             ))}
           </div>

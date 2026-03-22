@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="bg-[#080e1a] text-slate-400 relative overflow-hidden">
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none opacity-40" />
       <div className="section-container py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center shadow-sm shadow-teal-500/30">
@@ -51,9 +51,9 @@ export function Footer() {
           </div>
         </div>
         <Separator className="my-10 bg-slate-800" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-700">&copy; {new Date().getFullYear()} CITadel · Maksym Baida, PhD. All rights reserved.</p>
-          <p className="text-xs text-slate-700">Bogomolets National Medical University · Kyiv, Ukraine</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-4 text-center sm:text-left">
+          <p className="text-[10px] sm:text-xs text-slate-700">&copy; {new Date().getFullYear()} CITadel · Maksym Baida, PhD. All rights reserved.</p>
+          <p className="text-[10px] sm:text-xs text-slate-700">Bogomolets National Medical University · Kyiv, Ukraine</p>
         </div>
       </div>
     </footer>

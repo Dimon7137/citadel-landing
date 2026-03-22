@@ -50,7 +50,7 @@ export function Header() {
       )}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18">
           {/* Logo */}
           <a
             href="#"
@@ -109,7 +109,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden text-slate-400 hover:text-white hover:bg-white/10"
+                className="lg:hidden text-slate-400 hover:text-white hover:bg-white/10 min-h-[44px] min-w-[44px]"
                 aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
