@@ -133,7 +133,7 @@ export function HeroSection() {
               transition={{ delay: 1.0, duration: 0.6 }}
               className="absolute left-1 sm:left-[5%] top-[12%] z-20 flex items-center gap-0"
             >
-              <div className="text-center sm:text-right pr-1 sm:pr-3">
+              <div className="text-center pr-1 sm:pr-3">
                 <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Proximal
                 </div>
@@ -151,7 +151,7 @@ export function HeroSection() {
               transition={{ delay: 1.15, duration: 0.6 }}
               className="absolute left-1 sm:left-[5%] top-[42%] z-20 flex items-center gap-0"
             >
-              <div className="text-center sm:text-right pr-1 sm:pr-3">
+              <div className="text-center pr-1 sm:pr-3">
                 <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Zone
                 </div>
