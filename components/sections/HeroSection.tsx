@@ -16,7 +16,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a1628] pt-20 pb-16"
+      className="relative z-0 min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a1628] pt-20 pb-16"
     >
       {/* Surgical grid */}
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
@@ -131,17 +131,17 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.0, duration: 0.6 }}
-              className="absolute left-2 sm:left-[5%] top-[12%] z-20 flex items-center gap-0"
+              className="absolute left-0 right-[54%] sm:right-auto sm:left-[5%] top-[12%] z-20 flex items-center justify-end gap-0"
             >
-              <div className="text-right pr-2 sm:pr-3">
-                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-2 sm:pr-3 min-w-0">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest truncate">
                   Proximal
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white truncate">
                   Nail Component
                 </div>
               </div>
-              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20 shrink-0" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
@@ -149,17 +149,17 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.15, duration: 0.6 }}
-              className="absolute left-2 sm:left-[5%] top-[42%] z-20 flex items-center gap-0"
+              className="absolute left-0 right-[54%] sm:right-auto sm:left-[5%] top-[42%] z-20 flex items-center justify-end gap-0"
             >
-              <div className="text-right pr-2 sm:pr-3">
-                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-2 sm:pr-3 min-w-0">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest truncate">
                   Zone
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white truncate">
                   PMMA Spacer
                 </div>
               </div>
-              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20 shrink-0" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
@@ -168,15 +168,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.6 }}
-              className="absolute right-2 sm:right-[5%] top-[28%] z-20 flex items-center gap-0"
+              className="absolute left-[54%] right-0 sm:left-auto sm:right-[5%] top-[28%] z-20 flex items-center justify-start gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-2 sm:pl-3">
-                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20 shrink-0" />
+              <div className="pl-2 sm:pl-3 min-w-0">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest truncate">
                   Coating
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white truncate">
                   HA+Ag Selective
                 </div>
               </div>
@@ -186,15 +186,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.25, duration: 0.6 }}
-              className="absolute right-2 sm:right-[5%] top-[60%] z-20 flex items-center gap-0"
+              className="absolute left-[54%] right-0 sm:left-auto sm:right-[5%] top-[60%] z-20 flex items-center justify-start gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-2 sm:pl-3">
-                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20 shrink-0" />
+              <div className="pl-2 sm:pl-3 min-w-0">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest truncate">
                   Connection
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white truncate">
                   Modular Coupler
                 </div>
               </div>
@@ -204,15 +204,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.35, duration: 0.6 }}
-              className="absolute right-2 sm:right-[5%] top-[82%] z-20 flex items-center gap-0"
+              className="absolute left-[54%] right-0 sm:left-auto sm:right-[5%] top-[82%] z-20 flex items-center justify-start gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-2 sm:pl-3">
-                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="w-6 sm:w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20 shrink-0" />
+              <div className="pl-2 sm:pl-3 min-w-0">
+                <div className="text-[9px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest truncate">
                   Distal
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-white">
+                <div className="text-xs sm:text-sm font-bold text-white truncate">
                   Nail Component
                 </div>
               </div>

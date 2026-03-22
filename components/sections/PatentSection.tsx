@@ -14,7 +14,7 @@ const validationCards = [
 
 export function PatentSection() {
   return (
-    <section id="patent" className="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+    <section id="patent" className="relative z-0 py-20 md:py-28 bg-[#0f172a] overflow-hidden">
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
       <div className="absolute inset-0 noise-overlay pointer-events-none" />
 

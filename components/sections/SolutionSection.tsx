@@ -14,7 +14,7 @@ const features = [
 
 export function SolutionSection() {
   return (
-    <section id="solution" className="relative py-20 md:py-28 bg-white overflow-hidden">
+    <section id="solution" className="relative z-0 py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute inset-0 bg-grid-slate pointer-events-none" />
       <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
         style={{ background: "radial-gradient(ellipse 70% 70% at 100% 40%, rgba(14,165,169,0.05) 0%, transparent 70%)" }}

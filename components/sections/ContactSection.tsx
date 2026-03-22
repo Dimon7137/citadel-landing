@@ -37,7 +37,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+    <section id="contact" className="relative z-0 py-20 md:py-28 bg-[#0f172a] overflow-hidden">
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 60% at 10% 50%, rgba(14,165,169,0.06) 0%, transparent 70%)" }} />
       <div className="absolute inset-0 noise-overlay pointer-events-none" />

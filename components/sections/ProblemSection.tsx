@@ -33,7 +33,7 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section id="problem" className="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+    <section id="problem" className="relative z-0 py-20 md:py-28 bg-[#0f172a] overflow-hidden">
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
       <div
         className="absolute inset-0 pointer-events-none"

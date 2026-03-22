@@ -33,7 +33,7 @@ export function DoctorSection() {
   return (
     <section
       id="doctor"
-      className="relative py-20 md:py-28 bg-white overflow-hidden"
+      className="relative z-0 py-20 md:py-28 bg-white overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none"

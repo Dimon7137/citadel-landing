@@ -16,7 +16,7 @@ const advantages = [
 
 export function AdvantagesSection() {
   return (
-    <section id="advantages" className="relative py-20 md:py-28 bg-white overflow-hidden">
+    <section id="advantages" className="relative z-0 py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute inset-0 bg-grid-slate pointer-events-none" />
       <div className="absolute top-0 left-0 w-1/2 h-full pointer-events-none"
         style={{ background: "radial-gradient(ellipse 60% 60% at 0% 50%, rgba(14,165,169,0.04) 0%, transparent 70%)" }}
