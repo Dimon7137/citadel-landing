@@ -118,7 +118,11 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[340px] p-0 bg-[#0f172a] border-slate-700">
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="flex flex-col h-full">
-                <div className="flex items-center gap-2.5 p-6 border-b border-slate-700/50">
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  className="flex items-center gap-2.5 p-6 border-b border-slate-700/50 cursor-pointer"
+                >
                   <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                       <line x1="12" y1="2" x2="12" y2="22" />
@@ -131,7 +135,7 @@ export function Header() {
                     <div className="text-sm font-bold text-white">CITadel</div>
                     <div className="text-[10px] text-slate-500 uppercase tracking-wider">Intramedullary System</div>
                   </div>
-                </div>
+                </a>
                 <nav className="flex flex-col gap-1 p-4 flex-1">
                   {navLinks.map((link) => (
                     <a key={link.href} href={link.href}
