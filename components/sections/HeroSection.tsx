@@ -126,22 +126,22 @@ export function HeroSection() {
               className="relative z-10 max-h-[520px] object-contain drop-shadow-[0_0_50px_rgba(14,165,169,0.2)] drop-shadow-[0_0_100px_rgba(14,165,169,0.08)]"
             />
 
-            {/* Leader line annotations — LEFT side (desktop only) */}
+            {/* Leader line annotations — LEFT side */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.0, duration: 0.6 }}
-              className="absolute hidden sm:flex sm:left-[5%] top-[12%] z-20 items-center gap-0"
+              className="absolute left-1 sm:left-[5%] top-[12%] z-20 flex items-center gap-0"
             >
-              <div className="text-right pr-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-1 sm:pr-3">
+                <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Proximal
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-[10px] sm:text-sm font-bold text-white leading-tight">
                   Nail Component
                 </div>
               </div>
-              <div className="w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="hidden sm:block w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
@@ -149,34 +149,34 @@ export function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.15, duration: 0.6 }}
-              className="absolute hidden sm:flex sm:left-[5%] top-[42%] z-20 items-center gap-0"
+              className="absolute left-1 sm:left-[5%] top-[42%] z-20 flex items-center gap-0"
             >
-              <div className="text-right pr-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="text-right pr-1 sm:pr-3">
+                <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Zone
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-[10px] sm:text-sm font-bold text-white leading-tight">
                   PMMA Spacer
                 </div>
               </div>
-              <div className="w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
+              <div className="hidden sm:block w-12 md:w-20 h-px bg-gradient-to-r from-teal-400/60 to-teal-400/20" />
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
             </motion.div>
 
-            {/* Leader line annotations — RIGHT side (desktop only) */}
+            {/* Leader line annotations — RIGHT side */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.6 }}
-              className="absolute hidden sm:flex sm:right-[5%] top-[28%] z-20 items-center gap-0"
+              className="absolute right-1 sm:right-[5%] top-[28%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="hidden sm:block w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-1 sm:pl-3">
+                <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Coating
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-[10px] sm:text-sm font-bold text-white leading-tight">
                   HA+Ag Selective
                 </div>
               </div>
@@ -186,15 +186,15 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.25, duration: 0.6 }}
-              className="absolute hidden sm:flex sm:right-[5%] top-[60%] z-20 items-center gap-0"
+              className="absolute right-1 sm:right-[5%] top-[60%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="hidden sm:block w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-1 sm:pl-3">
+                <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Connection
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-[10px] sm:text-sm font-bold text-white leading-tight">
                   Modular Coupler
                 </div>
               </div>
@@ -204,44 +204,20 @@ export function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.35, duration: 0.6 }}
-              className="absolute hidden sm:flex sm:right-[5%] top-[82%] z-20 items-center gap-0"
+              className="absolute right-1 sm:right-[5%] top-[82%] z-20 flex items-center gap-0"
             >
               <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.8)] shrink-0" />
-              <div className="w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
-              <div className="pl-3">
-                <div className="text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
+              <div className="hidden sm:block w-12 md:w-20 h-px bg-gradient-to-l from-teal-400/60 to-teal-400/20" />
+              <div className="pl-1 sm:pl-3">
+                <div className="text-[8px] sm:text-[10px] text-teal-400/70 font-medium uppercase tracking-widest">
                   Distal
                 </div>
-                <div className="text-sm font-bold text-white">
+                <div className="text-[10px] sm:text-sm font-bold text-white leading-tight">
                   Nail Component
                 </div>
               </div>
             </motion.div>
           </div>
-
-          {/* Mobile legend — visible only on small screens */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.0, duration: 0.6 }}
-            className="sm:hidden grid grid-cols-2 gap-x-6 gap-y-3 mt-6 px-2"
-          >
-            {[
-              { label: "Proximal", value: "Nail Component" },
-              { label: "Coating", value: "HA+Ag Selective" },
-              { label: "Zone", value: "PMMA Spacer" },
-              { label: "Connection", value: "Modular Coupler" },
-              { label: "Distal", value: "Nail Component" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_6px_rgba(14,165,169,0.6)] shrink-0" />
-                <div>
-                  <div className="text-[9px] text-teal-400/70 font-medium uppercase tracking-widest">{item.label}</div>
-                  <div className="text-xs font-bold text-white">{item.value}</div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Stats */}
