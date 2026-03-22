@@ -28,25 +28,12 @@ export function ContactSection() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSending(true);
-    setError("");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) throw new Error("Failed to send");
-      setSubmitted(true);
-    } catch {
-      setError("Failed to send message. Please try again or email us directly.");
-    } finally {
-      setSending(false);
-    }
+    const subject = `CITadel enquiry from ${form.name}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nOrganisation: ${form.organisation}\n\n${form.message}`;
+    window.location.href = `mailto:m.baida@nmu.ua?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSubmitted(true);
   };
 
   return (

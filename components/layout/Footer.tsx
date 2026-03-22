@@ -18,11 +18,8 @@ export function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center shadow-sm shadow-teal-500/30">
-                <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <line x1="12" y1="2" x2="12" y2="22" />
-                  <circle cx="12" cy="8" r="2.5" fill="currentColor" stroke="none" />
-                  <circle cx="12" cy="16" r="2.5" fill="currentColor" stroke="none" />
-                  <line x1="8" y1="11.5" x2="16" y2="11.5" strokeWidth="1.5" />
+                <svg width="16" height="16" viewBox="0 0 44 44" fill="none">
+                  <text x="22" y="30" textAnchor="middle" fontFamily="system-ui,sans-serif" fontWeight="800" fontSize="26" fill="white">CT</text>
                 </svg>
               </div>
               <div>
