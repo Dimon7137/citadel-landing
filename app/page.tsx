@@ -11,9 +11,9 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative min-h-screen bg-white">
       <Header />
-      <main className="relative z-0 min-h-screen bg-white">
+      <main>
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
@@ -24,6 +24,6 @@ export default function Home() {
         <ContactSection />
         <Footer />
       </main>
-    </>
+    </div>
   );
 }
