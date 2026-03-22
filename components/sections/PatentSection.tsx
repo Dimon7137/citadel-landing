@@ -67,7 +67,7 @@ export function PatentSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <Accordion type="single" collapsible defaultValue="item-0" className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             {validationCards.map((card, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-b border-slate-700/40">
                 <AccordionTrigger className="py-5 hover:text-teal-400 gap-3 text-left">

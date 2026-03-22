@@ -32,7 +32,7 @@ export function AdvantagesSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <Accordion type="single" collapsible defaultValue="item-0" className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto">
             {advantages.map((adv, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-b border-slate-200/60">
                 <AccordionTrigger className="py-5 hover:text-teal-600 gap-3 text-left">
