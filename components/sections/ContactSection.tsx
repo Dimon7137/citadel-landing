@@ -1,0 +1,157 @@
+"use client";
+
+import { useState } from "react";
+import { Send, Mail, MapPin, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { SectionHeader } from "@/components/shared/SectionHeader";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
+
+const contactInfo = [
+  { icon: Mail, label: "Email", value: "m.baida@nmu.ua", description: "For professional enquiries" },
+  { icon: MapPin, label: "Institution", value: "Bogomolets National Medical University", description: "Kyiv, Ukraine · Online meetings available" },
+  { icon: Users, label: "Collaboration", value: "Partnership · Licensing · Research", description: "EIC Accelerator · Clinical pilot" },
+];
+
+const purposes = [
+  "Industrial partnership & licensing",
+  "Clinical collaboration & pilot deployment",
+  "EIC Accelerator support & co-development",
+  "Scientific exchange & publications",
+  "Investor & funding enquiries",
+];
+
+export function ContactSection() {
+  const [form, setForm] = useState({ name: "", email: "", organisation: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      setError("Failed to send message. Please try again or email us directly.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="relative py-20 md:py-28 bg-[#0f172a] overflow-hidden">
+      <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 60% at 10% 50%, rgba(14,165,169,0.06) 0%, transparent 70%)" }} />
+      <div className="absolute inset-0 noise-overlay pointer-events-none" />
+
+      <div className="section-container relative z-10">
+        <AnimatedSection>
+          <SectionHeader label="Contact" title={<>Open to{" "}<span className="text-teal-400">collaboration</span></>}
+            description="We invite manufacturers, clinicians, research institutions, and investors to connect." light />
+        </AnimatedSection>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
+          <AnimatedSection direction="left" className="lg:col-span-2 space-y-6">
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-6">
+              <h3 className="text-sm font-semibold text-white mb-4">Who should reach out</h3>
+              <ul className="space-y-2.5">
+                {purposes.map((p) => (
+                  <li key={p} className="flex items-center gap-3 text-sm text-slate-400">
+                    <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_6px_rgba(14,165,169,0.5)] shrink-0" />{p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-3">
+              {contactInfo.map((item, i) => (
+                <div key={i} className="flex items-start gap-4 bg-slate-800/30 border border-slate-700/40 rounded-xl p-4">
+                  <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
+                    <item.icon className="w-4 h-4 text-teal-400" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-slate-500 uppercase tracking-wider font-medium mb-0.5">{item.label}</div>
+                    <div className="text-sm font-semibold text-white">{item.value}</div>
+                    <div className="text-xs text-slate-500 mt-0.5">{item.description}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection direction="right" className="lg:col-span-3">
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-8">
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="w-16 h-16 rounded-full bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Message sent</h3>
+                  <p className="text-sm text-slate-400 max-w-sm">We will get back to you within one business day.</p>
+                  <Button variant="outline" className="mt-6 text-sm border-slate-700 text-slate-300 hover:text-white hover:border-teal-500/50"
+                    onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", message: "" }); }}>
+                    Send another message
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-white mb-1">Get in touch</h3>
+                    <p className="text-sm text-slate-400">Describe your interest — we respond within one business day</p>
+                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">Name *</label>
+                        <Input placeholder="Your name" value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} required
+                          className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">Email *</label>
+                        <Input type="email" placeholder="email@organisation.com" value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} required
+                          className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">Organisation</label>
+                      <Input placeholder="Company, hospital, university..." value={form.organisation} onChange={(e) => setForm((f) => ({ ...f, organisation: e.target.value }))}
+                        className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">Message *</label>
+                      <Textarea placeholder="Describe your interest..." rows={5} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required
+                        className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
+                    </div>
+                    <div className="pt-2">
+                      {error && (
+                        <p className="text-sm text-red-400 text-center mb-3">{error}</p>
+                      )}
+                      <Button type="submit" size="lg" disabled={sending}
+                        className="w-full bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-[0_0_30px_rgba(14,165,169,0.2)] hover:shadow-[0_0_40px_rgba(14,165,169,0.35)] transition-all group disabled:opacity-50 disabled:cursor-not-allowed">
+                        {sending ? "Sending..." : "Send message"}
+                        {!sending && <Send className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />}
+                      </Button>
+                      <p className="text-xs text-slate-600 text-center mt-3">By submitting this form, you agree to our privacy policy.</p>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+  );
+}
