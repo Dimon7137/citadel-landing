@@ -5,10 +5,10 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 const steps = [
-  { number: "01", title: "Nail Insertion", description: "Both components introduced into the medullary canal for immediate axial and rotational stability.", detail: "Internal stabilisation" },
-  { number: "02", title: "PMMA Spacer", description: "Antibiotic-loaded spacer positioned in the defect zone for soft-tissue management and infection control.", detail: "Infection management" },
-  { number: "03", title: "Modular Fixation", description: "Components connected via central coupler. Interlocking screws provide stable 3D fixation.", detail: "Stable construct" },
-  { number: "04", title: "Reconstruction", description: "CITadel removed for definitive bone reconstruction once infection is controlled and tissue has healed.", detail: "Reconstruction ready" },
+  { number: "01", title: "Debridement", description: "Debridement and defect creation", detail: "Preparation" },
+  { number: "02", title: "PMMA Spacer", description: "PMMA spacer placement", detail: "Infection management" },
+  { number: "03", title: "CITadel Fixation", description: "Internal fixation with CITadel system", detail: "Stabilisation" },
+  { number: "04", title: "Reconstruction", description: "Definitive bone reconstruction", detail: "Final stage" },
 ];
 
 export function HowItWorksSection() {
@@ -21,13 +21,12 @@ export function HowItWorksSection() {
         <AnimatedSection>
           <SectionHeader
             label="How It Works"
-            title={<>Clinical workflow in{" "}<span className="text-teal-400">four steps</span></>}
-            description="From initial stabilisation to definitive reconstruction — CITadel supports the entire staged management pathway."
+            title={<>How CITadel is used in{" "}<span className="text-teal-400">staged reconstruction</span></>}
             light
           />
         </AnimatedSection>
 
-        {/* Horizontal timeline */}
+        {/* Timeline */}
         <div className="relative">
           {/* Timeline connector line */}
           <div className="hidden lg:block absolute top-[36px] left-[10%] right-[10%] h-px">
@@ -58,7 +57,6 @@ export function HowItWorksSection() {
                         {step.number}
                       </span>
                     </div>
-                    {/* Pulse ring on hover */}
                     <div className="absolute inset-0 rounded-full border border-teal-400/30 scale-100 group-hover:scale-[1.3] group-hover:opacity-0 opacity-0 group-hover:animate-pulse-ring transition-all" />
                   </div>
                 </div>
@@ -78,16 +76,8 @@ export function HowItWorksSection() {
 
         <AnimatedSection delay={0.5} className="mt-12 sm:mt-24">
           <div className="relative bg-teal-500/5 border border-teal-500/20 rounded-xl sm:rounded-2xl px-4 sm:px-8 py-4 sm:py-6 text-center">
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inset-0 rounded-full bg-teal-400 animate-pulse-ring" />
-                <span className="relative rounded-full h-2 w-2 bg-teal-400" />
-              </span>
-              <span className="text-xs font-semibold text-teal-400 uppercase tracking-widest">Clinical outcome</span>
-            </div>
-            <p className="text-slate-300 text-base">
-              <span className="font-semibold text-white">No catastrophic deformation or implant migration</span>{" "}
-              observed during bench validation and early clinical application
+            <p className="text-slate-300 text-sm sm:text-base">
+              Designed for staged treatment, not single-stage defect replacement.
             </p>
           </div>
         </AnimatedSection>

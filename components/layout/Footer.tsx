@@ -1,11 +1,11 @@
 import { Separator } from "@/components/ui/separator";
 
 const navLinks = [
-  { label: "Technology", href: "#solution" },
+  { label: "Solution", href: "#solution" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Advantages", href: "#advantages" },
-  { label: "Research", href: "#patent" },
-  { label: "About", href: "#doctor" },
+  { label: "Differentiation", href: "#differentiation" },
+  { label: "Validation", href: "#validation" },
+  { label: "Partnership", href: "#partnership" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -44,9 +44,9 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">Contact</h4>
             <ul className="space-y-3 text-sm text-slate-500">
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Email</span>m.baida@nmu.ua</li>
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Institution</span>Bogomolets National Medical University, Kyiv</li>
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Collaboration</span>Partnership · Licensing · Research</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Email</span>meredian18@gmail.com</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Phone</span>+380 66 766 7094</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Collaboration</span>Partnership · Licensing · Co-development</li>
             </ul>
           </div>
         </div>

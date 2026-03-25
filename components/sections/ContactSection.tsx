@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, MapPin, Users } from "lucide-react";
+import { Send, Mail, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,30 +9,20 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "m.baida@nmu.ua", description: "For professional enquiries" },
-  { icon: MapPin, label: "Institution", value: "Bogomolets National Medical University", description: "Kyiv, Ukraine · Online meetings available" },
-  { icon: Users, label: "Collaboration", value: "Partnership · Licensing · Research", description: "EIC Accelerator · Clinical pilot" },
-];
-
-const purposes = [
-  "Industrial partnership & licensing",
-  "Clinical collaboration & pilot deployment",
-  "EIC Accelerator support & co-development",
-  "Scientific exchange & publications",
-  "Investor & funding enquiries",
+  { icon: Mail, label: "Email", value: "meredian18@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+380 66 766 7094" },
 ];
 
 export function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", organisation: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
-  const [error, setError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = `CITadel enquiry from ${form.name}`;
     const body = `Name: ${form.name}\nEmail: ${form.email}\nOrganisation: ${form.organisation}\n\n${form.message}`;
-    window.location.href = `mailto:m.baida@nmu.ua?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:meredian18@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
@@ -44,36 +34,27 @@ export function ContactSection() {
 
       <div className="section-container relative z-10">
         <AnimatedSection>
-          <SectionHeader label="Contact" title={<>Open to{" "}<span className="text-teal-400">collaboration</span></>}
-            description="We invite manufacturers, clinicians, research institutions, and investors to connect." light />
+          <SectionHeader
+            label="Contact"
+            title={<>Contact and{" "}<span className="text-teal-400">inquiries</span></>}
+            description="CITadel is open for collaboration with industry partners, clinical centres, and strategic stakeholders."
+            light
+          />
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
-          <AnimatedSection direction="left" className="lg:col-span-2 space-y-6">
-            <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-              <h3 className="text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">Who should reach out</h3>
-              <ul className="space-y-2.5">
-                {purposes.map((p) => (
-                  <li key={p} className="flex items-center gap-3 text-sm text-slate-400">
-                    <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_6px_rgba(14,165,169,0.5)] shrink-0" />{p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="space-y-3">
-              {contactInfo.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 sm:gap-4 bg-slate-800/30 border border-slate-700/40 rounded-lg sm:rounded-xl p-3 sm:p-4">
-                  <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
-                    <item.icon className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-teal-400" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-slate-500 uppercase tracking-wider font-medium mb-0.5">{item.label}</div>
-                    <div className="text-sm font-semibold text-white">{item.value}</div>
-                    <div className="text-xs text-slate-500 mt-0.5">{item.description}</div>
-                  </div>
+          <AnimatedSection direction="left" className="lg:col-span-2 space-y-4">
+            {contactInfo.map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-slate-800/30 border border-slate-700/40 rounded-lg sm:rounded-xl p-4">
+                <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
+                  <item.icon className="w-4 h-4 text-teal-400" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <div className="text-[10px] text-slate-500 uppercase tracking-wider font-medium mb-0.5">{item.label}</div>
+                  <div className="text-sm font-semibold text-white">{item.value}</div>
+                </div>
+              </div>
+            ))}
           </AnimatedSection>
 
           <AnimatedSection direction="right" className="lg:col-span-3">
@@ -95,7 +76,7 @@ export function ContactSection() {
               ) : (
                 <>
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-white mb-1">Get in touch</h3>
+                    <h3 className="text-lg font-semibold text-white mb-1">Send us a message</h3>
                     <p className="text-sm text-slate-400">Describe your interest — we respond within one business day</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -122,15 +103,11 @@ export function ContactSection() {
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
                     </div>
                     <div className="pt-2">
-                      {error && (
-                        <p className="text-sm text-red-400 text-center mb-3">{error}</p>
-                      )}
                       <Button type="submit" size="lg" disabled={sending}
                         className="w-full bg-teal-500 hover:bg-teal-400 text-white font-semibold shadow-[0_0_30px_rgba(14,165,169,0.2)] hover:shadow-[0_0_40px_rgba(14,165,169,0.35)] transition-all group disabled:opacity-50 disabled:cursor-not-allowed">
-                        {sending ? "Sending..." : "Send message"}
-                        {!sending && <Send className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />}
+                        {sending ? "Sending..." : "Request Meeting"}
+                        {!sending && <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />}
                       </Button>
-                      <p className="text-xs text-slate-600 text-center mt-3">By submitting this form, you agree to our privacy policy.</p>
                     </div>
                   </form>
                 </>

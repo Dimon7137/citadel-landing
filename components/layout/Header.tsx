@@ -12,11 +12,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Technology", href: "#solution" },
+  { label: "Solution", href: "#solution" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Advantages", href: "#advantages" },
-  { label: "Research", href: "#patent" },
-  { label: "About", href: "#doctor" },
+  { label: "Differentiation", href: "#differentiation" },
+  { label: "Validation", href: "#validation" },
+  { label: "Partnership", href: "#partnership" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -99,7 +99,7 @@ export function Header() {
               onClick={() => handleNavClick("#contact")}
               className="bg-teal-500 hover:bg-teal-400 text-white shadow-sm shadow-teal-500/20 text-sm px-5"
             >
-              Request Information
+              Request Meeting
             </Button>
           </div>
 
