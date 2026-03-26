@@ -90,7 +90,8 @@ export function HeroSection() {
               }}
             >
               <img src="/citadel-landing/hero-bone.png" alt={t.hero.imageAlt}
-                className="max-h-[45dvh] sm:max-h-[55dvh] md:max-h-[60dvh] lg:max-h-[74dvh] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]" />
+                className="object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]"
+                style={{ maxHeight: "clamp(300px, 65dvh, 700px)" }} />
             </motion.div>
 
             {/* Glow at bottom */}
