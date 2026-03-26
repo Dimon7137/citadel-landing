@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  overscroll-behavior: none;
-  overflow: clip;
-}
-
-body {
+html, body {
   overscroll-behavior: none;
 }
 
