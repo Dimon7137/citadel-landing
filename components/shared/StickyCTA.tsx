@@ -13,15 +13,18 @@ export function StickyCTA() {
   useEffect(() => {
     const hero = document.getElementById("hero");
     const contact = document.getElementById("contact");
+    const partnership = document.getElementById("partnership");
     if (!hero || !contact) return;
     let heroVisible = true;
     let contactVisible = false;
-    const update = () => setVisible(!heroVisible && !contactVisible);
+    let partnershipVisible = false;
+    const update = () => setVisible(!heroVisible && !contactVisible && !partnershipVisible);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target.id === "hero") heroVisible = entry.isIntersecting;
           if (entry.target.id === "contact") contactVisible = entry.isIntersecting;
+          if (entry.target.id === "partnership") partnershipVisible = entry.isIntersecting;
         });
         update();
       },
@@ -29,6 +32,7 @@ export function StickyCTA() {
     );
     observer.observe(hero);
     observer.observe(contact);
+    if (partnership) observer.observe(partnership);
     return () => observer.disconnect();
   }, []);
 
