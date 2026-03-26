@@ -15,8 +15,8 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative z-0 flex items-center overflow-clip pt-20 pb-16"
-      style={{ minHeight: "100dvh", contain: "paint", background: "linear-gradient(135deg, #0a1628 55%, #0d1f3c 55%)" }}
+      className="relative z-0 flex items-center overflow-hidden pt-20 pb-16"
+      style={{ minHeight: "100dvh", background: "linear-gradient(135deg, #0a1628 55%, #0d1f3c 55%)" }}
     >
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
       <div className="absolute inset-0 noise-overlay pointer-events-none" />
