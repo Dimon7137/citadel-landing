@@ -42,9 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="theme-color" content="#0a1628" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <script dangerouslySetInnerHTML={{ __html: `if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);` }} />
       </head>
-      <body className={`${rubik.variable} font-sans`}>
+      <body className={`${rubik.variable} font-sans bg-[#0a1628]`}>
         <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
