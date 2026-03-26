@@ -12,12 +12,23 @@ export function StickyCTA() {
 
   useEffect(() => {
     const hero = document.getElementById("hero");
-    if (!hero) return;
+    const contact = document.getElementById("contact");
+    if (!hero || !contact) return;
+    let heroVisible = true;
+    let contactVisible = false;
+    const update = () => setVisible(!heroVisible && !contactVisible);
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target.id === "hero") heroVisible = entry.isIntersecting;
+          if (entry.target.id === "contact") contactVisible = entry.isIntersecting;
+        });
+        update();
+      },
       { threshold: 0.1 }
     );
     observer.observe(hero);
+    observer.observe(contact);
     return () => observer.disconnect();
   }, []);
 
