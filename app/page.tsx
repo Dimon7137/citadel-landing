@@ -15,7 +15,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a1628]">
+    <div className="bg-[#0a1628]" style={{ minHeight: "100dvh" }}>
       <Header />
       <StickyCTA />
       <main className="isolate">
