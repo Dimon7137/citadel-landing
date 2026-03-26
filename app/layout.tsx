@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
 import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
@@ -8,6 +8,12 @@ const rubik = Rubik({
   variable: "--font-rubik",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0a1628",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "CITadel — Modular Intramedullary System for Critical Long-Bone Defects",
@@ -42,8 +48,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#0a1628" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <script dangerouslySetInnerHTML={{ __html: `if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);` }} />
       </head>
       <body className={`${rubik.variable} font-sans bg-[#0a1628]`}>
