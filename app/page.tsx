@@ -16,9 +16,11 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <div className="relative" style={{ zIndex: 9999 }}>
+        <Header />
+      </div>
       <StickyCTA />
-      <main className="isolate">
+      <main className="relative isolate" style={{ zIndex: 1 }}>
         <HeroSection />
         <PositioningSection />
         <ProblemSection />
