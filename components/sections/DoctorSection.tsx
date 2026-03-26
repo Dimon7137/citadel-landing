@@ -39,9 +39,9 @@ export function DoctorSection() {
                   {t.doctor.stats.map((stat, i) => (
                     <motion.div key={stat.value} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                      className={`border rounded-xl px-4 py-3 text-center ${i === 2 ? "bg-teal-50 border-teal-200" : "bg-slate-50 border-slate-200"}`}>
-                      <div className={`text-xl font-bold ${i === 2 ? "text-teal-700" : "text-slate-900"}`}>{stat.value}</div>
-                      <div className={`text-[11px] uppercase tracking-wider font-medium ${i === 2 ? "text-teal-600" : "text-slate-500"}`}>{stat.label}</div>
+                      className={`border rounded-xl px-3 sm:px-4 py-3 text-center min-w-0 ${i === 2 ? "bg-teal-50 border-teal-200" : "bg-slate-50 border-slate-200"}`}>
+                      <div className={`text-lg sm:text-xl font-bold ${i === 2 ? "text-teal-700" : "text-slate-900"}`}>{stat.value}</div>
+                      <div className={`text-[9px] sm:text-[11px] uppercase tracking-wider font-medium leading-tight ${i === 2 ? "text-teal-600" : "text-slate-500"}`}>{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
