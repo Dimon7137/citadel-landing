@@ -1,15 +1,20 @@
-import { Separator } from "@/components/ui/separator";
+"use client";
 
-const navLinks = [
-  { label: "Solution", href: "#solution" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Differentiation", href: "#differentiation" },
-  { label: "Validation", href: "#validation" },
-  { label: "Partnership", href: "#partnership" },
-  { label: "Contact", href: "#contact" },
+import { Separator } from "@/components/ui/separator";
+import { useI18n } from "@/lib/i18n";
+
+const navKeys = [
+  { key: "solution" as const, href: "#solution" },
+  { key: "howItWorks" as const, href: "#how-it-works" },
+  { key: "differentiation" as const, href: "#differentiation" },
+  { key: "validation" as const, href: "#validation" },
+  { key: "partnership" as const, href: "#partnership" },
+  { key: "contact" as const, href: "#contact" },
 ];
 
 export function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="bg-[#080e1a] text-slate-400 relative overflow-hidden">
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none opacity-40" />
@@ -23,37 +28,37 @@ export function Footer() {
                 </svg>
               </div>
               <div>
-                <div className="text-sm font-bold text-white">CITadel</div>
-                <div className="text-[10px] text-slate-600 uppercase tracking-wider">Intramedullary System</div>
+                <div className="text-sm font-bold text-white">{t.brand.name}</div>
+                <div className="text-[10px] text-slate-600 uppercase tracking-wider">{t.brand.tagline}</div>
               </div>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">Modular intramedullary fixator with selective HA+Ag coating for temporary internal stabilisation of critical long-bone defects.</p>
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">{t.footer.description}</p>
             <div className="mt-5 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(14,165,169,0.5)]" />
-              <span className="text-xs text-slate-600 font-medium">TRL 4–5 · Bench Validated · EIC Accelerator</span>
+              <span className="text-xs text-slate-600 font-medium">{t.footer.statusBadge}</span>
             </div>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">Navigation</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">{t.footer.navTitle}</h4>
             <ul className="space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.href}><a href={link.href} className="text-sm text-slate-500 hover:text-teal-400 transition-colors">{link.label}</a></li>
+              {navKeys.map((link) => (
+                <li key={link.href}><a href={link.href} className="text-sm text-slate-500 hover:text-teal-400 transition-colors">{t.nav[link.key]}</a></li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">Contact</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">{t.footer.contactTitle}</h4>
             <ul className="space-y-3 text-sm text-slate-500">
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Email</span>meredian18@gmail.com</li>
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Phone</span>+380 66 766 7094</li>
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">Collaboration</span>Partnership · Licensing · Co-development</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.emailLabel}</span>meredian18@gmail.com</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.phoneLabel}</span>+380 66 766 7094</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.footer.collaborationLabel}</span>{t.footer.collaborationValue}</li>
             </ul>
           </div>
         </div>
         <Separator className="my-10 bg-slate-800" />
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-4 text-center sm:text-left">
-          <p className="text-[10px] sm:text-xs text-slate-700">&copy; {new Date().getFullYear()} CITadel · Maksym Baida, PhD. All rights reserved.</p>
-          <p className="text-[10px] sm:text-xs text-slate-700">Bogomolets National Medical University · Kyiv, Ukraine</p>
+          <p className="text-[10px] sm:text-xs text-slate-700">&copy; {new Date().getFullYear()} {t.footer.copyright}</p>
+          <p className="text-[10px] sm:text-xs text-slate-700">{t.footer.institution}</p>
         </div>
       </div>
     </footer>

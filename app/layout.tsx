@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
+import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const rubik = Rubik({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-rubik",
   display: "swap",
 });
 
@@ -43,7 +44,9 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: `if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);` }} />
       </head>
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${rubik.variable} font-sans`}>
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }

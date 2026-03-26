@@ -10,19 +10,22 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
+import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 
-const navLinks = [
-  { label: "Solution", href: "#solution" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Differentiation", href: "#differentiation" },
-  { label: "Validation", href: "#validation" },
-  { label: "Partnership", href: "#partnership" },
-  { label: "Contact", href: "#contact" },
+const navKeys = [
+  { key: "solution" as const, href: "#solution" },
+  { key: "howItWorks" as const, href: "#how-it-works" },
+  { key: "differentiation" as const, href: "#differentiation" },
+  { key: "validation" as const, href: "#validation" },
+  { key: "partnership" as const, href: "#partnership" },
+  { key: "contact" as const, href: "#contact" },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -67,17 +70,17 @@ export function Header() {
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-sm font-bold text-white tracking-tight">
-                CITadel
+                {t.brand.name}
               </span>
               <span className="text-[10px] text-slate-500 font-medium tracking-wider uppercase">
-                Intramedullary System
+                {t.brand.tagline}
               </span>
             </div>
           </a>
 
           {/* Desktop navigation */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {navLinks.map((link) => (
+            {navKeys.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -85,75 +88,79 @@ export function Header() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="px-3.5 py-2 text-sm font-medium text-slate-400 rounded-md hover:text-teal-400 hover:bg-teal-500/5 transition-all duration-200"
+                className="px-2.5 py-2 text-[13px] font-medium text-slate-400 rounded-md hover:text-teal-400 hover:bg-teal-500/5 transition-all duration-200 whitespace-nowrap"
               >
-                {link.label}
+                {t.nav[link.key]}
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop CTA + Language */}
+          <div className="hidden lg:flex items-center gap-2">
+            <LanguageSwitcher />
             <Button
               size="sm"
               onClick={() => handleNavClick("#contact")}
               className="bg-teal-500 hover:bg-teal-400 text-white shadow-sm shadow-teal-500/20 text-sm px-5"
             >
-              Request Meeting
+              {t.cta.requestMeeting}
             </Button>
           </div>
 
-          {/* Mobile menu */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden text-slate-400 hover:text-white hover:bg-white/10 min-h-[44px] min-w-[44px]"
-                aria-label="Open menu"
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[340px] p-0 bg-[#0f172a] border-slate-700">
-              <SheetTitle className="sr-only">Navigation menu</SheetTitle>
-              <div className="flex flex-col h-full">
-                <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                  className="flex items-center gap-2.5 p-6 border-b border-slate-700/50 cursor-pointer"
+          {/* Mobile: language + menu */}
+          <div className="flex lg:hidden items-center gap-1">
+            <LanguageSwitcher />
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-slate-400 hover:text-white hover:bg-white/10 min-h-[44px] min-w-[44px]"
+                  aria-label="Open menu"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                      <line x1="12" y1="2" x2="12" y2="22" />
-                      <circle cx="12" cy="8" r="2.5" fill="currentColor" stroke="none" />
-                      <circle cx="12" cy="16" r="2.5" fill="currentColor" stroke="none" />
-                      <line x1="8" y1="11.5" x2="16" y2="11.5" strokeWidth="1.5" />
-                    </svg>
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[340px] p-0 bg-[#0f172a] border-slate-700">
+                <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+                <div className="flex flex-col h-full">
+                  <a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="flex items-center gap-2.5 p-6 border-b border-slate-700/50 cursor-pointer"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                        <line x1="12" y1="2" x2="12" y2="22" />
+                        <circle cx="12" cy="8" r="2.5" fill="currentColor" stroke="none" />
+                        <circle cx="12" cy="16" r="2.5" fill="currentColor" stroke="none" />
+                        <line x1="8" y1="11.5" x2="16" y2="11.5" strokeWidth="1.5" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white">{t.brand.name}</div>
+                      <div className="text-[10px] text-slate-500 uppercase tracking-wider">{t.brand.tagline}</div>
+                    </div>
+                  </a>
+                  <nav className="flex flex-col gap-1 p-4 flex-1">
+                    {navKeys.map((link) => (
+                      <a key={link.href} href={link.href}
+                        onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                        className="flex items-center px-4 py-3 text-sm font-medium text-slate-300 rounded-lg hover:text-teal-400 hover:bg-teal-500/5 transition-colors"
+                      >
+                        {t.nav[link.key]}
+                      </a>
+                    ))}
+                  </nav>
+                  <div className="p-4 border-t border-slate-700/50">
+                    <Button className="w-full bg-teal-500 hover:bg-teal-400 text-white" onClick={() => handleNavClick("#contact")}>
+                      {t.cta.requestMeeting}
+                    </Button>
                   </div>
-                  <div>
-                    <div className="text-sm font-bold text-white">CITadel</div>
-                    <div className="text-[10px] text-slate-500 uppercase tracking-wider">Intramedullary System</div>
-                  </div>
-                </a>
-                <nav className="flex flex-col gap-1 p-4 flex-1">
-                  {navLinks.map((link) => (
-                    <a key={link.href} href={link.href}
-                      onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                      className="flex items-center px-4 py-3 text-sm font-medium text-slate-300 rounded-lg hover:text-teal-400 hover:bg-teal-500/5 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </nav>
-                <div className="p-4 border-t border-slate-700/50">
-                  <Button className="w-full bg-teal-500 hover:bg-teal-400 text-white" onClick={() => handleNavClick("#contact")}>
-                    Request Information
-                  </Button>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
