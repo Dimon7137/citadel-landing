@@ -42,7 +42,8 @@ html, body {
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
+    background-color: #0a1628;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

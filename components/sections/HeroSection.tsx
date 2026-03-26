@@ -15,8 +15,8 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative z-0 min-h-screen flex items-center overflow-hidden pt-20 pb-16"
-      style={{ background: "linear-gradient(135deg, #0a1628 55%, #0d1f3c 55%)" }}
+      className="relative z-0 flex items-center overflow-hidden pt-20 pb-16"
+      style={{ minHeight: "100dvh", background: "linear-gradient(135deg, #0a1628 55%, #0d1f3c 55%)" }}
     >
       <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
       <div className="absolute inset-0 noise-overlay pointer-events-none" />
@@ -90,7 +90,8 @@ export function HeroSection() {
               }}
             >
               <img src="/citadel-landing/hero-bone.png" alt={t.hero.imageAlt}
-                className="max-h-[45vh] sm:max-h-[55vh] md:max-h-[60vh] lg:max-h-[74vh] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]" />
+                className="object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]"
+                style={{ maxHeight: "min(45svh, 400px)" }} />
             </motion.div>
 
             {/* Glow at bottom */}
