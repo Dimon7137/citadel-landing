@@ -18,7 +18,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
       <StickyCTA />
-      <main className="isolate">
+      <main className="relative z-0" style={{ contain: "paint" }}>
         <HeroSection />
         <PositioningSection />
         <ProblemSection />

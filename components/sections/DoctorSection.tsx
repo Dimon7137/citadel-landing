@@ -35,7 +35,7 @@ export function DoctorSection() {
                 <p className="text-base text-slate-600 leading-relaxed mb-8">{t.doctor.bio}</p>
 
                 {/* Stats badges */}
-                <div className="flex flex-wrap gap-3">
+                <div className="grid grid-cols-3 gap-3">
                   {t.doctor.stats.map((stat, i) => (
                     <motion.div key={stat.value} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
