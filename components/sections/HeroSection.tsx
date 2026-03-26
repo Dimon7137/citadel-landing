@@ -57,10 +57,12 @@ export function HeroSection() {
                 {t.cta.requestMeeting}
                 <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="xl" variant="ghost" disabled className="rounded-lg border border-slate-600 text-slate-400 px-8 cursor-not-allowed opacity-60" title={t.cta.comingSoon}>
-                <Download className="mr-1.5 w-4 h-4" />
-                {t.cta.downloadTeaser}
-              </Button>
+              <a href="/citadel-landing/CITadel.pdf" target="_blank" rel="noopener noreferrer">
+                <Button size="xl" variant="ghost" className="rounded-lg border border-slate-600 text-slate-300 px-8 hover:border-teal-500/40 hover:text-white transition-all">
+                  <Download className="mr-1.5 w-4 h-4" />
+                  {t.cta.downloadTeaser}
+                </Button>
+              </a>
             </motion.div>
           </div>
 
