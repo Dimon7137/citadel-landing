@@ -27,11 +27,11 @@ export function PartnershipSection() {
             title={<>{t.partnership.title}{" "}<span className="text-teal-400">{t.partnership.titleHighlight}</span></>} light />
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {t.partnership.items.map((p, i) => {
             const Icon = icons[i];
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={p.title}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}
                   className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-5 hover:border-teal-500/30 transition-all duration-300 h-full">
                   <div className="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">

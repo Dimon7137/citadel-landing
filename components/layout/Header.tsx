@@ -12,15 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
-
-const navKeys = [
-  { key: "solution" as const, href: "#solution" },
-  { key: "howItWorks" as const, href: "#how-it-works" },
-  { key: "differentiation" as const, href: "#differentiation" },
-  { key: "validation" as const, href: "#validation" },
-  { key: "partnership" as const, href: "#partnership" },
-  { key: "contact" as const, href: "#contact" },
-];
+import { NAV_KEYS } from "@/lib/constants";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -80,7 +72,7 @@ export function Header() {
 
           {/* Desktop navigation */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {navKeys.map((link) => (
+            {NAV_KEYS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -143,7 +135,7 @@ export function Header() {
                     </div>
                   </a>
                   <nav className="flex flex-col gap-1 p-4 flex-1">
-                    {navKeys.map((link) => (
+                    {NAV_KEYS.map((link) => (
                       <a key={link.href} href={link.href}
                         onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                         className="flex items-center px-4 py-3 text-sm font-medium text-slate-300 rounded-lg hover:text-teal-400 hover:bg-teal-500/5 transition-colors"

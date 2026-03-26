@@ -22,11 +22,11 @@ export function ProblemSection() {
             title={<>{t.problem.title}{" "}<span className="text-teal-400">{t.problem.titleHighlight}</span></>} light />
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {t.problem.items.map((item, i) => {
             const Icon = icons[i];
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={item}>
                 <div className="group relative bg-slate-800/30 backdrop-blur-sm border border-slate-700/40 rounded-xl sm:rounded-2xl p-5 sm:p-6 hover:border-red-500/30 transition-all duration-300 h-full flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-red-400" />

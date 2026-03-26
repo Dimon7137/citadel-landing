@@ -23,15 +23,6 @@ export const localeNames: Record<Locale, string> = {
   fr: "Français",
 };
 
-export const localeFlags: Record<Locale, string> = {
-  en: "GB",
-  uk: "UA",
-  ru: "RU",
-  es: "ES",
-  de: "DE",
-  fr: "FR",
-};
-
 const langMap: Record<string, Locale> = {
   en: "en", uk: "uk", ru: "ru", es: "es", de: "de", fr: "fr",
   "en-US": "en", "en-GB": "en", "en-AU": "en",

@@ -162,6 +162,11 @@ export const en = {
     role: "Orthopaedic Trauma Surgeon · Developer of CITadel",
     bio: "Over 15 years of clinical practice in traumatology and reconstructive orthopaedics. Associate Professor at Bogomolets National Medical University, Kyiv. CITadel was born from a direct clinical need — the absence of a reliable internal stabilisation option for patients requiring staged reconstruction.",
     imageAlt: "Dr. Maksym Baida",
+    stats: [
+      { value: "15+", label: "Years in Practice" },
+      { value: "PhD", label: "Orthopaedics" },
+      { value: "CITadel", label: "Inventor" },
+    ],
   },
 
   // Contact

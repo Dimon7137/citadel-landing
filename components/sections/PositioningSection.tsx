@@ -21,7 +21,7 @@ export function PositioningSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
-          <div className="hidden md:flex items-center justify-center gap-0 max-w-4xl mx-auto">
+          <div className="hidden md:flex items-center justify-center gap-0 max-w-6xl mx-auto">
             {t.positioning.steps.map((step, i) => (
               <div key={step} className="flex items-center">
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}

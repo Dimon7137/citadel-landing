@@ -2,15 +2,7 @@
 
 import { Separator } from "@/components/ui/separator";
 import { useI18n } from "@/lib/i18n";
-
-const navKeys = [
-  { key: "solution" as const, href: "#solution" },
-  { key: "howItWorks" as const, href: "#how-it-works" },
-  { key: "differentiation" as const, href: "#differentiation" },
-  { key: "validation" as const, href: "#validation" },
-  { key: "partnership" as const, href: "#partnership" },
-  { key: "contact" as const, href: "#contact" },
-];
+import { NAV_KEYS, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants";
 
 export function Footer() {
   const { t } = useI18n();
@@ -41,7 +33,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">{t.footer.navTitle}</h4>
             <ul className="space-y-3">
-              {navKeys.map((link) => (
+              {NAV_KEYS.map((link) => (
                 <li key={link.href}><a href={link.href} className="text-sm text-slate-500 hover:text-teal-400 transition-colors">{t.nav[link.key]}</a></li>
               ))}
             </ul>
@@ -49,8 +41,8 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-600 mb-5">{t.footer.contactTitle}</h4>
             <ul className="space-y-3 text-sm text-slate-500">
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.emailLabel}</span>meredian18@gmail.com</li>
-              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.phoneLabel}</span>+380 66 766 7094</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.emailLabel}</span>{CONTACT_EMAIL}</li>
+              <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.contact.phoneLabel}</span>{CONTACT_PHONE}</li>
               <li><span className="text-slate-600 text-xs uppercase tracking-wider block mb-0.5">{t.footer.collaborationLabel}</span>{t.footer.collaborationValue}</li>
             </ul>
           </div>

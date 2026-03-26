@@ -27,9 +27,9 @@ export function HowItWorksSection() {
               className="w-full h-full bg-gradient-to-r from-teal-500/60 via-teal-400/40 to-teal-500/60 origin-left" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 max-w-6xl mx-auto">
             {t.howItWorks.steps.map((step, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              <motion.div key={step.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: 0.15 + i * 0.12, duration: 0.5 }} className="relative group flex flex-col">
                 <div className="flex justify-center mb-8 lg:mb-10 shrink-0">
                   <div className="relative">

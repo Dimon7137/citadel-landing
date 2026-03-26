@@ -34,9 +34,9 @@ export const de = {
     badges: ["TRL 4–5", "Validiert", "PMMA ready", "Modular"],
     imageAlt: "CITadel — modularer intramedullärer Fixateur für kritische Langknochendefekte",
     stats: [
-      { num: "12+", label: "length & diameter configurations" },
-      { num: "Earlier", label: "progression to reconstruction" },
-      { num: "1", label: "internal fixation instead of multiple temporary solutions" },
+      { num: "12+", label: "Längen- und Durchmesserkonfigurationen" },
+      { num: "Früher", label: "Übergang zur Rekonstruktion" },
+      { num: "1", label: "interne Fixation statt mehrerer temporärer Lösungen" },
     ],
   },
 
@@ -162,6 +162,11 @@ export const de = {
     role: "Orthopädischer Unfallchirurg · Entwickler von CITadel",
     bio: "Über 15 Jahre klinische Praxis in Traumatologie und rekonstruktiver Orthopädie. Außerordentlicher Professor an der Nationalen Medizinischen Universität Bogomolets, Kiew. CITadel entstand aus einem direkten klinischen Bedarf — dem Fehlen einer zuverlässigen internen Stabilisierungsoption für Patienten, die eine stufenweise Rekonstruktion benötigen.",
     imageAlt: "Dr. Maksym Baida",
+    stats: [
+      { value: "15+", label: "Jahre Praxis" },
+      { value: "PhD", label: "Orthopädie" },
+      { value: "CITadel", label: "Erfinder" },
+    ],
   },
 
   // Contact

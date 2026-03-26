@@ -23,12 +23,12 @@ export function SolutionSection() {
             title={<>{t.solution.title}{" "}<span className="text-teal-600">{t.solution.titleHighlight}</span></>} />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {t.solution.features.map((feature, i) => {
               const Icon = icons[i];
               return (
-                <StaggerItem key={i}>
+                <StaggerItem key={feature.title}>
                   <motion.div whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(14,165,169,0.12)" }} transition={{ duration: 0.2 }}
                     className="group bg-white border border-slate-100 rounded-xl p-5 shadow-sm hover:border-teal-300/40 transition-all duration-300 h-full">
                     <div className="w-10 h-10 rounded-lg bg-teal-50 border border-teal-100 flex items-center justify-center mb-3">
@@ -43,9 +43,9 @@ export function SolutionSection() {
           </StaggerContainer>
 
           <AnimatedSection direction="right">
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-end">
               <img src="/citadel-landing/section4-nobg.png" alt={t.solution.imageAlt}
-                className="max-h-[500px] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.15)]" />
+                className="max-h-[650px] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.15)]" />
             </div>
           </AnimatedSection>
         </div>

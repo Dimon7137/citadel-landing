@@ -89,7 +89,7 @@ export function HeroSection() {
                 WebkitMaskImage: "linear-gradient(to bottom, black 65%, transparent 95%)",
               }}
             >
-              <img src="/citadel-landing/final_perfect.png" alt={t.hero.imageAlt}
+              <img src="/citadel-landing/hero-bone.png" alt={t.hero.imageAlt}
                 className="max-h-[45vh] sm:max-h-[55vh] md:max-h-[60vh] lg:max-h-[74vh] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]" />
             </motion.div>
 

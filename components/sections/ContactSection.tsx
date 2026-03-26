@@ -8,8 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { useI18n } from "@/lib/i18n";
-
-const contactIcons = [Mail, Phone];
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants";
 
 export function ContactSection() {
   const { t } = useI18n();
@@ -18,8 +17,8 @@ export function ContactSection() {
   const [sending, setSending] = useState(false);
 
   const contactInfo = [
-    { icon: Mail, label: t.contact.emailLabel, value: "meredian18@gmail.com" },
-    { icon: Phone, label: t.contact.phoneLabel, value: "+380 66 766 7094" },
+    { icon: Mail, label: t.contact.emailLabel, value: CONTACT_EMAIL },
+    { icon: Phone, label: t.contact.phoneLabel, value: CONTACT_PHONE },
   ];
 
   const [error, setError] = useState("");
@@ -69,10 +68,10 @@ export function ContactSection() {
             description={t.contact.description} light />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 max-w-6xl mx-auto">
           <AnimatedSection direction="left" className="lg:col-span-2 space-y-4">
             {contactInfo.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 bg-slate-800/30 border border-slate-700/40 rounded-lg sm:rounded-xl p-4">
+              <div key={item.value} className="flex items-center gap-3 bg-slate-800/30 border border-slate-700/40 rounded-lg sm:rounded-xl p-4">
                 <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0">
                   <item.icon className="w-4 h-4 text-teal-400" />
                 </div>

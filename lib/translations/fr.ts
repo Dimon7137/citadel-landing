@@ -34,9 +34,9 @@ export const fr = {
     badges: ["TRL 4–5", "Validé", "PMMA ready", "Modulaire"],
     imageAlt: "CITadel — fixateur intramédullaire modulaire pour les défauts critiques des os longs",
     stats: [
-      { num: "12+", label: "length & diameter configurations" },
-      { num: "Earlier", label: "progression to reconstruction" },
-      { num: "1", label: "internal fixation instead of multiple temporary solutions" },
+      { num: "12+", label: "configurations de longueur et diamètre" },
+      { num: "Plus tôt", label: "progression vers la reconstruction" },
+      { num: "1", label: "fixation interne au lieu de multiples solutions temporaires" },
     ],
   },
 
@@ -162,6 +162,11 @@ export const fr = {
     role: "Chirurgien orthopédique traumatologue · Développeur de CITadel",
     bio: "Plus de 15 ans de pratique clinique en traumatologie et en chirurgie orthopédique reconstructrice. Professeur associé à l'Université nationale de médecine Bogomolets, Kyiv. CITadel est né d'un besoin clinique direct — l'absence d'une option fiable de stabilisation interne pour les patients nécessitant une reconstruction par étapes.",
     imageAlt: "Dr. Maksym Baida",
+    stats: [
+      { value: "15+", label: "Ans de pratique" },
+      { value: "PhD", label: "Orthopédie" },
+      { value: "CITadel", label: "Inventeur" },
+    ],
   },
 
   // Contact

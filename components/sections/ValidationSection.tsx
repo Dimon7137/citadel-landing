@@ -19,7 +19,7 @@ export function ValidationSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-6xl mx-auto mb-8">
             {t.validation.badges.map((badge, i) => (
               <motion.div key={badge} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
@@ -29,7 +29,7 @@ export function ValidationSection() {
             ))}
           </div>
 
-          <p className="text-center text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl mx-auto">{t.validation.description}</p>
+          <p className="text-center text-sm sm:text-base text-slate-500 leading-relaxed max-w-3xl mx-auto">{t.validation.description}</p>
 
           <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.5 }} className="text-center text-sm font-semibold text-teal-600 mt-6">
