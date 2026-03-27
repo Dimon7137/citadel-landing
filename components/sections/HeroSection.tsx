@@ -1,16 +1,41 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Download, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 
+const TEASER_LANGS = [
+  { code: "en", label: "🇬🇧 English",    file: "/citadel-landing/citadel-teaser-en.pdf" },
+  { code: "uk", label: "🇺🇦 Українська", file: "/citadel-landing/citadel-teaser-uk.pdf" },
+  { code: "ru", label: "🇷🇺 Русский",    file: "/citadel-landing/citadel-teaser-ru.pdf" },
+  { code: "es", label: "🇪🇸 Español",    file: "/citadel-landing/citadel-teaser-es.pdf" },
+  { code: "de", label: "🇩🇪 Deutsch",    file: "/citadel-landing/citadel-teaser-de.pdf" },
+  { code: "fr", label: "🇫🇷 Français",   file: "/citadel-landing/citadel-teaser-fr.pdf" },
+];
+
 export function HeroSection() {
   const { t } = useI18n();
+  const [langPickerOpen, setLangPickerOpen] = useState(false);
+  const pickerRef = useRef<HTMLDivElement>(null);
 
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (!langPickerOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (pickerRef.current && !pickerRef.current.contains(e.target as Node)) {
+        setLangPickerOpen(false);
+      }
+    };
+    const keyHandler = (e: KeyboardEvent) => { if (e.key === "Escape") setLangPickerOpen(false); };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("keydown", keyHandler);
+    return () => { document.removeEventListener("mousedown", handler); document.removeEventListener("keydown", keyHandler); };
+  }, [langPickerOpen]);
 
   return (
     <section
@@ -57,12 +82,32 @@ export function HeroSection() {
                 {t.cta.requestMeeting}
                 <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <a href="/citadel-landing/citadel-teaser-v2.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="xl" variant="ghost" className="w-full rounded-lg border border-slate-600 text-slate-300 px-8 hover:bg-teal-500/10 hover:border-teal-500/40 hover:text-white transition-all">
+              <div ref={pickerRef} className="relative w-full sm:w-auto">
+                <Button size="xl" variant="ghost" onClick={() => setLangPickerOpen((v) => !v)}
+                  className="w-full rounded-lg border border-slate-600 text-slate-300 px-8 hover:bg-teal-500/10 hover:border-teal-500/40 hover:text-white transition-all">
                   <Download className="mr-1.5 w-4 h-4" />
                   {t.cta.downloadTeaser}
+                  <ChevronDown className={`ml-1.5 w-3.5 h-3.5 transition-transform duration-200 ${langPickerOpen ? "rotate-180" : ""}`} />
                 </Button>
-              </a>
+                <AnimatePresence>
+                  {langPickerOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute bottom-full mb-2 left-0 sm:left-auto sm:right-0 w-full sm:w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl overflow-hidden z-50">
+                      {TEASER_LANGS.map((lang) => (
+                        <a key={lang.code} href={lang.file} target="_blank" rel="noopener noreferrer"
+                          onClick={() => setLangPickerOpen(false)}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-white transition-colors">
+                          {lang.label}
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
           </div>
 

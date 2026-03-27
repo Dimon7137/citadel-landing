@@ -22,7 +22,7 @@ export function DifferentiationSection() {
             title={<>{t.differentiation.title}{" "}<span className="text-teal-400">{t.differentiation.titleHighlight}</span></>} light />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           <AnimatedSection direction="left">
             <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-6 h-full">
               <div className="flex items-center gap-3 mb-6">

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — Product Teaser</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Rubik', system-ui, sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ===== Language switcher (non-printing) ===== */
+  .lang-switcher {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 1000;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 8px 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .lang-btn {
+    font-family: 'Rubik', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .lang-btn:hover { background: #f0fdfa; border-color: #99f6e4; color: #0d9488; }
+  .lang-btn.active { background: #0d9488; border-color: #0d9488; color: #fff; }
+
+  @media print {
+    .lang-switcher { display: none; }
+  }
+
+  /* ===== Pages ===== */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 32mm 24mm 24mm 24mm;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* Subtle dot grid */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(14,165,169,0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  /* Top accent stripe */
+  .page::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #0369a1, #0d9488, #0ea5e9);
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 10mm 24mm;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 10;
+  }
+
+  .logo-group { display: flex; align-items: center; gap: 10px; }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: #0d9488;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; color: white;
+  }
+
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-size: 14px; font-weight: 700; color: #0f172a; }
+  .logo-tagline {
+    font-size: 8px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  .header-badge {
+    font-size: 9px;
+    color: #0d9488;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Content */
+  .content { position: relative; z-index: 5; }
+
+  .subtitle-line {
+    font-size: 10px;
+    color: #0d9488;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  h1 span { color: #0d9488; }
+
+  .description {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .badges { display: flex; gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+
+  .badge {
+    font-size: 9px;
+    font-weight: 600;
+    color: #0d9488;
+    border: 1px solid #99f6e4;
+    border-radius: 20px;
+    padding: 4px 11px;
+    background: #f0fdfa;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #0d9488;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before, .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+  }
+
+  /* Hero layout */
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .hero-bone { display: flex; align-items: center; justify-content: center; }
+
+  .hero-bone img {
+    width: 100%;
+    max-height: 210px;
+    object-fit: contain;
+  }
+
+  /* Features grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .feature-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    border-left: 3px solid #0d9488;
+  }
+
+  .feature-icon {
+    width: 28px; height: 28px;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+
+  .feature-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+  .feature-desc { font-size: 9px; color: #64748b; line-height: 1.5; }
+
+  /* Steps flow */
+  .steps-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .step-box {
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 115px;
+  }
+
+  .step-normal {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+  }
+
+  .step-highlight {
+    background: #f0fdfa;
+    border: 2px solid #0d9488;
+    color: #0d9488;
+    box-shadow: 0 2px 8px rgba(13,148,136,0.12);
+  }
+
+  .step-arrow { color: #94a3b8; font-size: 16px; margin: 0 6px; }
+
+  /* Comparison */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .comp-col { border-radius: 10px; padding: 14px; }
+
+  .comp-current {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+
+  .comp-citadel {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+  }
+
+  .comp-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .comp-icon-bad { color: #ef4444; font-size: 13px; }
+  .comp-icon-good { color: #0d9488; font-size: 13px; }
+
+  .comp-list { list-style: none; }
+
+  .comp-list li {
+    font-size: 9.5px;
+    color: #475569;
+    padding: 4px 0;
+    display: flex; align-items: flex-start; gap: 6px; line-height: 1.4;
+  }
+
+  .comp-list li::before { content: attr(data-icon); font-size: 10px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Bottom accent bar */
+  .accent-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #0369a1, #0d9488, #0ea5e9);
+  }
+
+  /* ======= PAGE 2 ======= */
+  .use-cases { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
+
+  .use-case {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #0d9488;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+
+  .uc-icon {
+    width: 34px; height: 34px;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+  }
+
+  .uc-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+  .uc-desc { font-size: 9.5px; color: #64748b; line-height: 1.5; }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .impact-item {
+    text-align: center;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 9px;
+    padding: 10px 6px;
+  }
+
+  .impact-icon { font-size: 15px; margin-bottom: 4px; }
+  .impact-text { font-size: 8.5px; color: #475569; line-height: 1.4; }
+
+  .validation-badges {
+    display: flex; gap: 8px; justify-content: center;
+    margin-bottom: 14px; flex-wrap: wrap;
+  }
+
+  .val-badge {
+    font-size: 9px; font-weight: 600;
+    color: #0d9488;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 10px;
+    padding: 7px 14px;
+    text-align: center;
+  }
+
+  .partnership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .partner-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .partner-icon { font-size: 18px; margin-bottom: 6px; }
+  .partner-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+  .partner-desc { font-size: 9px; color: #64748b; line-height: 1.5; }
+
+  .about-card {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+
+  .about-photo {
+    width: 76px; height: 76px;
+    border-radius: 10px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid #99f6e4;
+  }
+
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .about-name { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+
+  .about-role {
+    font-size: 9px;
+    color: #0d9488;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .about-bio { font-size: 9.5px; color: #475569; line-height: 1.6; }
+
+  .contact-bar {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 12px;
+    padding: 18px 22px;
+    text-align: center;
+  }
+
+  .contact-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+  .contact-text { font-size: 10px; color: #64748b; margin-bottom: 12px; }
+
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 11px;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .contact-details span {
+    color: #94a3b8;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+
+  .confidential {
+    position: absolute;
+    bottom: 10mm;
+    left: 24mm; right: 24mm;
+    text-align: center;
+    font-size: 7px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Language Switcher ===== -->
+<div class="lang-switcher" id="langSwitcher"></div>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="header">
+    <div class="logo-group">
+      <div class="logo-icon">CT</div>
+      <div class="logo-text">
+        <div class="logo-name">CITadel</div>
+        <div class="logo-tagline" id="hdr-tagline"></div>
+      </div>
+    </div>
+    <div class="header-badge" id="hdr-badge1"></div>
+  </div>
+
+  <div class="content">
+    <div class="hero-layout">
+      <div>
+        <div class="subtitle-line" id="hero-posLine"></div>
+        <h1 id="hero-title"></h1>
+        <p class="description" id="hero-subtitle"></p>
+        <div class="badges" id="hero-badges"></div>
+      </div>
+      <div class="hero-bone">
+        <img src="public/hero-bone.png" alt="CITadel bone implant">
+      </div>
+    </div>
+
+    <div class="section-label"><span id="lbl-pathway"></span></div>
+    <div class="steps-flow" id="steps-flow"></div>
+
+    <div class="section-label"><span id="lbl-features"></span></div>
+    <div class="features-grid" id="features-grid"></div>
+
+    <div class="section-label"><span id="lbl-diff"></span></div>
+    <div class="comparison" id="comparison"></div>
+  </div>
+
+  <div class="accent-bar"></div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <div class="header">
+    <div class="logo-group">
+      <div class="logo-icon">CT</div>
+      <div class="logo-text">
+        <div class="logo-name">CITadel</div>
+        <div class="logo-tagline" id="hdr-tagline2"></div>
+      </div>
+    </div>
+    <div class="header-badge" id="hdr-badge2"></div>
+  </div>
+
+  <div class="content">
+    <div class="section-label"><span id="lbl-usecases"></span></div>
+    <div class="use-cases" id="use-cases"></div>
+
+    <div class="section-label"><span id="lbl-impact"></span></div>
+    <div class="impact-grid" id="impact-grid"></div>
+
+    <div class="section-label"><span id="lbl-validation"></span></div>
+    <div class="validation-badges" id="val-badges"></div>
+    <p style="text-align:center;font-size:10px;color:#64748b;margin-bottom:6px;" id="val-desc"></p>
+    <p style="text-align:center;font-size:10px;font-weight:700;color:#0d9488;margin-bottom:22px;" id="val-trl"></p>
+
+    <div class="section-label"><span id="lbl-partnership"></span></div>
+    <div class="partnership-grid" id="partnership-grid"></div>
+
+    <div class="about-card">
+      <div class="about-photo">
+        <img src="public/doctor-photo.png" alt="Dr. Maksym Baida">
+      </div>
+      <div>
+        <div class="about-name" id="doc-name"></div>
+        <div class="about-role" id="doc-role"></div>
+        <div class="about-bio" id="doc-bio"></div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <div class="contact-title" id="contact-title"></div>
+      <div class="contact-text" id="contact-desc"></div>
+      <div class="contact-details">
+        <div><span id="lbl-email"></span>meredian18@gmail.com</div>
+        <div><span id="lbl-phone"></span>+380 66 766 7094</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confidential" id="confidential"></div>
+  <div class="accent-bar"></div>
+</div>
+
+<script>
+const T = {
+  en: {
+    tagline: "Intramedullary System",
+    badge1: "TRL 4-5 · Bench Validated",
+    badge2: "Product Teaser · 2026",
+    positioningLine: "A new category between external fixation and definitive reconstruction",
+    heroTitle: "Temporary Internal Stabilisation for",
+    heroHighlight: "Critical Long-Bone Defects",
+    subtitle: "A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.",
+    badges: ["TRL 4–5", "Validated", "PMMA Ready", "Modular", "HA-Ag Coating"],
+    lblPathway: "Treatment Pathway",
+    lblFeatures: "Key Features",
+    lblDiff: "Differentiation",
+    lblUseCases: "Clinical Use Cases",
+    lblImpact: "Clinical & Economic Impact",
+    lblValidation: "Validation Status",
+    lblPartnership: "Partnership Opportunities",
+    steps: ["External Fixation", "CITadel (TIS)", "Definitive Reconstruction"],
+    stepsNote: ["Current standard", "Temporary internal stabilisation", "Bone transport / graft"],
+    features: [
+      { icon: "⚙", title: "Modular Architecture", desc: "Two-component system adaptable to defect size and anatomy." },
+      { icon: "⎋", title: "Mechanical-Axis Support", desc: "Intramedullary alignment for stable temporary fixation." },
+      { icon: "◆", title: "PMMA Spacer Compatibility", desc: "Designed to function with antibiotic-loaded spacers." },
+      { icon: "◈", title: "HA-Ag Antibacterial Interface", desc: "Selective coating in bone-contact zones." },
+    ],
+    currentTitle: "Current Limitations",
+    currentItems: ["External fixation dependency", "Lack of spacer-compatible systems", "Limited internal options for defects"],
+    citadelTitle: "CITadel Advantages",
+    citadelItems: ["Internal temporary stabilisation", "Designed for spacer-based workflows", "Defect-focused construct logic"],
+    useCases: [
+      { icon: "⚠", title: "Infected Critical Bone Defects", desc: "Osteomyelitis cases requiring staged debridement, antibiotic spacer support, and delayed reconstruction." },
+      { icon: "⚡", title: "Blast & High-Energy Trauma", desc: "Complex limb injuries with segmental bone loss requiring temporary internal stabilisation." },
+      { icon: "✂", title: "Oncologic Segmental Resection", desc: "Post-resection defects needing stable internal fixation during staged limb salvage." },
+    ],
+    impactItems: ["Reduced hospital stay", "Faster patient recovery", "Improved stability", "Fewer complications"],
+    valBadges: ["TRL 4–5", "Bench Testing Completed", "Early Clinical Application", "Prototype Validated"],
+    valDesc: "CITadel has undergone biomechanical testing and early clinical use.",
+    valTrl: "Current TRL: 4–5 → Target: TRL 6 (clinical pilot)",
+    partnerItems: [
+      { icon: "🔑", title: "Industrial Licensing", desc: "License for manufacturing and distribution within your product portfolio." },
+      { icon: "🔧", title: "Co-Development", desc: "Joint engineering and regulatory pathway towards CE/MDR compliance." },
+      { icon: "🏥", title: "Clinical Pilot Sites", desc: "Reference centre for structured clinical validation and pilot deployment." },
+      { icon: "📈", title: "Strategic Investment", desc: "Accelerate transition to clinical-scale adoption through strategic funding." },
+    ],
+    docName: "Maksym Baida, PhD",
+    docRole: "Orthopaedic Trauma Surgeon · Developer of CITadel",
+    docBio: "Over 15 years of clinical practice in traumatology and reconstructive orthopaedics. Associate Professor at Bogomolets National Medical University, Kyiv. CITadel was born from a direct clinical need — the absence of a reliable internal stabilisation option for patients requiring staged reconstruction.",
+    contactTitle: "Let's Start the Conversation",
+    contactDesc: "CITadel is open for collaboration with industry partners, clinical centres, and strategic stakeholders.",
+    emailLabel: "Email",
+    phoneLabel: "Phone",
+    confidential: "Confidential · CITadel Product Teaser · © 2026 Maksym Baida, PhD",
+    langName: "🇬🇧 English",
+  },
+  uk: {
+    tagline: "Інтрамедулярна система",
+    badge1: "TRL 4-5 · Стендова валідація",
+    badge2: "Продуктовий тизер · 2026",
+    positioningLine: "Між зовнішньою фіксацією та остаточною реконструкцією",
+    heroTitle: "Тимчасова стабілізація",
+    heroHighlight: "критичних дефектів кісток",
+    subtitle: "Модульна інтрамедулярна система для етапної реконструкції, підтримки PMMA спейсера та тимчасової фіксації.",
+    badges: ["TRL 4–5", "Валідація", "PMMA", "Модульний", "HA-Ag покриття"],
+    lblPathway: "Лікувальний алгоритм",
+    lblFeatures: "Ключові властивості",
+    lblDiff: "Відмінності",
+    lblUseCases: "Клінічні показання",
+    lblImpact: "Клінічний та економічний вплив",
+    lblValidation: "Статус валідації",
+    lblPartnership: "Можливості партнерства",
+    steps: ["Зовнішня фіксація", "CITadel (ТВС)", "Остаточна реконструкція"],
+    stepsNote: ["Поточний стандарт", "Тимчасова внутрішня стабілізація", "Транспорт / трансплантат кістки"],
+    features: [
+      { icon: "⚙", title: "Модульна архітектура", desc: "Двокомпонентна система, що адаптується до розміру дефекту та анатомії." },
+      { icon: "⎋", title: "Підтримка механічної осі", desc: "Інтрамедулярне вирівнювання для стабільної тимчасової фіксації." },
+      { icon: "◆", title: "Сумісність із PMMA спейсером", desc: "Розроблено для роботи з антибіотиконавантаженими спейсерами." },
+      { icon: "◈", title: "Антибактеріальний інтерфейс HA-Ag", desc: "Селективне покриття в зонах контакту з кісткою." },
+    ],
+    currentTitle: "Існуючі обмеження",
+    currentItems: ["Залежність від зовнішньої фіксації", "Відсутність систем, сумісних зі спейсерами", "Обмежені внутрішні варіанти для дефектів"],
+    citadelTitle: "Переваги CITadel",
+    citadelItems: ["Внутрішня тимчасова стабілізація", "Розроблено для робочих процесів зі спейсерами", "Логіка конструкції, орієнтована на дефект"],
+    useCases: [
+      { icon: "⚠", title: "Інфіковані критичні кісткові дефекти", desc: "Випадки остеомієліту, що потребують етапного дебридменту, підтримки антибіотикового спейсера та відстроченої реконструкції." },
+      { icon: "⚡", title: "Вибухова та високоенергетична травма", desc: "Складні пошкодження кінцівок із сегментарною втратою кістки, що потребують тимчасової внутрішньої стабілізації." },
+      { icon: "✂", title: "Онкологічна сегментарна резекція", desc: "Пострезекційні дефекти, що потребують стабільної внутрішньої фіксації при етапному збереженні кінцівки." },
+    ],
+    impactItems: ["Скорочення госпіталізації", "Швидше одужання", "Покращена стабільність", "Менше ускладнень"],
+    valBadges: ["TRL 4–5", "Стендове тестування завершено", "Ранній клінічний досвід", "Прототип валідовано"],
+    valDesc: "CITadel пройшов біомеханічне тестування та ранню клінічну апробацію.",
+    valTrl: "Поточний TRL: 4–5 → Ціль: TRL 6 (клінічний пілот)",
+    partnerItems: [
+      { icon: "🔑", title: "Промислове ліцензування", desc: "Ліцензуйте систему CITadel для виробництва та дистрибуції у вашому портфелі." },
+      { icon: "🔧", title: "Спільна розробка", desc: "Спільний інженерний та регуляторний шлях до відповідності CE/MDR." },
+      { icon: "🏥", title: "Клінічні пілотні центри", desc: "Станьте референтним центром для структурованої клінічної валідації." },
+      { icon: "📈", title: "Стратегічні інвестиції", desc: "Прискорення переходу до клінічного масштабу через стратегічне фінансування." },
+    ],
+    docName: "Максим Байда, PhD",
+    docRole: "Ортопед-травматолог · Розробник CITadel",
+    docBio: "Понад 15 років клінічної практики в травматології та реконструктивній ортопедії. Доцент Національного медичного університету імені О. О. Богомольця, Київ. CITadel народився з прямої клінічної потреби — відсутності надійного варіанту внутрішньої стабілізації для пацієнтів, які потребують етапної реконструкції.",
+    contactTitle: "Розпочнімо діалог",
+    contactDesc: "CITadel відкритий для співпраці з індустріальними партнерами, клінічними центрами та стратегічними стейкхолдерами.",
+    emailLabel: "Email",
+    phoneLabel: "Телефон",
+    confidential: "Конфіденційно · Тизер CITadel · © 2026 Максим Байда, PhD",
+    langName: "🇺🇦 Українська",
+  },
+  ru: {
+    tagline: "Интрамедуллярная система",
+    badge1: "TRL 4-5 · Стендовая валидация",
+    badge2: "Продуктовый тизер · 2026",
+    positioningLine: "Между внешней фиксацией и окончательной реконструкцией",
+    heroTitle: "Временная стабилизация",
+    heroHighlight: "критических дефектов костей",
+    subtitle: "Модульная интрамедуллярная система для этапной реконструкции, поддержки PMMA спейсеров и временной фиксации.",
+    badges: ["TRL 4–5", "Валидация", "PMMA", "Модульный", "HA-Ag покрытие"],
+    lblPathway: "Лечебный алгоритм",
+    lblFeatures: "Ключевые характеристики",
+    lblDiff: "Отличия",
+    lblUseCases: "Клинические показания",
+    lblImpact: "Клинический и экономический эффект",
+    lblValidation: "Статус валидации",
+    lblPartnership: "Возможности партнёрства",
+    steps: ["Внешняя фиксация", "CITadel (ВВС)", "Окончательная реконструкция"],
+    stepsNote: ["Текущий стандарт", "Временная внутренняя стабилизация", "Транспорт / трансплантат кости"],
+    features: [
+      { icon: "⚙", title: "Модульная архитектура", desc: "Двухкомпонентная система, адаптируемая к размеру дефекта и анатомии." },
+      { icon: "⎋", title: "Поддержка механической оси", desc: "Интрамедуллярное выравнивание для стабильной временной фиксации." },
+      { icon: "◆", title: "Совместимость с PMMA спейсерами", desc: "Разработана для работы с антибиотик-нагруженными спейсерами." },
+      { icon: "◈", title: "Антибактериальный интерфейс HA-Ag", desc: "Селективное покрытие в зонах контакта с костью." },
+    ],
+    currentTitle: "Существующие ограничения",
+    currentItems: ["Зависимость от внешней фиксации", "Отсутствие систем, совместимых со спейсерами", "Ограниченные внутренние варианты для дефектов"],
+    citadelTitle: "Преимущества CITadel",
+    citadelItems: ["Внутренняя временная стабилизация", "Разработана для работы со спейсерами", "Логика конструкции, ориентированная на дефект"],
+    useCases: [
+      { icon: "⚠", title: "Инфицированные критические дефекты костей", desc: "Случаи остеомиелита, требующие этапного дебридмента, поддержки антибиотиковым спейсером и отсроченной реконструкции." },
+      { icon: "⚡", title: "Минно-взрывная и высокоэнергетическая травма", desc: "Сложные повреждения конечностей с сегментарной потерей кости, требующие временной внутренней стабилизации." },
+      { icon: "✂", title: "Онкологическая сегментарная резекция", desc: "Пострезекционные дефекты, требующие стабильной внутренней фиксации при этапном сохранении конечности." },
+    ],
+    impactItems: ["Сокращение госпитализации", "Ускоренное восстановление", "Улучшенная стабильность", "Меньше осложнений"],
+    valBadges: ["TRL 4–5", "Стендовые испытания завершены", "Раннее клиническое применение", "Прототип валидирован"],
+    valDesc: "CITadel прошла биомеханические испытания и раннее клиническое применение.",
+    valTrl: "Текущий TRL: 4–5 → Целевой: TRL 6 (клинический пилот)",
+    partnerItems: [
+      { icon: "🔑", title: "Промышленное лицензирование", desc: "Лицензирование системы CITadel для производства и дистрибуции в вашем портфеле." },
+      { icon: "🔧", title: "Совместная разработка", desc: "Совместная инженерная и регуляторная работа по достижению соответствия CE/MDR." },
+      { icon: "🏥", title: "Клинические пилотные площадки", desc: "Партнёрство в качестве референтного центра для клинической валидации." },
+      { icon: "📈", title: "Стратегические инвестиции", desc: "Ускорение перехода к клиническому масштабу через стратегическое финансирование." },
+    ],
+    docName: "Максим Байда, PhD",
+    docRole: "Ортопед-травматолог · Разработчик CITadel",
+    docBio: "Более 15 лет клинической практики в травматологии и реконструктивной ортопедии. Доцент Национального медицинского университета имени А.А. Богомольца, Киев. CITadel родилась из прямой клинической потребности — отсутствия надёжного варианта внутренней стабилизации для пациентов, нуждающихся в этапной реконструкции.",
+    contactTitle: "Давайте начнём разговор",
+    contactDesc: "CITadel открыта для сотрудничества с индустриальными партнёрами, клиническими центрами и стратегическими заинтересованными сторонами.",
+    emailLabel: "Email",
+    phoneLabel: "Телефон",
+    confidential: "Конфиденциально · Тизер CITadel · © 2026 Максим Байда, PhD",
+    langName: "🇷🇺 Русский",
+  },
+  es: {
+    tagline: "Sistema Intramedular",
+    badge1: "TRL 4-5 · Validado en Banco",
+    badge2: "Teaser de Producto · 2026",
+    positioningLine: "Una nueva categoría entre la fijación externa y la reconstrucción definitiva",
+    heroTitle: "Estabilización Interna Temporal para",
+    heroHighlight: "Defectos Críticos de Huesos Largos",
+    subtitle: "Un sistema intramedular modular diseñado para la reconstrucción por etapas, soporte de espaciadores de PMMA y fijación temporal consciente de infecciones.",
+    badges: ["TRL 4–5", "Validado", "PMMA Ready", "Modular", "Recubrimiento HA-Ag"],
+    lblPathway: "Vía de Tratamiento",
+    lblFeatures: "Características Clave",
+    lblDiff: "Diferenciación",
+    lblUseCases: "Casos Clínicos de Uso",
+    lblImpact: "Impacto Clínico y Económico",
+    lblValidation: "Estado de Validación",
+    lblPartnership: "Oportunidades de Colaboración",
+    steps: ["Fijación Externa", "CITadel (EIT)", "Reconstrucción Definitiva"],
+    stepsNote: ["Estándar actual", "Estabilización interna temporal", "Transporte / injerto óseo"],
+    features: [
+      { icon: "⚙", title: "Arquitectura modular", desc: "Sistema de dos componentes adaptable al tamaño del defecto y la anatomía." },
+      { icon: "⎋", title: "Soporte del eje mecánico", desc: "Alineación intramedular para una fijación temporal estable." },
+      { icon: "◆", title: "Compatibilidad con espaciadores PMMA", desc: "Diseñado para funcionar con espaciadores cargados de antibióticos." },
+      { icon: "◈", title: "Interfaz antibacteriana HA-Ag", desc: "Recubrimiento selectivo en zonas de contacto óseo." },
+    ],
+    currentTitle: "Limitaciones Actuales",
+    currentItems: ["Dependencia de la fijación externa", "Falta de sistemas compatibles con espaciadores", "Opciones internas limitadas para defectos"],
+    citadelTitle: "Ventajas de CITadel",
+    citadelItems: ["Estabilización interna temporal", "Diseñado para flujos de trabajo con espaciadores", "Lógica de constructo enfocada en el defecto"],
+    useCases: [
+      { icon: "⚠", title: "Defectos óseos críticos infectados", desc: "Casos de osteomielitis que requieren desbridamiento por etapas, soporte de espaciadores antibióticos y reconstrucción diferida." },
+      { icon: "⚡", title: "Trauma por explosión y alta energía", desc: "Lesiones complejas de extremidades con pérdida ósea segmentaria que requieren estabilización interna temporal." },
+      { icon: "✂", title: "Resección segmentaria oncológica", desc: "Defectos posresección que necesitan fijación interna estable durante el salvamento de extremidades por etapas." },
+    ],
+    impactItems: ["Menor estancia hospitalaria", "Recuperación más rápida", "Mayor estabilidad", "Menos complicaciones"],
+    valBadges: ["TRL 4–5", "Pruebas de banco completadas", "Aplicación clínica temprana", "Prototipo validado"],
+    valDesc: "CITadel ha sido sometido a pruebas biomecánicas y uso clínico temprano.",
+    valTrl: "TRL actual: 4–5 → Objetivo: TRL 6 (piloto clínico)",
+    partnerItems: [
+      { icon: "🔑", title: "Licenciamiento industrial", desc: "Licencie el sistema CITadel para fabricación y distribución en su cartera de productos." },
+      { icon: "🔧", title: "Co-desarrollo", desc: "Desarrollo conjunto en ingeniería y vía regulatoria hacia el cumplimiento CE/MDR." },
+      { icon: "🏥", title: "Centros piloto clínicos", desc: "Asóciese como centro de referencia para validación clínica estructurada." },
+      { icon: "📈", title: "Inversión estratégica", desc: "Acelere la transición a la adopción a escala clínica mediante financiación estratégica." },
+    ],
+    docName: "Maksym Baida, PhD",
+    docRole: "Cirujano de Trauma Ortopédico · Desarrollador de CITadel",
+    docBio: "Más de 15 años de práctica clínica en traumatología y ortopedia reconstructiva. Profesor Asociado en la Universidad Nacional de Medicina Bogomolets, Kiev. CITadel nació de una necesidad clínica directa: la ausencia de una opción fiable de estabilización interna para pacientes que requieren reconstrucción por etapas.",
+    contactTitle: "Iniciemos la Conversación",
+    contactDesc: "CITadel está abierto a la colaboración con socios industriales, centros clínicos y partes interesadas estratégicas.",
+    emailLabel: "Correo",
+    phoneLabel: "Teléfono",
+    confidential: "Confidencial · Teaser CITadel · © 2026 Maksym Baida, PhD",
+    langName: "🇪🇸 Español",
+  },
+  de: {
+    tagline: "Intramedulläres System",
+    badge1: "TRL 4-5 · Laborvalidiert",
+    badge2: "Produkt-Teaser · 2026",
+    positioningLine: "Eine neue Kategorie zwischen externer Fixation und definitiver Rekonstruktion",
+    heroTitle: "Temporäre interne Stabilisierung für",
+    heroHighlight: "kritische Langknochendefekte",
+    subtitle: "Ein modulares intramedulläres System für stufenweise Rekonstruktion, PMMA-Spacer-Unterstützung und infektionsbewusste temporäre Fixation.",
+    badges: ["TRL 4–5", "Validiert", "PMMA Ready", "Modular", "HA-Ag Beschichtung"],
+    lblPathway: "Behandlungspfad",
+    lblFeatures: "Hauptmerkmale",
+    lblDiff: "Differenzierung",
+    lblUseCases: "Klinische Anwendungsfälle",
+    lblImpact: "Klinische & wirtschaftliche Wirkung",
+    lblValidation: "Validierungsstatus",
+    lblPartnership: "Partnerschaftsmöglichkeiten",
+    steps: ["Externe Fixation", "CITadel (TIS)", "Definitive Rekonstruktion"],
+    stepsNote: ["Aktueller Standard", "Temporäre interne Stabilisierung", "Knochentransport / -transplantat"],
+    features: [
+      { icon: "⚙", title: "Modulare Architektur", desc: "Zweikomponentensystem, anpassbar an Defektgröße und Anatomie." },
+      { icon: "⎋", title: "Mechanische Achsunterstützung", desc: "Intramedulläre Ausrichtung für stabile temporäre Fixation." },
+      { icon: "◆", title: "PMMA-Spacer-Kompatibilität", desc: "Entwickelt für den Einsatz mit antibiotikabeladenen Spacern." },
+      { icon: "◈", title: "HA-Ag antibakterielle Grenzfläche", desc: "Selektive Beschichtung in Knochenkontaktzonen." },
+    ],
+    currentTitle: "Aktuelle Einschränkungen",
+    currentItems: ["Abhängigkeit von externer Fixation", "Fehlende Spacer-kompatible Systeme", "Begrenzte interne Optionen für Defekte"],
+    citadelTitle: "CITadel-Vorteile",
+    citadelItems: ["Interne temporäre Stabilisierung", "Für Spacer-basierte Arbeitsabläufe konzipiert", "Defektfokussierte Konstruktlogik"],
+    useCases: [
+      { icon: "⚠", title: "Infizierte kritische Knochendefekte", desc: "Osteomyelitis-Fälle, die stufenweises Débridement, Antibiotika-Spacer-Unterstützung und verzögerte Rekonstruktion erfordern." },
+      { icon: "⚡", title: "Explosions- und Hochenergietrauma", desc: "Komplexe Extremitätenverletzungen mit segmentalem Knochenverlust, die temporäre interne Stabilisierung erfordern." },
+      { icon: "✂", title: "Onkologische segmentale Resektion", desc: "Postresektionsdefekte, die stabile interne Fixation während der stufenweisen Extremitätenrettung benötigen." },
+    ],
+    impactItems: ["Kürzerer Krankenhausaufenthalt", "Schnellere Erholung", "Verbesserte Stabilität", "Weniger Komplikationen"],
+    valBadges: ["TRL 4–5", "Labortests abgeschlossen", "Frühe klinische Anwendung", "Prototyp validiert"],
+    valDesc: "CITadel hat biomechanische Tests und frühe klinische Anwendung durchlaufen.",
+    valTrl: "Aktueller TRL: 4–5 → Ziel: TRL 6 (klinischer Pilot)",
+    partnerItems: [
+      { icon: "🔑", title: "Industrielle Lizenzierung", desc: "Lizenzieren Sie das CITadel-System für Fertigung und Vertrieb in Ihrem Portfolio." },
+      { icon: "🔧", title: "Gemeinsame Entwicklung", desc: "Gemeinsame Ingenieurleistung und regulatorische Pfadentwicklung Richtung CE/MDR." },
+      { icon: "🏥", title: "Klinische Pilotzentren", desc: "Partnerschaft als Referenzzentrum für strukturierte klinische Validierung." },
+      { icon: "📈", title: "Strategische Investition", desc: "Beschleunigung des Übergangs zur klinischen Anwendung durch strategische Finanzierung." },
+    ],
+    docName: "Maksym Baida, PhD",
+    docRole: "Orthopädischer Unfallchirurg · Entwickler von CITadel",
+    docBio: "Über 15 Jahre klinische Praxis in Traumatologie und rekonstruktiver Orthopädie. Außerordentlicher Professor an der Nationalen Medizinischen Universität Bogomolets, Kiew. CITadel entstand aus einem direkten klinischen Bedarf — dem Fehlen einer zuverlässigen internen Stabilisierungsoption für Patienten, die eine stufenweise Rekonstruktion benötigen.",
+    contactTitle: "Lassen Sie uns ins Gespräch kommen",
+    contactDesc: "CITadel ist offen für die Zusammenarbeit mit Industriepartnern, klinischen Zentren und strategischen Stakeholdern.",
+    emailLabel: "E-Mail",
+    phoneLabel: "Telefon",
+    confidential: "Vertraulich · CITadel Produkt-Teaser · © 2026 Maksym Baida, PhD",
+    langName: "🇩🇪 Deutsch",
+  },
+  fr: {
+    tagline: "Système intramédullaire",
+    badge1: "TRL 4-5 · Validé en laboratoire",
+    badge2: "Teaser produit · 2026",
+    positioningLine: "Une nouvelle catégorie entre la fixation externe et la reconstruction définitive",
+    heroTitle: "Stabilisation interne temporaire pour les",
+    heroHighlight: "défauts critiques des os longs",
+    subtitle: "Un système intramédullaire modulaire conçu pour la reconstruction par étapes, le support de spacers en PMMA et la fixation temporaire adaptée aux contextes infectieux.",
+    badges: ["TRL 4–5", "Validé", "PMMA Ready", "Modulaire", "Revêtement HA-Ag"],
+    lblPathway: "Parcours de Traitement",
+    lblFeatures: "Caractéristiques Clés",
+    lblDiff: "Différenciation",
+    lblUseCases: "Cas d'Utilisation Cliniques",
+    lblImpact: "Impact Clinique & Économique",
+    lblValidation: "Statut de Validation",
+    lblPartnership: "Opportunités de Partenariat",
+    steps: ["Fixation externe", "CITadel (TIS)", "Reconstruction définitive"],
+    stepsNote: ["Norme actuelle", "Stabilisation interne temporaire", "Transport / greffe osseuse"],
+    features: [
+      { icon: "⚙", title: "Architecture modulaire", desc: "Système à deux composants adaptable à la taille du défaut et à l'anatomie." },
+      { icon: "⎋", title: "Support de l'axe mécanique", desc: "Alignement intramédullaire pour une fixation temporaire stable." },
+      { icon: "◆", title: "Compatibilité avec les spacers PMMA", desc: "Conçu pour fonctionner avec des spacers chargés en antibiotiques." },
+      { icon: "◈", title: "Interface antibactérienne HA-Ag", desc: "Revêtement sélectif dans les zones de contact osseux." },
+    ],
+    currentTitle: "Limitations actuelles",
+    currentItems: ["Dépendance à la fixation externe", "Absence de systèmes compatibles avec les spacers", "Options internes limitées pour les défauts"],
+    citadelTitle: "Avantages de CITadel",
+    citadelItems: ["Stabilisation interne temporaire", "Conçu pour les protocoles à base de spacers", "Logique de construction centrée sur le défaut"],
+    useCases: [
+      { icon: "⚠", title: "Défauts osseux critiques infectés", desc: "Cas d'ostéomyélite nécessitant un débridement par étapes, un support de spacer antibiotique et une reconstruction différée." },
+      { icon: "⚡", title: "Traumatismes balistiques et à haute énergie", desc: "Lésions complexes des membres avec perte osseuse segmentaire nécessitant une stabilisation interne temporaire." },
+      { icon: "✂", title: "Résection segmentaire oncologique", desc: "Défauts post-résection nécessitant une fixation interne stable lors d'un sauvetage de membre par étapes." },
+    ],
+    impactItems: ["Durée d'hospitalisation réduite", "Récupération plus rapide", "Meilleure stabilité", "Moins de complications"],
+    valBadges: ["TRL 4–5", "Tests en laboratoire terminés", "Application clinique précoce", "Prototype validé"],
+    valDesc: "CITadel a fait l'objet de tests biomécaniques et d'une utilisation clinique préliminaire.",
+    valTrl: "TRL actuel : 4–5 → Objectif : TRL 6 (pilote clinique)",
+    partnerItems: [
+      { icon: "🔑", title: "Licence industrielle", desc: "Licenciez le système CITadel pour la fabrication et la distribution au sein de votre portefeuille." },
+      { icon: "🔧", title: "Co-développement", desc: "Développement conjoint en ingénierie et parcours réglementaire vers la conformité CE/MDR." },
+      { icon: "🏥", title: "Sites pilotes cliniques", desc: "Devenez centre de référence pour la validation clinique structurée et le déploiement pilote." },
+      { icon: "📈", title: "Investissement stratégique", desc: "Accélérez la transition vers une adoption à l'échelle clinique grâce à un financement stratégique." },
+    ],
+    docName: "Maksym Baida, PhD",
+    docRole: "Chirurgien orthopédique traumatologue · Développeur de CITadel",
+    docBio: "Plus de 15 ans de pratique clinique en traumatologie et en chirurgie orthopédique reconstructrice. Professeur associé à l'Université nationale de médecine Bogomolets, Kyiv. CITadel est né d'un besoin clinique direct — l'absence d'une option fiable de stabilisation interne pour les patients nécessitant une reconstruction par étapes.",
+    contactTitle: "Entamons la Conversation",
+    contactDesc: "CITadel est ouvert à la collaboration avec des partenaires industriels, des centres cliniques et des parties prenantes stratégiques.",
+    emailLabel: "E-mail",
+    phoneLabel: "Téléphone",
+    confidential: "Confidentiel · Teaser CITadel · © 2026 Maksym Baida, PhD",
+    langName: "🇫🇷 Français",
+  },
+};
+
+const LANGS = ['en','uk','ru','es','de','fr'];
+
+function getLang() {
+  const p = new URLSearchParams(window.location.search);
+  const l = p.get('lang');
+  return LANGS.includes(l) ? l : 'en';
+}
+
+function setLang(lang) {
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url);
+  render(lang);
+}
+
+function set(id, html) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+
+function render(lang) {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+
+  // Header
+  set('hdr-tagline', t.tagline);
+  set('hdr-tagline2', t.tagline);
+  set('hdr-badge1', t.badge1);
+  set('hdr-badge2', t.badge2);
+
+  // Hero
+  set('hero-posLine', t.positioningLine);
+  set('hero-title', t.heroTitle + ' <span>' + t.heroHighlight + '</span>');
+  set('hero-subtitle', t.subtitle);
+  set('hero-badges', t.badges.map(b => `<span class="badge">${b}</span>`).join(''));
+
+  // Labels
+  set('lbl-pathway', t.lblPathway);
+  set('lbl-features', t.lblFeatures);
+  set('lbl-diff', t.lblDiff);
+  set('lbl-usecases', t.lblUseCases);
+  set('lbl-impact', t.lblImpact);
+  set('lbl-validation', t.lblValidation);
+  set('lbl-partnership', t.lblPartnership);
+
+  // Steps
+  const stepsHtml = t.steps.map((s, i) => {
+    const isHl = i === 1;
+    const cls = isHl ? 'step-box step-highlight' : 'step-box step-normal';
+    const note = `<small style="font-weight:400;${isHl ? '' : 'color:#94a3b8'}">${t.stepsNote[i]}</small>`;
+    const arrow = (i < t.steps.length - 1) ? `<div class="step-arrow">&rarr;</div>` : '';
+    return `<div class="${cls}">${s}<br>${note}</div>${arrow}`;
+  }).join('');
+  set('steps-flow', stepsHtml);
+
+  // Features
+  set('features-grid', t.features.map(f =>
+    `<div class="feature-card">
+      <div class="feature-icon">${f.icon}</div>
+      <div class="feature-title">${f.title}</div>
+      <div class="feature-desc">${f.desc}</div>
+    </div>`
+  ).join(''));
+
+  // Comparison
+  set('comparison', `
+    <div class="comp-col comp-current">
+      <div class="comp-title"><span class="comp-icon-bad">&#10005;</span> ${t.currentTitle}</div>
+      <ul class="comp-list">${t.currentItems.map(i => `<li data-icon="✕">${i}</li>`).join('')}</ul>
+    </div>
+    <div class="comp-col comp-citadel">
+      <div class="comp-title"><span class="comp-icon-good">&#10003;</span> ${t.citadelTitle}</div>
+      <ul class="comp-list">${t.citadelItems.map(i => `<li data-icon="✓">${i}</li>`).join('')}</ul>
+    </div>
+  `);
+
+  // Use cases
+  const ucIcons = ['⚠', '⚡', '✂'];
+  set('use-cases', t.useCases.map((uc, i) =>
+    `<div class="use-case">
+      <div class="uc-icon">${ucIcons[i]}</div>
+      <div>
+        <div class="uc-title">${uc.title}</div>
+        <div class="uc-desc">${uc.desc}</div>
+      </div>
+    </div>`
+  ).join(''));
+
+  // Impact
+  const impIcons = ['⏱', '❤', '⚖', '✓'];
+  set('impact-grid', t.impactItems.map((item, i) =>
+    `<div class="impact-item">
+      <div class="impact-icon">${impIcons[i]}</div>
+      <div class="impact-text">${item}</div>
+    </div>`
+  ).join(''));
+
+  // Validation
+  set('val-badges', t.valBadges.map(b => `<span class="val-badge">${b}</span>`).join(''));
+  set('val-desc', t.valDesc);
+  set('val-trl', t.valTrl);
+
+  // Partnership
+  set('partnership-grid', t.partnerItems.map(p =>
+    `<div class="partner-card">
+      <div class="partner-icon">${p.icon}</div>
+      <div class="partner-title">${p.title}</div>
+      <div class="partner-desc">${p.desc}</div>
+    </div>`
+  ).join(''));
+
+  // Doctor
+  set('doc-name', t.docName);
+  set('doc-role', t.docRole);
+  set('doc-bio', t.docBio);
+
+  // Contact
+  set('contact-title', t.contactTitle);
+  set('contact-desc', t.contactDesc);
+  set('lbl-email', `<span>${t.emailLabel}</span>`);
+  set('lbl-phone', `<span>${t.phoneLabel}</span>`);
+
+  // Confidential
+  set('confidential', t.confidential);
+
+  // Lang switcher active state
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+// Build lang switcher
+const switcher = document.getElementById('langSwitcher');
+LANGS.forEach(l => {
+  const btn = document.createElement('button');
+  btn.className = 'lang-btn';
+  btn.dataset.lang = l;
+  btn.textContent = T[l].langName;
+  btn.onclick = () => setLang(l);
+  switcher.appendChild(btn);
+});
+
+// Initial render
+render(getLang());
+</script>
+</body>
+</html>

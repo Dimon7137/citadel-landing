@@ -31,7 +31,7 @@ export function PositioningSection() {
                 </motion.div>
                 {i < t.positioning.steps.length - 1 && (
                   <motion.div initial={{ opacity: 0, scaleX: 0 }} whileInView={{ opacity: 1, scaleX: 1 }} viewport={{ once: true }}
-                    transition={{ delay: 0.4 + i * 0.15, duration: 0.4 }} className="flex items-center mx-2">
+                    transition={{ delay: 0.4 + i * 0.15, duration: 0.4 }} className="flex items-center mx-4">
                     <div className="w-12 h-px bg-gradient-to-r from-slate-600 to-teal-500/50" />
                     <ArrowRight className="w-4 h-4 text-teal-400/60 -ml-1" />
                   </motion.div>
@@ -49,7 +49,7 @@ export function PositioningSection() {
                   <span className={`text-sm font-semibold ${i === 1 ? "text-teal-400" : "text-slate-400"}`}>{step}</span>
                 </motion.div>
                 {i < t.positioning.steps.length - 1 && (
-                  <div className="flex flex-col items-center my-2">
+                  <div className="flex flex-col items-center my-4">
                     <div className="w-px h-6 bg-gradient-to-b from-slate-600 to-teal-500/50" />
                     <ArrowDown className="w-4 h-4 text-teal-400/60 -mt-1" />
                   </div>
