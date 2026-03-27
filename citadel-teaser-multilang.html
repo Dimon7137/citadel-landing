@@ -181,7 +181,7 @@
     color: #0d9488;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -194,13 +194,28 @@
     background: #e2e8f0;
   }
 
+  /* ======= PAGE 1 spacing overrides ======= */
+  .p1 .section-label { margin-top: 24px; }
+  .p1 .steps-flow { margin-bottom: 30px; }
+  .p1 .features-grid { gap: 14px; margin-bottom: 30px; }
+  .p1 .feature-card { padding: 18px; }
+  .p1 .feature-icon { width: 32px; height: 32px; margin-bottom: 10px; font-size: 15px; }
+  .p1 .feature-title { font-size: 12px; margin-bottom: 5px; }
+  .p1 .feature-desc { font-size: 10px; line-height: 1.55; }
+  .p1 .comparison { gap: 16px; }
+  .p1 .comp-col { padding: 18px; }
+  .p1 .comp-list li { padding: 6px 0; font-size: 10.5px; }
+  .p1 .comp-title { font-size: 12px; margin-bottom: 12px; }
+  .p1 .step-box { padding: 14px 20px; font-size: 11px; min-width: 130px; }
+  .p1 .step-arrow { font-size: 18px; margin: 0 10px; }
+
   /* Hero layout */
   .hero-layout {
     display: grid;
     grid-template-columns: 1fr 150px;
     gap: 16px;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: 26px;
   }
 
   .hero-bone { display: flex; align-items: center; justify-content: center; }
@@ -322,34 +337,34 @@
   }
 
   /* ======= PAGE 2 ======= */
-  .use-cases { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
+  .use-cases { display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 14px; }
 
   .use-case {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-left: 3px solid #0d9488;
     border-radius: 10px;
-    padding: 14px;
-    display: flex; gap: 14px; align-items: flex-start;
+    padding: 9px 12px;
+    display: flex; gap: 10px; align-items: flex-start;
   }
 
   .uc-icon {
-    width: 34px; height: 34px;
+    width: 28px; height: 28px;
     background: #f0fdfa;
     border: 1px solid #99f6e4;
-    border-radius: 9px;
+    border-radius: 7px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 15px; flex-shrink: 0;
+    font-size: 13px; flex-shrink: 0;
   }
 
-  .uc-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
-  .uc-desc { font-size: 9.5px; color: #64748b; line-height: 1.5; }
+  .uc-title { font-size: 10.5px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+  .uc-desc { font-size: 9px; color: #64748b; line-height: 1.45; }
 
   .impact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 6px;
+    margin-bottom: 12px;
   }
 
   .impact-item {
@@ -357,59 +372,59 @@
     background: #f0fdfa;
     border: 1px solid #99f6e4;
     border-radius: 9px;
-    padding: 10px 6px;
+    padding: 7px 4px;
   }
 
-  .impact-icon { font-size: 15px; margin-bottom: 4px; }
-  .impact-text { font-size: 8.5px; color: #475569; line-height: 1.4; }
+  .impact-icon { font-size: 13px; margin-bottom: 3px; }
+  .impact-text { font-size: 8px; color: #475569; line-height: 1.35; }
 
   .validation-badges {
-    display: flex; gap: 8px; justify-content: center;
-    margin-bottom: 14px; flex-wrap: wrap;
+    display: flex; gap: 6px; justify-content: center;
+    margin-bottom: 8px; flex-wrap: wrap;
   }
 
   .val-badge {
-    font-size: 9px; font-weight: 600;
+    font-size: 8.5px; font-weight: 600;
     color: #0d9488;
     background: #f0fdfa;
     border: 1px solid #99f6e4;
     border-radius: 10px;
-    padding: 7px 14px;
+    padding: 5px 11px;
     text-align: center;
   }
 
   .partnership-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 7px;
+    margin-bottom: 14px;
   }
 
   .partner-card {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    padding: 14px;
+    padding: 10px 12px;
   }
 
-  .partner-icon { font-size: 18px; margin-bottom: 6px; }
-  .partner-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
-  .partner-desc { font-size: 9px; color: #64748b; line-height: 1.5; }
+  .partner-icon { font-size: 15px; margin-bottom: 4px; }
+  .partner-title { font-size: 10.5px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+  .partner-desc { font-size: 8.5px; color: #64748b; line-height: 1.45; }
 
   .about-card {
     display: flex;
-    gap: 18px;
+    gap: 14px;
     align-items: center;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 18px;
-    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
   }
 
   .about-photo {
-    width: 76px; height: 76px;
-    border-radius: 10px;
+    width: 62px; height: 62px;
+    border-radius: 8px;
     background: #e2e8f0;
     flex-shrink: 0;
     overflow: hidden;
@@ -418,29 +433,29 @@
 
   .about-photo img { width: 100%; height: 100%; object-fit: cover; }
 
-  .about-name { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+  .about-name { font-size: 12px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
 
   .about-role {
-    font-size: 9px;
+    font-size: 8px;
     color: #0d9488;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
-  .about-bio { font-size: 9.5px; color: #475569; line-height: 1.6; }
+  .about-bio { font-size: 8.5px; color: #475569; line-height: 1.5; }
 
   .contact-bar {
     background: #f0fdfa;
     border: 1px solid #99f6e4;
-    border-radius: 12px;
-    padding: 18px 22px;
+    border-radius: 10px;
+    padding: 12px 18px;
     text-align: center;
   }
 
-  .contact-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-  .contact-text { font-size: 10px; color: #64748b; margin-bottom: 12px; }
+  .contact-title { font-size: 12px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+  .contact-text { font-size: 9px; color: #64748b; margin-bottom: 10px; }
 
   .contact-details {
     display: flex;
@@ -496,7 +511,7 @@
     <div class="header-badge" id="hdr-badge1"></div>
   </div>
 
-  <div class="content">
+  <div class="content p1">
     <div class="hero-layout">
       <div>
         <div class="subtitle-line" id="hero-posLine"></div>
@@ -544,8 +559,8 @@
 
     <div class="section-label"><span id="lbl-validation"></span></div>
     <div class="validation-badges" id="val-badges"></div>
-    <p style="text-align:center;font-size:10px;color:#64748b;margin-bottom:6px;" id="val-desc"></p>
-    <p style="text-align:center;font-size:10px;font-weight:700;color:#0d9488;margin-bottom:22px;" id="val-trl"></p>
+    <p style="text-align:center;font-size:9px;color:#64748b;margin-bottom:4px;" id="val-desc"></p>
+    <p style="text-align:center;font-size:9px;font-weight:700;color:#0d9488;margin-bottom:12px;" id="val-trl"></p>
 
     <div class="section-label"><span id="lbl-partnership"></span></div>
     <div class="partnership-grid" id="partnership-grid"></div>
