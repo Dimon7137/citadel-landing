@@ -3,30 +3,28 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { en } from "./translations/en";
 import { uk } from "./translations/uk";
-import { ru } from "./translations/ru";
 import { es } from "./translations/es";
 import { de } from "./translations/de";
 import { fr } from "./translations/fr";
 
-export type Locale = "en" | "uk" | "ru" | "es" | "de" | "fr";
+export type Locale = "en" | "uk" | "es" | "de" | "fr";
 
 export type Translations = typeof en;
 
-const translations: Record<Locale, Translations> = { en, uk, ru, es, de, fr };
+const translations: Record<Locale, Translations> = { en, uk, es, de, fr };
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
   uk: "Українська",
-  ru: "Русский",
   es: "Español",
   de: "Deutsch",
   fr: "Français",
 };
 
 const langMap: Record<string, Locale> = {
-  en: "en", uk: "uk", ru: "ru", es: "es", de: "de", fr: "fr",
+  en: "en", uk: "uk", es: "es", de: "de", fr: "fr",
   "en-US": "en", "en-GB": "en", "en-AU": "en",
-  "uk-UA": "uk", "ru-RU": "ru", "es-ES": "es", "es-MX": "es",
+  "uk-UA": "uk", "es-ES": "es", "es-MX": "es",
   "de-DE": "de", "de-AT": "de", "de-CH": "de",
   "fr-FR": "fr", "fr-CA": "fr", "fr-BE": "fr",
 };

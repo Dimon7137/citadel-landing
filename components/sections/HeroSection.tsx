@@ -9,7 +9,6 @@ import { useI18n } from "@/lib/i18n";
 const TEASER_LANGS = [
   { code: "en", label: "🇬🇧 English",    file: "/citadel-landing/citadel-teaser-en.pdf" },
   { code: "uk", label: "🇺🇦 Українська", file: "/citadel-landing/citadel-teaser-uk.pdf" },
-  { code: "ru", label: "🇷🇺 Русский",    file: "/citadel-landing/citadel-teaser-ru.pdf" },
   { code: "es", label: "🇪🇸 Español",    file: "/citadel-landing/citadel-teaser-es.pdf" },
   { code: "de", label: "🇩🇪 Deutsch",    file: "/citadel-landing/citadel-teaser-de.pdf" },
   { code: "fr", label: "🇫🇷 Français",   file: "/citadel-landing/citadel-teaser-fr.pdf" },

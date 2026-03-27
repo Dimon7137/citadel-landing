@@ -19,7 +19,7 @@ export function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const locales: Locale[] = ["en", "uk", "ru", "es", "de", "fr"];
+  const locales: Locale[] = ["en", "uk", "es", "de", "fr"];
 
   return (
     <div ref={ref} className="relative">
