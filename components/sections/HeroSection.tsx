@@ -53,12 +53,12 @@ export function HeroSection() {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.32 }}
               className="flex flex-col sm:flex-row gap-3">
               <Button size="xl" onClick={scrollToContact}
-                className="bg-teal-500 hover:bg-teal-400 text-white rounded-lg px-8 shadow-[0_0_30px_rgba(14,165,169,0.25)] hover:shadow-[0_0_40px_rgba(14,165,169,0.4)] transition-all group">
+                className="w-full sm:w-auto bg-teal-500 hover:bg-teal-400 text-white rounded-lg px-8 shadow-[0_0_30px_rgba(14,165,169,0.25)] hover:shadow-[0_0_40px_rgba(14,165,169,0.4)] transition-all group">
                 {t.cta.requestMeeting}
                 <ArrowRight className="ml-1.5 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <a href="/citadel-landing/citadel-teaser-v2.pdf" target="_blank" rel="noopener noreferrer">
-                <Button size="xl" variant="ghost" className="rounded-lg border border-slate-600 text-slate-300 px-8 hover:bg-teal-500/10 hover:border-teal-500/40 hover:text-white transition-all">
+              <a href="/citadel-landing/citadel-teaser-v2.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="xl" variant="ghost" className="w-full rounded-lg border border-slate-600 text-slate-300 px-8 hover:bg-teal-500/10 hover:border-teal-500/40 hover:text-white transition-all">
                   <Download className="mr-1.5 w-4 h-4" />
                   {t.cta.downloadTeaser}
                 </Button>
