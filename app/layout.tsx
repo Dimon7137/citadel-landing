@@ -16,6 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  icons: { icon: "/favicon.svg" },
   title: "CITadel — Modular Intramedullary System for Critical Long-Bone Defects",
   description:
     "CITadel is a modular intramedullary fixator with selective HA+Ag coating for temporary internal stabilisation of critical long-bone defects. Developed by Maksym Baida, PhD — Bogomolets National Medical University, Kyiv.",
