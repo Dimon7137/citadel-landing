@@ -94,7 +94,7 @@ export function ContactSection() {
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{t.contact.successTitle}</h3>
                   <p className="text-sm text-slate-400 max-w-sm">{t.contact.successText}</p>
-                  <Button variant="outline" className="mt-6 text-sm border-teal-500/40 text-teal-300 hover:text-white hover:bg-teal-500/10 hover:border-teal-500"
+                  <Button className="mt-6 bg-teal-500 hover:bg-teal-400 text-white font-semibold px-8 shadow-[0_0_30px_rgba(14,165,169,0.25)] hover:shadow-[0_0_40px_rgba(14,165,169,0.4)] transition-all"
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", message: "" }); }}>
                     {t.cta.sendAnother}
                   </Button>
