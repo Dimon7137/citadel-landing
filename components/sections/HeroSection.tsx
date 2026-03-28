@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 
 const TEASER_LANGS = [
-  { code: "en", label: "🇬🇧 English",    file: "/citadel-landing/citadel-teaser-en.pdf" },
-  { code: "uk", label: "🇺🇦 Українська", file: "/citadel-landing/citadel-teaser-uk.pdf" },
-  { code: "es", label: "🇪🇸 Español",    file: "/citadel-landing/citadel-teaser-es.pdf" },
-  { code: "de", label: "🇩🇪 Deutsch",    file: "/citadel-landing/citadel-teaser-de.pdf" },
-  { code: "fr", label: "🇫🇷 Français",   file: "/citadel-landing/citadel-teaser-fr.pdf" },
+  { code: "en", label: "🇬🇧 English",    file: "/citadel-teaser-en.pdf" },
+  { code: "uk", label: "🇺🇦 Українська", file: "/citadel-teaser-uk.pdf" },
+  { code: "es", label: "🇪🇸 Español",    file: "/citadel-teaser-es.pdf" },
+  { code: "de", label: "🇩🇪 Deutsch",    file: "/citadel-teaser-de.pdf" },
+  { code: "fr", label: "🇫🇷 Français",   file: "/citadel-teaser-fr.pdf" },
 ];
 
 export function HeroSection() {
@@ -135,7 +135,7 @@ export function HeroSection() {
                 WebkitMaskImage: "linear-gradient(to bottom, black 65%, transparent 95%)",
               }}
             >
-              <img src="/citadel-landing/hero-bone.png" alt={t.hero.imageAlt}
+              <img src="/hero-bone.png" alt={t.hero.imageAlt}
                 className="object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.2)]"
                 style={{ maxHeight: "clamp(300px, 65dvh, 700px)" }} />
             </motion.div>

@@ -23,7 +23,7 @@ export function DoctorSection() {
             <div className="flex flex-col md:flex-row">
               {/* Photo */}
               <div className="md:w-2/5 relative">
-                <img src="/citadel-landing/doctor-photo.png" alt={t.doctor.imageAlt}
+                <img src="/doctor-photo.png" alt={t.doctor.imageAlt}
                   className="w-full h-full object-cover min-h-[300px] md:min-h-[420px]" />
                 <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent md:hidden" />
               </div>

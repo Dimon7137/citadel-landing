@@ -44,7 +44,7 @@ export function SolutionSection() {
 
           <AnimatedSection direction="right">
             <div className="relative flex items-center justify-end">
-              <img src="/citadel-landing/section4-nobg.png" alt={t.solution.imageAlt}
+              <img src="/section4-nobg.png" alt={t.solution.imageAlt}
                 className="max-h-[650px] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.15)]" />
             </div>
           </AnimatedSection>
