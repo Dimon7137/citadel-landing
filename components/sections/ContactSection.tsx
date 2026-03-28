@@ -87,14 +87,14 @@ export function ContactSection() {
             <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-5 sm:p-8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <div className="w-16 h-16 rounded-full bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">
-                    <svg className="w-8 h-8 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(14,165,169,0.4)]">
+                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{t.contact.successTitle}</h3>
                   <p className="text-sm text-slate-400 max-w-sm">{t.contact.successText}</p>
-                  <Button variant="outline" className="mt-6 text-sm border-slate-700 text-slate-300 hover:text-white hover:border-teal-500/50"
+                  <Button variant="outline" className="mt-6 text-sm border-teal-500/40 text-teal-300 hover:text-white hover:bg-teal-500/10 hover:border-teal-500"
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", message: "" }); }}>
                     {t.cta.sendAnother}
                   </Button>
