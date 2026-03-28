@@ -104,24 +104,24 @@ export function ContactSection() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
-                        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.nameLabel}</label>
-                        <Input placeholder={t.contact.namePlaceholder} value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} required
+                        <label htmlFor="f-name" className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.nameLabel}</label>
+                        <Input id="f-name" placeholder={t.contact.namePlaceholder} value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} required
                           className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.emailFieldLabel}</label>
-                        <Input type="email" placeholder={t.contact.emailPlaceholder} value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} required
+                        <label htmlFor="f-email" className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.emailFieldLabel}</label>
+                        <Input id="f-email" type="email" placeholder={t.contact.emailPlaceholder} value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} required
                           className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.orgLabel}</label>
-                      <Input placeholder={t.contact.orgPlaceholder} value={form.organisation} onChange={(e) => setForm((f) => ({ ...f, organisation: e.target.value }))}
+                      <label htmlFor="f-org" className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.orgLabel}</label>
+                      <Input id="f-org" placeholder={t.contact.orgPlaceholder} value={form.organisation} onChange={(e) => setForm((f) => ({ ...f, organisation: e.target.value }))}
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.messageLabel}</label>
-                      <Textarea placeholder={t.contact.messagePlaceholder} rows={5} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required
+                      <label htmlFor="f-message" className="text-xs font-medium text-slate-400 uppercase tracking-wider">{t.contact.messageLabel}</label>
+                      <Textarea id="f-message" placeholder={t.contact.messagePlaceholder} rows={5} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required
                         className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-600 focus:border-teal-500" />
                     </div>
                     {error && <p className="text-red-400 text-sm">{error}</p>}
