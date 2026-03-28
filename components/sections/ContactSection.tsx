@@ -39,6 +39,10 @@ export function ContactSection() {
           email: form.email,
           organisation: form.organisation,
           message: form.message,
+          replyto: form.email,
+          autoresponse: true,
+          autoresponse_subject: "We received your request — CITadel",
+          autoresponse_message: `Dear ${form.name},\n\nThank you for reaching out to CITadel Intramedullary System.\n\nWe have received your enquiry and will get back to you within 1 business day.\n\nBest regards,\nMaksym Baida, MD, PhD\npartnership@citadelimplant.com\nhttps://citadelimplant.com`,
         }),
       });
 
