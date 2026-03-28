@@ -7,5 +7,5 @@ export const NAV_KEYS = [
   { key: "contact" as const, href: "#contact" },
 ];
 
-export const CONTACT_EMAIL = "meredian18@gmail.com";
+export const CONTACT_EMAIL = "partnership@citadelimplant.com";
 export const CONTACT_PHONE = "+380 66 766 7094";
