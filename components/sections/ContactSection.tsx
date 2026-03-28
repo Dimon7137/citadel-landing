@@ -33,7 +33,7 @@ export function ContactSection() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE",
+          access_key: "625b2da1-1c03-47aa-aea1-0e47d50b9b18",
           subject: `CITadel enquiry from ${form.name}`,
           from_name: form.name,
           email: form.email,
