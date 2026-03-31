@@ -49,6 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQD5475MFM" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NQD5475MFM');` }} />
         <script dangerouslySetInnerHTML={{ __html: `if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);` }} />
       </head>
       <body className={`${rubik.variable} font-sans bg-[#0a1628]`}>
