@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — A5 Flyer v2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page { size: 148mm 210mm; margin: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #ccc;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 148mm;
+    height: 210mm;
+    margin: 10mm auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; }
+  }
+
+  /* ===== FRONT (Light) ===== */
+  .front {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 9mm 11mm;
+  }
+
+  .f-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5mm;
+  }
+
+  .f-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20pt;
+    color: #0f2b46;
+    letter-spacing: -0.5px;
+  }
+
+  .f-badge-row {
+    display: flex;
+    gap: 2mm;
+  }
+  .f-badge {
+    font-size: 5.5pt;
+    padding: 1mm 2.5mm;
+    background: #f1f5f9;
+    border-radius: 1.5mm;
+    color: #475569;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .f-headline {
+    text-align: center;
+    margin-bottom: 4mm;
+  }
+  .f-headline h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: #0f2b46;
+    line-height: 1.25;
+  }
+  .f-headline p {
+    font-size: 7.5pt;
+    color: #64748b;
+    margin-top: 2mm;
+    line-height: 1.4;
+  }
+
+  .f-illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2mm 8mm;
+  }
+  .f-illustration img {
+    max-width: 100%;
+    max-height: 75mm;
+    object-fit: contain;
+  }
+
+  .f-positioning {
+    text-align: center;
+    font-size: 7pt;
+    color: #0f2b46;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 3mm;
+    margin-bottom: 3mm;
+  }
+
+  .f-badges-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 4mm;
+    margin-bottom: 4mm;
+  }
+  .f-badges-bottom span {
+    font-size: 6pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .f-badges-bottom .sep {
+    color: #e2e8f0;
+  }
+
+  .f-efort {
+    background: #f8fafc;
+    border: 0.3mm solid #e2e8f0;
+    border-radius: 3mm;
+    padding: 3.5mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+  }
+  .f-efort-dot {
+    width: 6mm;
+    height: 6mm;
+    background: #0f2b46;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 8pt;
+    flex-shrink: 0;
+  }
+  .f-efort-text { flex: 1; }
+  .f-efort-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    color: #0f2b46;
+  }
+  .f-efort-details {
+    font-size: 6.5pt;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 0.5mm;
+  }
+  .f-efort-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7pt;
+    color: #0f2b46;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1.3;
+  }
+
+  /* ===== BACK (Light) ===== */
+  .back {
+    background: #ffffff;
+    padding: 9mm 11mm;
+  }
+
+  .b-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 0.5mm solid #0f2b46;
+  }
+  .b-header-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 12pt;
+    color: #0f2b46;
+  }
+  .b-header-sub {
+    font-size: 6.5pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  .b-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm 5mm;
+    margin-bottom: 3.5mm;
+  }
+
+  .b-card {}
+
+  .b-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+    margin-bottom: 1.5mm;
+  }
+
+  .b-card-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5mm;
+    height: 3.5mm;
+    background: #0f2b46;
+    color: white;
+    font-size: 5pt;
+    font-weight: 700;
+    border-radius: 0.8mm;
+    flex-shrink: 0;
+  }
+
+  .b-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7.5pt;
+    color: #0f2b46;
+  }
+
+  .b-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .b-card ul li {
+    font-size: 6.5pt;
+    color: #475569;
+    line-height: 1.5;
+    padding-left: 2.5mm;
+    position: relative;
+  }
+  .b-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.6mm;
+    width: 1mm;
+    height: 1mm;
+    background: #2dd4bf;
+    border-radius: 50%;
+  }
+
+  .b-tagline {
+    text-align: center;
+    font-size: 6.5pt;
+    color: #94a3b8;
+    font-style: italic;
+    padding: 2mm 0;
+    border-top: 0.2mm solid #f1f5f9;
+    border-bottom: 0.2mm solid #f1f5f9;
+    margin-bottom: 3mm;
+  }
+
+  .b-qr-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5mm;
+    padding: 2mm 0;
+  }
+
+  .b-qr-img {
+    width: 28mm;
+    height: 28mm;
+  }
+
+  .b-qr-right { max-width: 58mm; }
+  .b-qr-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #0f2b46;
+    line-height: 1.3;
+  }
+  .b-qr-url {
+    font-size: 7pt;
+    color: #2dd4bf;
+    font-weight: 600;
+    margin-top: 1mm;
+  }
+  .b-qr-desc {
+    font-size: 6pt;
+    color: #94a3b8;
+    margin-top: 1mm;
+    line-height: 1.4;
+  }
+
+  .b-contact {
+    border-top: 0.3mm solid #e5e7eb;
+    padding-top: 3mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .b-contact-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7.5pt;
+    color: #0f2b46;
+  }
+  .b-contact-role {
+    font-size: 6pt;
+    color: #64748b;
+    line-height: 1.4;
+  }
+  .b-contact-right { text-align: right; }
+  .b-contact-email {
+    font-size: 6.5pt;
+    color: #0f2b46;
+    font-weight: 600;
+  }
+  .b-contact-phone {
+    font-size: 6pt;
+    color: #64748b;
+    margin-top: 0.5mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== FRONT ==================== -->
+<div class="page front">
+  <div class="f-top">
+    <div class="f-logo">CITadel</div>
+    <div class="f-badge-row">
+      <div class="f-badge">TRL 4–5</div>
+      <div class="f-badge">Bench validated</div>
+      <div class="f-badge">PMMA compatible</div>
+    </div>
+  </div>
+
+  <div class="f-headline">
+    <h1>Temporary Internal Stabilisation (TIS)<br>for Critical Long-Bone Defects</h1>
+    <p>A modular intramedullary system designed for staged reconstruction<br>with PMMA spacer compatibility and selective HA–Ag coating</p>
+  </div>
+
+  <div class="f-illustration">
+    <img src="public/hero-bone.png" alt="CITadel Intramedullary System">
+  </div>
+
+  <div class="f-positioning">A new category between external fixation and definitive reconstruction</div>
+
+  <div class="f-badges-bottom">
+    <span>Modular design</span>
+    <span class="sep">|</span>
+    <span>Mechanical-axis alignment</span>
+    <span class="sep">|</span>
+    <span>Antibacterial interface</span>
+  </div>
+
+  <div class="f-efort">
+    <div class="f-efort-dot">E</div>
+    <div class="f-efort-text">
+      <div class="f-efort-title">Meet us at EFORT 2026</div>
+      <div class="f-efort-details">Poster presentation — Temporary Stabilisation of Critical Bone Defects</div>
+    </div>
+    <div class="f-efort-time">May 5<br>13:00–14:30</div>
+  </div>
+</div>
+
+<!-- ==================== BACK ==================== -->
+<div class="page back">
+  <div class="b-header">
+    <div class="b-header-logo">CITadel</div>
+    <div class="b-header-sub">Intramedullary System</div>
+  </div>
+
+  <div class="b-grid">
+    <div class="b-card">
+      <div class="b-card-header">
+        <span class="b-card-num">1</span>
+        <span class="b-card-title">Current limitations</span>
+      </div>
+      <ul>
+        <li>No dedicated internal solution for defect management</li>
+        <li>External fixation increases complications and patient burden</li>
+        <li>Lack of systems compatible with PMMA spacers</li>
+      </ul>
+    </div>
+
+    <div class="b-card">
+      <div class="b-card-header">
+        <span class="b-card-num">2</span>
+        <span class="b-card-title">CITadel system</span>
+      </div>
+      <ul>
+        <li>Modular intramedullary design</li>
+        <li>Mechanical-axis internal stabilisation</li>
+        <li>Full PMMA spacer compatibility</li>
+        <li>Selective HA–Ag antibacterial interface</li>
+      </ul>
+    </div>
+
+    <div class="b-card">
+      <div class="b-card-header">
+        <span class="b-card-num">3</span>
+        <span class="b-card-title">Use cases</span>
+      </div>
+      <ul>
+        <li>Infected critical bone defects</li>
+        <li>Blast and high-energy trauma</li>
+        <li>Oncologic segmental resection</li>
+      </ul>
+    </div>
+
+    <div class="b-card">
+      <div class="b-card-header">
+        <span class="b-card-num">4</span>
+        <span class="b-card-title">Why CITadel</span>
+      </div>
+      <ul>
+        <li>Internal stabilisation where external fixation is often the only option</li>
+        <li>Designed specifically for staged reconstruction</li>
+        <li>Defect-focused construct logic</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="b-tagline">Internal stability where external fixation used to be the only option</div>
+
+  <div class="b-qr-section">
+    <img class="b-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://citadelimplant.com&color=0f2b46" alt="QR">
+    <div class="b-qr-right">
+      <div class="b-qr-cta">Scan to explore the technology<br>and partnership opportunities</div>
+      <div class="b-qr-url">www.citadelimplant.com</div>
+      <div class="b-qr-desc">Full product details, validation data,<br>and contact form available on the website</div>
+    </div>
+  </div>
+
+  <div class="b-contact">
+    <div class="b-contact-left">
+      <div class="b-contact-name">Maksym Baida, PhD</div>
+      <div class="b-contact-role">Founder & Developer, CITadel<br>Orthopaedic Trauma Surgeon</div>
+    </div>
+    <div class="b-contact-right">
+      <div class="b-contact-email">partnership@citadelimplant.com</div>
+      <div class="b-contact-phone">+380 66 766 7094</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
