@@ -37,7 +37,7 @@ export function DoctorSection() {
                 {/* Stats badges */}
                 <div className="grid grid-cols-3 gap-3">
                   {t.doctor.stats.map((stat, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+                    <motion.div key={stat.value} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }} transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                       className={`border rounded-xl px-3 sm:px-4 py-3 text-center min-w-0 ${i === 2 ? "bg-teal-50 border-teal-200" : "bg-slate-50 border-slate-200"}`}>
                       <div className={`text-lg sm:text-xl font-bold ${i === 2 ? "text-teal-700" : "text-slate-900"}`}>{stat.value}</div>

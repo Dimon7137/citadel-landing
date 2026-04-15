@@ -30,7 +30,7 @@ export const de = {
     positioningLine: "Eine neue Kategorie zwischen externer Fixation und definitiver Rekonstruktion",
     title: "Temporäre interne Stabilisierung für",
     titleHighlight: "kritische Langknochendefekte",
-    subtitle: "Für Chirurgen, die kritische Langknochendefekte behandeln, bei denen externe Fixation bisher die einzige Option war — CITadel bietet ein modulares intramedulläres System für die stufenweise Rekonstruktion.",
+    subtitle: "Ein modulares intramedulläres System für stufenweise Rekonstruktion, PMMA-Spacer-Unterstützung und infektionsbewusste temporäre Fixation.",
     badges: ["TRL 4–5", "Validiert", "PMMA ready", "Modular"],
     imageAlt: "CITadel — modularer intramedullärer Fixateur für kritische Langknochendefekte",
     stats: [
@@ -49,24 +49,17 @@ export const de = {
     caption: "Konzipiert für die temporäre interne Stabilisierung bei stufenweiser Extremitätenrekonstruktion.",
   },
 
-  // Problem → Die klinische Realität (Chirurgen-Perspektive + Marktanker)
+  // Problem
   problem: {
-    label: "Die klinische Realität",
-    title: "Der Bedarf, für den CITadel",
-    titleHighlight: "entwickelt wurde",
-    intro: "In der modernen Traumaversorgung zählen kritische Langknochendefekte — segmentaler Knochenverlust durch Infektion, Hochenergietrauma oder onkologische Resektion — zu den schwierigsten Problemen der Orthopädie. Der Standardpfad zwingt Patienten zu 6–12 Monaten externer Fixation, mit dokumentierten Raten an Pin-Infektionen, Weichteilkompromittierung und psychischer Belastung.",
+    label: "Das Problem",
+    title: "Aktuelle Limitierungen beim Management",
+    titleHighlight: "kritischer Knochendefekte",
     items: [
-      "Infizierte Pseudarthrosen — chronische Osteomyelitis mit Bedarf an stufenweisem Débridement und verzögerter Rekonstruktion",
-      "Hochenergietrauma — Explosionsverletzungen, Verkehrs- und Industrieunfälle mit segmentalem Knochenverlust",
-      "Onkologische Segmentresektion — Defekte nach Tumorresektion mit Bedarf an stabiler interner Fixation zur Extremitätenerhaltung",
+      "Keine dedizierte interne Lösung für stufenweises Defektmanagement",
+      "Externe Fixation erhöht Komplikationen und Belastung für den Patienten",
+      "Standardimplantate sind nicht für Spacer-gestützte Konstrukte ausgelegt",
+      "Rekonstruktionspfade bleiben mechanisch suboptimal",
     ],
-    closingLine: "Der aktuelle Krieg in der Ukraine hat dieses Patientenkollektiv in den Fokus gerückt — doch der zugrundeliegende globale Bedarf besteht seit Jahrzehnten und wächst.",
-    marketStats: [
-      { number: "~250–400K", label: "kritische Langknochendefekte pro Jahr (EU + USA)" },
-      { number: "6–12 Monate", label: "durchschnittliche Dauer externer Fixation" },
-      { number: "20–40%", label: "Revisionsrate im Pfad der externen Fixation" },
-    ],
-    sourcesNote: "Quellen: Giannoudis 2006/2011; Calori 2014; Nauth 2018; WHO GBD 2021.",
   },
 
   // Solution
@@ -77,7 +70,7 @@ export const de = {
     features: [
       { title: "Modulare Architektur", description: "Zweikomponentensystem, anpassbar an Defektgröße und Anatomie." },
       { title: "Mechanische Achsunterstützung", description: "Intramedulläre Ausrichtung für stabile temporäre Fixation." },
-      { title: "PMMA-Spacer-Kompatibilität", description: "Entwickelt für den Einsatz mit antibiotikabeladenen PMMA-Spacern — unter Erhalt der induzierten Membranbiologie, die die stufenweise Rekonstruktion ermöglicht." },
+      { title: "PMMA-Spacer-Kompatibilität", description: "Entwickelt für den Einsatz mit antibiotikabeladenen Spacern." },
       { title: "HA-Ag antibakterielle Grenzfläche", description: "Selektive Beschichtung in Knochenkontaktzonen." },
     ],
     imageAlt: "CITadel-System — modularer intramedullärer Fixateur mit Beschriftungen",
@@ -141,8 +134,8 @@ export const de = {
     label: "Validierung",
     title: "Entwicklung und",
     titleHighlight: "Validierungsstatus",
-    badges: ["TRL 4–5", "Labortests abgeschlossen", "Vorläufige klinische Erfahrung", "Prototyp validiert"],
-    description: "CITadel hat biomechanische Labortests durchlaufen. Vorläufige klinische Anwendung wurde in ausgewählten Fällen durchgeführt; eine formelle Veröffentlichung der Ergebnisse ist nach dem EFORT-Kongress 2026 geplant. Weitere klinische Validierung erfolgt gemeinsam mit Partnerzentren.",
+    badges: ["TRL 4–5", "Labortests abgeschlossen", "Frühe klinische Anwendung", "Prototyp validiert"],
+    description: "CITadel hat biomechanische Tests und frühe klinische Anwendung durchlaufen. Weitere Entwicklung und Pilotimplementierung sind mit Industriepartnern geplant.",
     trlNote: "Aktueller TRL: 4–5 → Ziel: TRL 6 (klinischer Pilot)",
   },
 

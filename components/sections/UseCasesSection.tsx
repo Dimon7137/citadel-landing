@@ -27,7 +27,7 @@ export function UseCasesSection() {
           {t.useCases.items.map((uc, i) => {
             const Icon = icons[i];
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={uc.title}>
                 <motion.div whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(14,165,169,0.12)" }} transition={{ duration: 0.2 }}
                   className="group bg-white border border-slate-100 rounded-xl sm:rounded-2xl p-6 shadow-sm hover:border-teal-300/40 transition-all duration-300 h-full">
                   <div className="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center mb-5">

@@ -30,7 +30,7 @@ export const fr = {
     positioningLine: "Une nouvelle catégorie entre la fixation externe et la reconstruction définitive",
     title: "Stabilisation interne temporaire pour les",
     titleHighlight: "défauts critiques des os longs",
-    subtitle: "Pour les chirurgiens qui prennent en charge des défauts critiques des os longs où la fixation externe a été la seule option viable — CITadel offre un système intramédullaire modulaire pour la reconstruction par étapes.",
+    subtitle: "Un système intramédullaire modulaire conçu pour la reconstruction par étapes, le support de spacers en PMMA et la fixation temporaire adaptée aux contextes infectieux.",
     badges: ["TRL 4–5", "Validé", "PMMA ready", "Modulaire"],
     imageAlt: "CITadel — fixateur intramédullaire modulaire pour les défauts critiques des os longs",
     stats: [
@@ -49,24 +49,17 @@ export const fr = {
     caption: "Conçu pour la stabilisation interne temporaire dans la reconstruction des membres par étapes.",
   },
 
-  // Problem → La réalité clinique (voix du chirurgien + ancrage marché)
+  // Problem
   problem: {
-    label: "La réalité clinique",
-    title: "Le besoin pour lequel",
-    titleHighlight: "CITadel a été créé",
-    intro: "Dans la pratique traumatologique moderne, les défauts critiques des os longs — pertes osseuses segmentaires dues à l'infection, aux traumatismes à haute énergie ou aux résections oncologiques — restent parmi les problèmes les plus difficiles de l'orthopédie. Le parcours standard impose aux patients 6 à 12 mois de fixation externe, avec des taux bien documentés d'infections des sites de broches, de compromission des tissus mous et de charge psychologique.",
+    label: "Le problème",
+    title: "Limites actuelles dans la prise en charge des",
+    titleHighlight: "défauts osseux critiques",
     items: [
-      "Pseudarthroses infectées — ostéomyélite chronique nécessitant un débridement par étapes et une reconstruction différée",
-      "Traumatisme à haute énergie — blessures par explosion, accidents de la route et industriels avec perte osseuse segmentaire",
-      "Résection oncologique segmentaire — défauts post-tumoraux nécessitant une fixation interne stable lors du sauvetage de membre",
+      "Aucune solution interne dédiée à la gestion par étapes des défauts osseux",
+      "La fixation externe augmente les complications et la charge pour le patient",
+      "Les implants standards ne sont pas conçus pour les constructions avec spacer",
+      "Les parcours de reconstruction restent mécaniquement sous-optimaux",
     ],
-    closingLine: "Le conflit actuel en Ukraine a mis cette population de patients en lumière — mais le besoin mondial sous-jacent existe depuis des décennies et ne cesse de croître.",
-    marketStats: [
-      { number: "~250–400K", label: "cas de défauts critiques des os longs par an (UE + États-Unis)" },
-      { number: "6–12 mois", label: "durée moyenne de la fixation externe" },
-      { number: "20–40%", label: "taux de révision dans le parcours de fixation externe" },
-    ],
-    sourcesNote: "Sources : Giannoudis 2006/2011 ; Calori 2014 ; Nauth 2018 ; WHO GBD 2021.",
   },
 
   // Solution
@@ -77,7 +70,7 @@ export const fr = {
     features: [
       { title: "Architecture modulaire", description: "Système à deux composants adaptable à la taille du défaut et à l'anatomie." },
       { title: "Support de l'axe mécanique", description: "Alignement intramédullaire pour une fixation temporaire stable." },
-      { title: "Compatibilité avec les spacers en PMMA", description: "Conçu pour fonctionner avec des spacers en PMMA chargés en antibiotiques — en préservant la biologie de la membrane induite qui rend la reconstruction par étapes possible." },
+      { title: "Compatibilité avec les spacers en PMMA", description: "Conçu pour fonctionner avec des spacers chargés en antibiotiques." },
       { title: "Interface antibactérienne HA-Ag", description: "Revêtement sélectif dans les zones de contact osseux." },
     ],
     imageAlt: "Système CITadel — fixateur intramédullaire modulaire avec annotations",
@@ -141,8 +134,8 @@ export const fr = {
     label: "Validation",
     title: "Développement et",
     titleHighlight: "état de validation",
-    badges: ["TRL 4–5", "Validation de banc terminée", "Expérience clinique préliminaire", "Prototype validé"],
-    description: "CITadel a terminé la validation biomécanique de banc. Une application clinique préliminaire a été réalisée sur des cas sélectionnés ; la publication formelle des résultats est prévue après le congrès EFORT 2026. La validation clinique se poursuit avec des centres partenaires.",
+    badges: ["TRL 4–5", "Tests en laboratoire terminés", "Application clinique précoce", "Prototype validé"],
+    description: "CITadel a fait l'objet de tests biomécaniques et d'une utilisation clinique préliminaire. Un développement complémentaire et une mise en œuvre pilote sont prévus avec des partenaires industriels.",
     trlNote: "TRL actuel : 4–5 → Objectif : TRL 6 (pilote clinique)",
   },
 
