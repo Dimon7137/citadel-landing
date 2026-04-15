@@ -30,7 +30,7 @@ export const es = {
     positioningLine: "Una nueva categoría entre la fijación externa y la reconstrucción definitiva",
     title: "Estabilización Interna Temporal para",
     titleHighlight: "Defectos Críticos de Huesos Largos",
-    subtitle: "Un sistema intramedular modular diseñado para la reconstrucción por etapas, soporte de espaciadores de PMMA y fijación temporal consciente de infecciones.",
+    subtitle: "Para cirujanos que tratan defectos críticos de huesos largos donde la fijación externa ha sido la única opción viable — CITadel ofrece un sistema intramedular modular para la reconstrucción por etapas.",
     badges: ["TRL 4–5", "Validado", "PMMA ready", "Modular"],
     imageAlt: "CITadel — fijador intramedular modular para defectos críticos de huesos largos",
     stats: [
@@ -49,17 +49,24 @@ export const es = {
     caption: "Diseñado para la estabilización interna temporal en la reconstrucción de extremidades por etapas.",
   },
 
-  // Problem
+  // Problem → La realidad clínica (voz del cirujano + anclaje de mercado)
   problem: {
-    label: "El Problema",
-    title: "Limitaciones actuales en el manejo de",
-    titleHighlight: "defectos óseos críticos",
+    label: "La realidad clínica",
+    title: "La necesidad para la que",
+    titleHighlight: "se creó CITadel",
+    intro: "En la práctica traumatológica moderna, los defectos críticos de huesos largos — pérdida ósea segmentaria por infección, trauma de alta energía o resección oncológica — siguen siendo uno de los problemas más difíciles de la ortopedia. La vía estándar obliga a los pacientes a soportar fijación externa durante 6–12 meses, con tasas bien documentadas de infección en los sitios de los pines, compromiso de tejidos blandos y carga psicológica.",
     items: [
-      "No existe una solución interna dedicada para el manejo por etapas de defectos",
-      "La fijación externa aumenta las complicaciones y la carga para el paciente",
-      "Los implantes estándar no están diseñados para constructos con soporte de espaciadores",
-      "Las vías de reconstrucción siguen siendo mecánicamente subóptimas",
+      "No-uniones infectadas — osteomielitis crónica que requiere desbridamiento por etapas y reconstrucción diferida",
+      "Trauma de alta energía — lesiones por explosión, tráfico e industriales con pérdida ósea segmentaria",
+      "Resección oncológica segmentaria — defectos post-tumor que requieren fijación interna estable durante el salvamento de extremidad",
     ],
+    closingLine: "El conflicto actual en Ucrania ha puesto este tipo de casos en primer plano — pero la necesidad global subyacente existe desde hace décadas y sigue creciendo.",
+    marketStats: [
+      { number: "~250–400K", label: "casos de defectos críticos de huesos largos al año (UE + EE. UU.)" },
+      { number: "6–12 meses", label: "duración media de la fijación externa" },
+      { number: "20–40%", label: "tasa de revisiones en la vía de fijación externa" },
+    ],
+    sourcesNote: "Fuentes: Giannoudis 2006/2011; Calori 2014; Nauth 2018; WHO GBD 2021.",
   },
 
   // Solution
@@ -70,7 +77,7 @@ export const es = {
     features: [
       { title: "Arquitectura modular", description: "Sistema de dos componentes adaptable al tamaño del defecto y la anatomía." },
       { title: "Soporte del eje mecánico", description: "Alineación intramedular para una fijación temporal estable." },
-      { title: "Compatibilidad con espaciadores de PMMA", description: "Diseñado para funcionar con espaciadores cargados de antibióticos." },
+      { title: "Compatibilidad con espaciadores de PMMA", description: "Diseñado para funcionar con espaciadores de PMMA cargados con antibiótico — preservando la biología de la membrana inducida que hace posible la reconstrucción por etapas." },
       { title: "Interfaz antibacteriana HA-Ag", description: "Recubrimiento selectivo en zonas de contacto óseo." },
     ],
     imageAlt: "Sistema CITadel — fijador intramedular modular con anotaciones",
@@ -134,8 +141,8 @@ export const es = {
     label: "Validación",
     title: "Estado de desarrollo y",
     titleHighlight: "validación",
-    badges: ["TRL 4–5", "Pruebas de banco completadas", "Aplicación clínica temprana", "Prototipo validado"],
-    description: "CITadel ha sido sometido a pruebas biomecánicas y uso clínico temprano. Se planea un mayor desarrollo e implementación piloto con socios industriales.",
+    badges: ["TRL 4–5", "Validación de banco completada", "Experiencia clínica preliminar", "Prototipo validado"],
+    description: "CITadel ha completado la validación biomecánica de banco. Se ha realizado aplicación clínica preliminar en casos seleccionados; la publicación formal de resultados está prevista tras el congreso EFORT 2026. La validación clínica continúa con centros asociados.",
     trlNote: "TRL actual: 4–5 → Objetivo: TRL 6 (piloto clínico)",
   },
 

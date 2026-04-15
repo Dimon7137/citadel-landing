@@ -32,8 +32,8 @@ export function DifferentiationSection() {
                 <h3 className="text-sm sm:text-base font-semibold text-white">{t.differentiation.currentTitle}</h3>
               </div>
               <ul className="space-y-4">
-                {t.differentiation.currentItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                {t.differentiation.currentItems.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
                       <X className="w-3 h-3 text-red-400" />
                     </div>
@@ -53,8 +53,8 @@ export function DifferentiationSection() {
                 <h3 className="text-sm sm:text-base font-semibold text-white">{t.differentiation.citadelTitle}</h3>
               </div>
               <ul className="space-y-4">
-                {t.differentiation.citadelItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                {t.differentiation.citadelItems.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-teal-400" />
                     </div>
@@ -73,7 +73,7 @@ export function DifferentiationSection() {
               {t.differentiation.impactItems.map((item, i) => {
                 const Icon = impactIcons[i];
                 return (
-                  <motion.div key={item} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }} className="flex items-center gap-2.5">
                     <Icon className="w-4 h-4 text-teal-400 shrink-0" />
                     <span className="text-xs sm:text-sm text-slate-300">{item}</span>

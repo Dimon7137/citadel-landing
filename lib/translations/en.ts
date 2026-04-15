@@ -30,7 +30,7 @@ export const en = {
     positioningLine: "A new category between external fixation and definitive reconstruction",
     title: "Temporary Internal Stabilisation for",
     titleHighlight: "Critical Long-Bone Defects",
-    subtitle: "A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.",
+    subtitle: "For surgeons managing critical long-bone defects where external fixation has been the only viable option — CITadel offers a modular intramedullary system for staged reconstruction.",
     badges: ["TRL 4–5", "Validated", "PMMA ready", "Modular"],
     imageAlt: "CITadel — modular intramedullary fixator for critical long-bone defects",
     stats: [
@@ -49,17 +49,24 @@ export const en = {
     caption: "Designed for temporary internal stabilisation in staged limb reconstruction.",
   },
 
-  // Problem
+  // Problem → The Clinical Reality (surgeon-voice narrative + market anchor)
   problem: {
-    label: "The Problem",
-    title: "Current limitations in managing",
-    titleHighlight: "critical bone defects",
+    label: "The Clinical Reality",
+    title: "The need CITadel was",
+    titleHighlight: "built for",
+    intro: "In modern trauma practice, critical long-bone defects — segmental bone loss from infection, high-energy trauma, or oncologic resection — remain one of the hardest problems in orthopaedics. The default pathway forces patients into external fixation for 6–12 months, with well-documented rates of pin-site infection, soft-tissue compromise, and psychological burden.",
     items: [
-      "No dedicated internal solution for staged defect management",
-      "External fixation increases complications and patient burden",
-      "Standard implants are not designed for spacer-supported constructs",
-      "Reconstruction pathways remain mechanically suboptimal",
+      "Infected non-unions — chronic osteomyelitis requiring staged debridement and delayed reconstruction",
+      "High-energy trauma — blast, road-traffic, and industrial injuries with segmental bone loss",
+      "Oncologic segmental resection — post-tumour defects needing stable internal fixation during limb salvage",
     ],
+    closingLine: "Ukraine's current conflict has brought this caseload into sharp focus — but the underlying global need is decades old and growing.",
+    marketStats: [
+      { number: "~250–400K", label: "critical long-bone defect cases / year (EU + US)" },
+      { number: "6–12 months", label: "average external fixation duration" },
+      { number: "20–40%", label: "revision rate range, external fixation pathway" },
+    ],
+    sourcesNote: "Sources: Giannoudis 2006/2011; Calori 2014; Nauth 2018; WHO GBD 2021.",
   },
 
   // Solution
@@ -70,7 +77,7 @@ export const en = {
     features: [
       { title: "Modular architecture", description: "Two-component system adaptable to defect size and anatomy." },
       { title: "Mechanical-axis support", description: "Intramedullary alignment for stable temporary fixation." },
-      { title: "PMMA spacer compatibility", description: "Designed to function with antibiotic-loaded spacers." },
+      { title: "PMMA spacer compatibility", description: "Designed to function with antibiotic-loaded PMMA spacers — preserving the induced-membrane biology that makes staged reconstruction work." },
       { title: "HA-Ag antibacterial interface", description: "Selective coating in bone-contact zones." },
     ],
     imageAlt: "CITadel system — modular intramedullary fixator with annotations",
@@ -134,8 +141,8 @@ export const en = {
     label: "Validation",
     title: "Development and",
     titleHighlight: "validation status",
-    badges: ["TRL 4–5", "Bench testing completed", "Early clinical application", "Prototype validated"],
-    description: "CITadel has undergone biomechanical testing and early clinical use. Further development and pilot implementation are planned with industrial partners.",
+    badges: ["TRL 4–5", "Bench validation completed", "Preliminary clinical experience", "Prototype validated"],
+    description: "CITadel has undergone biomechanical bench validation. Preliminary clinical application has been performed in selected cases; formal outcome publication is planned post-EFORT 2026. Further clinical validation is pursued with partner centres.",
     trlNote: "Current TRL: 4–5 → Target: TRL 6 (clinical pilot)",
   },
 

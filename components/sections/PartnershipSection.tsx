@@ -31,7 +31,7 @@ export function PartnershipSection() {
           {t.partnership.items.map((p, i) => {
             const Icon = icons[i];
             return (
-              <StaggerItem key={p.title}>
+              <StaggerItem key={i}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}
                   className="bg-slate-800/30 border border-slate-700/40 rounded-xl sm:rounded-2xl p-5 hover:border-teal-500/30 transition-all duration-300 h-full">
                   <div className="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4">

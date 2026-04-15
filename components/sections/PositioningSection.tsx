@@ -23,7 +23,7 @@ export function PositioningSection() {
         <AnimatedSection delay={0.15}>
           <div className="hidden md:flex items-center justify-center gap-0 max-w-6xl mx-auto">
             {t.positioning.steps.map((step, i) => (
-              <div key={step} className="flex items-center">
+              <div key={i} className="flex items-center">
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
                   className={`relative px-5 lg:px-8 py-5 rounded-2xl text-center min-w-[160px] lg:min-w-[200px] ${i === 1 ? "bg-teal-500/10 border-2 border-teal-500/40 shadow-[0_0_30px_rgba(14,165,169,0.15)]" : "bg-slate-800/30 border border-slate-700/40"}`}>
@@ -42,7 +42,7 @@ export function PositioningSection() {
 
           <div className="flex md:hidden flex-col items-center gap-0">
             {t.positioning.steps.map((step, i) => (
-              <div key={step} className="flex flex-col items-center">
+              <div key={i} className="flex flex-col items-center">
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.12, duration: 0.5 }}
                   className={`px-8 py-4 rounded-xl text-center w-full max-w-[280px] ${i === 1 ? "bg-teal-500/10 border-2 border-teal-500/40 shadow-[0_0_20px_rgba(14,165,169,0.15)]" : "bg-slate-800/30 border border-slate-700/40"}`}>
