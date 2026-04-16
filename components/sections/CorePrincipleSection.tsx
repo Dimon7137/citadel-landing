@@ -19,36 +19,40 @@ export function CorePrincipleSection() {
             title={<>{t.corePrinciple.title}{" "}<span className="text-teal-400">{t.corePrinciple.titleHighlight}</span></>} light />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
           {/* Left — Core Principle */}
           <AnimatedSection direction="left">
-            <div className="border-l-4 border-teal-500 pl-6 py-2">
-              <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-medium">
-                {t.corePrinciple.text}
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-6 sm:p-8 h-full">
+              <div className="border-l-4 border-teal-500 pl-5 py-1 mb-6">
+                <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-medium">
+                  {t.corePrinciple.text}
+                </p>
+              </div>
+              <p className="text-base text-slate-400 leading-relaxed">
+                {t.corePrinciple.subtext}
               </p>
             </div>
-            <p className="mt-6 text-base text-slate-400 leading-relaxed">
-              {t.corePrinciple.subtext}
-            </p>
           </AnimatedSection>
 
           {/* Right — What Changes */}
           <AnimatedSection direction="right">
-            <p className="text-xs font-semibold text-teal-400 uppercase tracking-widest mb-5">
-              {t.whatChanges.subtitle}
-            </p>
-            <StaggerContainer className="space-y-3">
-              {t.whatChanges.items.map((item, i) => (
-                <StaggerItem key={i}>
-                  <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-teal-500 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-white" />
+            <div className="bg-slate-800/30 border border-slate-700/40 rounded-2xl p-6 sm:p-8 h-full">
+              <p className="text-xs font-semibold text-teal-400 uppercase tracking-widest mb-5">
+                {t.whatChanges.subtitle}
+              </p>
+              <StaggerContainer className="space-y-3">
+                {t.whatChanges.items.map((item, i) => (
+                  <StaggerItem key={i}>
+                    <div className="flex items-start gap-3 bg-slate-700/20 rounded-lg px-4 py-3">
+                      <div className="w-5 h-5 rounded-full bg-teal-500 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-sm sm:text-base text-slate-300 leading-snug">{item}</span>
                     </div>
-                    <span className="text-sm sm:text-base text-slate-300 leading-snug">{item}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
           </AnimatedSection>
         </div>
       </div>

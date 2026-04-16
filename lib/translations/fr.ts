@@ -98,8 +98,8 @@ export const fr = {
     titleHighlight: "reconstruction par étapes",
     steps: [
       { title: "Débridement", description: "Débridement et création du défaut", detail: "Préparation" },
-      { title: "Spacer PMMA", description: "Mise en place du spacer PMMA", detail: "Gestion de l'infection" },
       { title: "Fixation CITadel", description: "Fixation interne avec le système CITadel", detail: "Stabilisation" },
+      { title: "Spacer PMMA", description: "Mise en place du spacer PMMA", detail: "Gestion de l'infection" },
       { title: "Reconstruction", description: "Reconstruction osseuse définitive", detail: "Étape finale" },
     ],
     footerNote: "Conçu pour un traitement par étapes, pas pour un remplacement de défaut en une seule étape.",
@@ -165,7 +165,7 @@ export const fr = {
     titleHighlight: "développement",
     badges: [
       "Premières applications cliniques réalisées",
-      "Validation biomécanique en cours",
+      "Validation biomécanique terminée",
       "Présentation EFORT 2026",
     ],
     description: "CITadel a fait l'objet d'applications cliniques précoces et d'une validation biomécanique. Les résultats seront présentés à l'EFORT 2026.",

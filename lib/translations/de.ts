@@ -98,8 +98,8 @@ export const de = {
     titleHighlight: "stufenweisen Rekonstruktion eingesetzt wird",
     steps: [
       { title: "Débridement", description: "Débridement und Defektbildung", detail: "Vorbereitung" },
-      { title: "PMMA-Spacer", description: "PMMA-Spacer-Platzierung", detail: "Infektionsmanagement" },
       { title: "CITadel-Fixation", description: "Interne Fixation mit CITadel-System", detail: "Stabilisierung" },
+      { title: "PMMA-Spacer", description: "PMMA-Spacer-Platzierung", detail: "Infektionsmanagement" },
       { title: "Rekonstruktion", description: "Definitive Knochenrekonstruktion", detail: "Finales Stadium" },
     ],
     footerNote: "Entwickelt für stufenweise Behandlung, nicht für einzeitige Defektrekonstruktion.",
@@ -165,7 +165,7 @@ export const de = {
     titleHighlight: "status",
     badges: [
       "Erste klinische Anwendungen durchgeführt",
-      "Biomechanische Validierung läuft",
+      "Biomechanische Validierung abgeschlossen",
       "EFORT 2026 Präsentation",
     ],
     description: "CITadel hat frühe klinische Anwendungen und biomechanische Validierung durchlaufen. Die Ergebnisse werden auf der EFORT 2026 präsentiert.",

@@ -98,8 +98,8 @@ export const en = {
     titleHighlight: "staged reconstruction",
     steps: [
       { title: "Debridement", description: "Debridement and defect creation", detail: "Preparation" },
-      { title: "PMMA Spacer", description: "PMMA spacer placement", detail: "Infection management" },
       { title: "CITadel Fixation", description: "Internal fixation with CITadel system", detail: "Stabilisation" },
+      { title: "PMMA Spacer", description: "PMMA spacer placement", detail: "Infection management" },
       { title: "Reconstruction", description: "Definitive bone reconstruction", detail: "Final stage" },
     ],
     footerNote: "Designed for staged treatment, not single-stage defect replacement.",
@@ -165,7 +165,7 @@ export const en = {
     titleHighlight: "status",
     badges: [
       "Early clinical applications performed",
-      "Biomechanical validation in progress",
+      "Biomechanical validation completed",
       "EFORT 2026 presentation",
     ],
     description: "CITadel has undergone early clinical application and biomechanical validation. Results will be presented at EFORT 2026.",

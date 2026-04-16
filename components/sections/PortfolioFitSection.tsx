@@ -12,6 +12,24 @@ const marketIcons = [ShieldAlert, Bone, Zap, Scissors];
 export function PortfolioFitSection() {
   const { t } = useI18n();
 
+  const columns = [
+    {
+      label: t.portfolioFit.fitsLabel,
+      items: t.portfolioFit.fitsItems,
+      icons: fitsIcons,
+    },
+    {
+      label: t.portfolioFit.extendsLabel,
+      items: t.portfolioFit.extendsItems,
+      icons: extendsIcons,
+    },
+    {
+      label: t.marketRelevance.label,
+      items: t.marketRelevance.items,
+      icons: marketIcons,
+    },
+  ];
+
   return (
     <section id="portfolio-fit" className="relative z-0 py-20 md:py-28 bg-white overflow-hidden">
       <div className="absolute inset-0 bg-grid-slate pointer-events-none" />
@@ -22,70 +40,38 @@ export function PortfolioFitSection() {
             title={<>{t.portfolioFit.title}{" "}<span className="text-teal-600">{t.portfolioFit.titleHighlight}</span></>} />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 max-w-6xl mx-auto">
-          {/* Left — Portfolio Fit */}
-          <AnimatedSection direction="left">
-            <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-4">
-              {t.portfolioFit.fitsLabel}
-            </p>
-            <StaggerContainer className="space-y-3 mb-8">
-              {t.portfolioFit.fitsItems.map((item, i) => {
-                const Icon = fitsIcons[i];
-                return (
-                  <StaggerItem key={i}>
-                    <div className="flex items-center gap-3 bg-teal-50 border border-teal-200 rounded-lg px-4 py-3">
-                      <Icon className="w-4 h-4 text-teal-600 shrink-0" />
-                      <span className="text-sm font-semibold text-slate-800">{item}</span>
-                    </div>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-
-            <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-4">
-              {t.portfolioFit.extendsLabel}
-            </p>
-            <StaggerContainer className="space-y-3">
-              {t.portfolioFit.extendsItems.map((item, i) => {
-                const Icon = extendsIcons[i];
-                return (
-                  <StaggerItem key={i}>
-                    <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-lg px-4 py-3">
-                      <Icon className="w-4 h-4 text-teal-600 shrink-0" />
-                      <span className="text-sm font-medium text-slate-600">{item}</span>
-                    </div>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-          </AnimatedSection>
-
-          {/* Right — Market Relevance */}
-          <AnimatedSection direction="right">
-            <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-4">
-              {t.marketRelevance.label}
-            </p>
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-2">
-              {t.marketRelevance.text}
-            </p>
-            <p className="text-sm text-slate-500 mb-5">
-              {t.marketRelevance.subtitle}
-            </p>
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {t.marketRelevance.items.map((item, i) => {
-                const Icon = marketIcons[i];
-                return (
-                  <StaggerItem key={i}>
-                    <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-lg px-4 py-3">
-                      <Icon className="w-4 h-4 text-slate-500 shrink-0" />
-                      <span className="text-sm font-medium text-slate-700">{item}</span>
-                    </div>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-          </AnimatedSection>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {columns.map((col, colIndex) => (
+            <AnimatedSection key={colIndex} delay={colIndex * 0.1}>
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 h-full">
+                <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-6">
+                  {col.label}
+                </p>
+                <StaggerContainer className="space-y-3">
+                  {col.items.map((item, i) => {
+                    const Icon = col.icons[i];
+                    return (
+                      <StaggerItem key={i}>
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-teal-300 transition-colors">
+                          <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center shrink-0">
+                            <Icon className="w-4 h-4 text-teal-600" />
+                          </div>
+                          <span className="text-sm font-medium text-slate-700">{item}</span>
+                        </div>
+                      </StaggerItem>
+                    );
+                  })}
+                </StaggerContainer>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
+
+        <AnimatedSection delay={0.4} className="mt-8">
+          <div className="bg-teal-50 border border-teal-200 rounded-xl px-6 py-4 max-w-3xl mx-auto text-center">
+            <p className="text-sm text-slate-600">{t.marketRelevance.text}</p>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -98,8 +98,8 @@ export const es = {
     titleHighlight: "reconstrucción por etapas",
     steps: [
       { title: "Desbridamiento", description: "Desbridamiento y creación del defecto", detail: "Preparación" },
-      { title: "Espaciador PMMA", description: "Colocación del espaciador PMMA", detail: "Manejo de infección" },
       { title: "Fijación CITadel", description: "Fijación interna con sistema CITadel", detail: "Estabilización" },
+      { title: "Espaciador PMMA", description: "Colocación del espaciador PMMA", detail: "Manejo de infección" },
       { title: "Reconstrucción", description: "Reconstrucción ósea definitiva", detail: "Etapa final" },
     ],
     footerNote: "Diseñado para tratamiento por etapas, no para reemplazo de defecto en una sola etapa.",
@@ -165,7 +165,7 @@ export const es = {
     titleHighlight: "desarrollo",
     badges: [
       "Primeras aplicaciones clínicas realizadas",
-      "Validación biomecánica en curso",
+      "Validación biomecánica completada",
       "Presentación EFORT 2026",
     ],
     description: "CITadel ha pasado por aplicaciones clínicas tempranas y validación biomecánica. Los resultados se presentarán en EFORT 2026.",

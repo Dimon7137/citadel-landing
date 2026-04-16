@@ -98,8 +98,8 @@ export const uk = {
     titleHighlight: "етапнiй реконструкцiї",
     steps: [
       { title: "Дебридмент", description: "Дебридмент та формування дефекту", detail: "Пiдготовка" },
-      { title: "PMMA спейсер", description: "Встановлення PMMA спейсера", detail: "Контроль iнфекцiї" },
       { title: "Фiксацiя CITadel", description: "Внутрiшня фiксацiя системою CITadel", detail: "Стабiлiзацiя" },
+      { title: "PMMA спейсер", description: "Встановлення PMMA спейсера", detail: "Контроль iнфекцiї" },
       { title: "Реконструкцiя", description: "Остаточна кiсткова реконструкцiя", detail: "Фiнальний етап" },
     ],
     footerNote: "Розроблено для етапного лiкування, а не для одноетапного замiщення дефекту.",
@@ -165,7 +165,7 @@ export const uk = {
     titleHighlight: "розвитку",
     badges: [
       "Виконанi першi клiнiчнi застосування",
-      "Тривє бiомеханiчна валiдацiя",
+      "Бiомеханiчна валiдацiя завершена",
       "Презентацiя на EFORT 2026",
     ],
     description: "CITadel пройшов раннi клiнiчнi застосування та бiомеханiчну валiдацiю. Результати будуть представленi на EFORT 2026.",
