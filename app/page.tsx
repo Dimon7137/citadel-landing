@@ -2,14 +2,15 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/shared/StickyCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { PositioningSection } from "@/components/sections/PositioningSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { SolutionSection } from "@/components/sections/SolutionSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { UseCasesSection } from "@/components/sections/UseCasesSection";
-import { DifferentiationSection } from "@/components/sections/DifferentiationSection";
+import { GapSection } from "@/components/sections/GapSection";
+import { LimitationsSection } from "@/components/sections/LimitationsSection";
+import { SystemSection } from "@/components/sections/SystemSection";
+import { CorePrincipleSection } from "@/components/sections/CorePrincipleSection";
+import { WhatChangesSection } from "@/components/sections/WhatChangesSection";
+import { PortfolioFitSection } from "@/components/sections/PortfolioFitSection";
+import { MarketRelevanceSection } from "@/components/sections/MarketRelevanceSection";
 import { ValidationSection } from "@/components/sections/ValidationSection";
-import { PartnershipSection } from "@/components/sections/PartnershipSection";
+import { CTASection } from "@/components/sections/CTASection";
 import { DoctorSection } from "@/components/sections/DoctorSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -20,14 +21,15 @@ export default function Home() {
       <StickyCTA />
       <main className="isolate">
         <HeroSection />
-        <PositioningSection />
-        <ProblemSection />
-        <SolutionSection />
-        <HowItWorksSection />
-        <UseCasesSection />
-        <DifferentiationSection />
+        <GapSection />
+        <LimitationsSection />
+        <SystemSection />
+        <CorePrincipleSection />
+        <WhatChangesSection />
+        <PortfolioFitSection />
+        <MarketRelevanceSection />
         <ValidationSection />
-        <PartnershipSection />
+        <CTASection />
         <DoctorSection />
         <ContactSection />
       </main>

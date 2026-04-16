@@ -1,9 +1,9 @@
 export const en = {
   // Navigation
   nav: {
-    solution: "Solution",
-    howItWorks: "How It Works",
-    differentiation: "Differentiation",
+    system: "System",
+    whatChanges: "What Changes",
+    portfolioFit: "Portfolio Fit",
     validation: "Validation",
     partnership: "Partnership",
     contact: "Contact",
@@ -27,130 +27,134 @@ export const en = {
 
   // Hero
   hero: {
-    positioningLine: "A new category between external fixation and definitive reconstruction",
-    title: "Temporary Internal Stabilisation for",
-    titleHighlight: "Critical Long-Bone Defects",
-    subtitle: "A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.",
-    badges: ["TRL 4–5", "Validated", "PMMA ready", "Modular"],
+    title: "Structuring the most unstable phase in",
+    titleHighlight: "limb reconstruction",
+    subtitle: "CITadel is a temporary internal stabilisation system designed to control the interval between debridement and definitive reconstruction.",
+    supportLine: "Mechanically stable. Biologically controlled. Functionally enabling.",
     imageAlt: "CITadel — modular intramedullary fixator for critical long-bone defects",
-    stats: [
-      { num: "12+", label: "length & diameter configurations" },
-      { num: "Earlier", label: "progression to reconstruction" },
-      { num: "1", label: "internal fixation instead of multiple temporary solutions" },
-    ],
   },
 
-  // Positioning
-  positioning: {
-    label: "Where CITadel Fits",
-    title: "Where CITadel fits in the",
-    titleHighlight: "treatment pathway",
-    steps: ["External Fixation", "CITadel (TIS)", "Definitive Reconstruction"],
-    caption: "Designed for temporary internal stabilisation in staged limb reconstruction.",
-  },
-
-  // Problem
-  problem: {
-    label: "The Problem",
-    title: "Current limitations in managing",
-    titleHighlight: "critical bone defects",
-    items: [
-      "No dedicated internal solution for staged defect management",
-      "External fixation increases complications and patient burden",
-      "Standard implants are not designed for spacer-supported constructs",
-      "Reconstruction pathways remain mechanically suboptimal",
-    ],
-  },
-
-  // Solution
-  solution: {
-    label: "The Solution",
-    title: "CITadel: a modular temporary",
-    titleHighlight: "internal stabilisation system",
-    features: [
-      { title: "Modular architecture", description: "Two-component system adaptable to defect size and anatomy." },
-      { title: "Mechanical-axis support", description: "Intramedullary alignment for stable temporary fixation." },
-      { title: "PMMA spacer compatibility", description: "Designed to function with antibiotic-loaded spacers." },
-      { title: "HA-Ag antibacterial interface", description: "Selective coating in bone-contact zones." },
-    ],
-    imageAlt: "CITadel system — modular intramedullary fixator with annotations",
-  },
-
-  // How It Works
-  howItWorks: {
-    label: "How It Works",
-    title: "How CITadel is used in",
+  // The Gap
+  gap: {
+    label: "The Gap",
+    title: "The missing structure in",
     titleHighlight: "staged reconstruction",
-    steps: [
-      { title: "Debridement", description: "Debridement and defect creation", detail: "Preparation" },
-      { title: "PMMA Spacer", description: "PMMA spacer placement", detail: "Infection management" },
-      { title: "CITadel Fixation", description: "Internal fixation with CITadel system", detail: "Stabilisation" },
-      { title: "Reconstruction", description: "Definitive bone reconstruction", detail: "Final stage" },
+    text: "In clinical practice, there is a critical phase between initial debridement and definitive reconstruction that remains poorly defined and inconsistently managed.",
+    appliesLabel: "This applies to",
+    appliesItems: [
+      "Infected long-bone defects",
+      "Osteomyelitis after debridement",
+      "High-energy trauma with segmental bone loss",
+      "Oncologic resections",
     ],
-    footerNote: "Designed for staged treatment, not single-stage defect replacement.",
+    keyLine: "This phase currently lacks a clearly defined internal stabilisation strategy.",
   },
 
-  // Use Cases
-  useCases: {
-    label: "Use Cases",
-    title: "Primary clinical",
-    titleHighlight: "use cases",
+  // Limitations
+  limitations: {
+    label: "Current Approaches",
+    title: "Where current solutions",
+    titleHighlight: "fall short",
+    external: {
+      title: "External fixation",
+      items: [
+        "Decreasing stability over time",
+        "Patient discomfort",
+        "Pin-site complications",
+      ],
+    },
+    internal: {
+      title: "Internal fixation",
+      items: [
+        "Limited use in infected environments",
+      ],
+    },
+    conclusion: "The transition phase between treatment stages remains structurally undefined.",
+  },
+
+  // The System
+  system: {
+    label: "The System",
+    title: "CITadel",
+    titleHighlight: "system",
+    text: "CITadel is a modular intramedullary stabilisation system combined with a PMMA spacer and selective antibacterial coating.",
+    subtext: "It is designed to provide controlled internal stability during the transition phase of staged limb reconstruction.",
+    imageAlt: "CITadel system — modular intramedullary stabilisation system",
+  },
+
+  // Core Principle
+  corePrinciple: {
+    label: "Core Principle",
+    title: "Managing",
+    titleHighlight: "uncertainty",
+    text: "CITadel does not attempt to replace reconstruction. It creates a controlled interval in which reconstruction becomes more predictable.",
+    subtext: "Rather than being just an implant, it functions as a system that structures the most unstable phase of treatment.",
+  },
+
+  // What Changes
+  whatChanges: {
+    label: "What Changes",
+    title: "What becomes",
+    titleHighlight: "more predictable",
+    subtitle: "After applying CITadel",
     items: [
-      { title: "Infected critical bone defects", description: "Osteomyelitis cases requiring staged debridement, antibiotic spacer support, and delayed reconstruction." },
-      { title: "Blast and high-energy trauma", description: "Complex limb injuries with segmental bone loss requiring temporary internal stabilisation." },
-      { title: "Oncologic segmental resection", description: "Post-resection defects needing stable internal fixation during staged limb salvage." },
+      "Limb alignment and length are preserved",
+      "Local infection control is supported",
+      "Conditions for controlled early functional loading are enabled",
+      "Patient compliance improves",
+      "Second-stage reconstruction becomes more predictable",
     ],
   },
 
-  // Differentiation
-  differentiation: {
-    label: "Differentiation",
-    title: "Why CITadel is",
-    titleHighlight: "different",
-    currentTitle: "Current solutions",
-    currentItems: [
-      "External fixation dependency",
-      "Lack of spacer-compatible systems",
-      "Limited internal options for defects",
+  // Portfolio Fit
+  portfolioFit: {
+    label: "Portfolio Fit",
+    title: "Integration within",
+    titleHighlight: "orthopaedic portfolios",
+    fitsLabel: "CITadel fits within",
+    fitsItems: ["Trauma", "Infection management", "Limb reconstruction"],
+    extendsLabel: "It extends",
+    extendsItems: [
+      "Intramedullary fixation systems",
+      "Antibiotic spacer-based workflows",
     ],
-    citadelTitle: "CITadel",
-    citadelItems: [
-      "Internal temporary stabilisation",
-      "Designed for spacer-based workflows",
-      "Defect-focused construct logic",
+  },
+
+  // Market Relevance
+  marketRelevance: {
+    label: "Market Relevance",
+    title: "A need beyond",
+    titleHighlight: "specific scenarios",
+    text: "The clinical need addressed by CITadel is not limited to conflict-related injuries.",
+    subtitle: "It is present across a broad range of indications",
+    items: [
+      "Infected non-unions",
+      "Osteomyelitis",
+      "Complex trauma",
+      "Oncologic bone defects",
     ],
-    impactTitle: "Clinical & Economic Impact",
-    impactItems: [
-      "Reduced hospital stay",
-      "Faster patient recovery",
-      "Improved stability vs external fixation",
-      "Fewer complications and revisions",
-    ],
-    impactHighlight: "Positioned as a cost-saving treatment protocol",
   },
 
   // Validation
   validation: {
     label: "Validation",
-    title: "Development and",
-    titleHighlight: "validation status",
-    badges: ["TRL 4–5", "Bench testing completed", "Early clinical application", "Prototype validated"],
-    description: "CITadel has undergone biomechanical testing and early clinical use. Further development and pilot implementation are planned with industrial partners.",
-    trlNote: "Current TRL: 4–5 → Target: TRL 6 (clinical pilot)",
+    title: "Development",
+    titleHighlight: "status",
+    badges: [
+      "Early clinical applications performed",
+      "Biomechanical validation in progress",
+      "EFORT 2026 presentation",
+    ],
+    description: "CITadel has undergone early clinical application and biomechanical validation. Results will be presented at EFORT 2026.",
   },
 
-  // Partnership
+  // Partnership / CTA
   partnership: {
     label: "Partnership",
     title: "Partnership and",
-    titleHighlight: "collaboration opportunities",
-    items: [
-      { title: "Industrial licensing", description: "License the CITadel system for manufacturing and distribution within your product portfolio." },
-      { title: "Co-development", description: "Joint engineering and regulatory pathway development towards CE/MDR compliance." },
-      { title: "Clinical pilot sites", description: "Partner as a reference centre for structured clinical validation and pilot deployment." },
-      { title: "Strategic investment", description: "Accelerate transition to clinical-scale adoption through strategic funding." },
-    ],
-    ctaText: "Interested in working with us? Let's start the conversation.",
+    titleHighlight: "further development",
+    description: "CITadel is open to strategic partnerships, clinical validation programs, and integration into existing orthopaedic portfolios.",
+    ctaText: "Interested in exploring opportunities? Let's start the conversation.",
   },
 
   // Doctor / About
@@ -194,7 +198,7 @@ export const en = {
   // Footer
   footer: {
     description: "Modular intramedullary fixator with selective HA+Ag coating for temporary internal stabilisation of critical long-bone defects.",
-    statusBadge: "TRL 4–5 · Bench Validated · EIC Accelerator",
+    statusBadge: "Early clinical application · Biomechanical validation · EFORT 2026",
     navTitle: "Navigation",
     contactTitle: "Contact",
     collaborationLabel: "Collaboration",

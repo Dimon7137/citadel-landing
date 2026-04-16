@@ -1,7 +1,7 @@
 export const NAV_KEYS = [
-  { key: "solution" as const, href: "#solution" },
-  { key: "howItWorks" as const, href: "#how-it-works" },
-  { key: "differentiation" as const, href: "#differentiation" },
+  { key: "system" as const, href: "#system" },
+  { key: "whatChanges" as const, href: "#what-changes" },
+  { key: "portfolioFit" as const, href: "#portfolio-fit" },
   { key: "validation" as const, href: "#validation" },
   { key: "partnership" as const, href: "#partnership" },
   { key: "contact" as const, href: "#contact" },

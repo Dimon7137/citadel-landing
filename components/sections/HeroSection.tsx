@@ -49,30 +49,21 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left — text */}
           <div className="text-left">
-            <motion.p initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              className="text-xs sm:text-sm text-teal-300/70 font-medium tracking-wide mb-5">
-              {t.hero.positioningLine}
-            </motion.p>
-
-            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.08 }}
+            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
               {t.hero.title}{" "}
               <span className="text-teal-400 glow-text-teal">{t.hero.titleHighlight}</span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.18 }}
-              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.12 }}
+              className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6 max-w-xl">
               {t.hero.subtitle}
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }}
-              className="flex flex-wrap gap-1.5 sm:gap-2 mb-8">
-              {t.hero.badges.map((badge) => (
-                <span key={badge} className="text-[10px] sm:text-xs font-medium text-teal-300/80 border border-teal-500/20 rounded-full px-2 sm:px-3.5 py-1 sm:py-1.5 bg-teal-900/20">
-                  {badge}
-                </span>
-              ))}
-            </motion.div>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.22 }}
+              className="text-sm sm:text-base font-medium text-teal-300/80 tracking-wide mb-8 max-w-xl">
+              {t.hero.supportLine}
+            </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.32 }}
               className="flex flex-col sm:flex-row gap-3">

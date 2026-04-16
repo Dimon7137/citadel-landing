@@ -1,9 +1,9 @@
 export const de = {
   // Navigation
   nav: {
-    solution: "Lösung",
-    howItWorks: "So funktioniert es",
-    differentiation: "Differenzierung",
+    system: "System",
+    whatChanges: "Was sich ändert",
+    portfolioFit: "Portfolio-Integration",
     validation: "Validierung",
     partnership: "Partnerschaft",
     contact: "Kontakt",
@@ -27,130 +27,134 @@ export const de = {
 
   // Hero
   hero: {
-    positioningLine: "Eine neue Kategorie zwischen externer Fixation und definitiver Rekonstruktion",
-    title: "Temporäre interne Stabilisierung für",
-    titleHighlight: "kritische Langknochendefekte",
-    subtitle: "Ein modulares intramedulläres System für stufenweise Rekonstruktion, PMMA-Spacer-Unterstützung und infektionsbewusste temporäre Fixation.",
-    badges: ["TRL 4–5", "Validiert", "PMMA ready", "Modular"],
+    title: "Strukturierung der instabilsten Phase der",
+    titleHighlight: "Extremitätenrekonstruktion",
+    subtitle: "CITadel ist ein temporäres internes Stabilisierungssystem zur Kontrolle des Intervalls zwischen Débridement und definitiver Rekonstruktion.",
+    supportLine: "Mechanisch stabil. Biologisch kontrolliert. Funktionell ermöglichend.",
     imageAlt: "CITadel — modularer intramedullärer Fixateur für kritische Langknochendefekte",
-    stats: [
-      { num: "12+", label: "Längen- und Durchmesserkonfigurationen" },
-      { num: "Früher", label: "Übergang zur Rekonstruktion" },
-      { num: "1", label: "interne Fixation statt mehrerer temporärer Lösungen" },
+  },
+
+  // The Gap
+  gap: {
+    label: "Die Lücke",
+    title: "Die fehlende Struktur in der",
+    titleHighlight: "stufenweisen Rekonstruktion",
+    text: "In der klinischen Praxis gibt es eine kritische Phase zwischen dem initialen Débridement und der definitiven Rekonstruktion, die schlecht definiert und uneinheitlich gesteuert bleibt.",
+    appliesLabel: "Dies betrifft",
+    appliesItems: [
+      "Infizierte Langknochendefekte",
+      "Osteomyelitis nach Débridement",
+      "Hochenergietraumata mit segmentalem Knochenverlust",
+      "Onkologische Resektionen",
     ],
+    keyLine: "Diese Phase verfügt derzeit über keine klar definierte interne Stabilisierungsstrategie.",
   },
 
-  // Positioning
-  positioning: {
-    label: "Wo CITadel einzuordnen ist",
-    title: "Wo CITadel in den",
-    titleHighlight: "Behandlungspfad passt",
-    steps: ["Externe Fixation", "CITadel (TIS)", "Definitive Rekonstruktion"],
-    caption: "Konzipiert für die temporäre interne Stabilisierung bei stufenweiser Extremitätenrekonstruktion.",
+  // Limitations
+  limitations: {
+    label: "Aktuelle Ansätze",
+    title: "Wo aktuelle Lösungen",
+    titleHighlight: "an Grenzen stoßen",
+    external: {
+      title: "Externe Fixation",
+      items: [
+        "Abnehmende Stabilität über die Zeit",
+        "Patientenunwohlsein",
+        "Pin-Infektionen",
+      ],
+    },
+    internal: {
+      title: "Interne Fixation",
+      items: [
+        "Eingeschränkter Einsatz in infektiösen Umgebungen",
+      ],
+    },
+    conclusion: "Die Übergangsphase zwischen den Behandlungsstufen bleibt strukturell undefiniert.",
   },
 
-  // Problem
-  problem: {
-    label: "Das Problem",
-    title: "Aktuelle Limitierungen beim Management",
-    titleHighlight: "kritischer Knochendefekte",
+  // The System
+  system: {
+    label: "Das System",
+    title: "CITadel",
+    titleHighlight: "System",
+    text: "CITadel ist ein modulares intramedulläres Stabilisierungssystem in Kombination mit einem PMMA-Spacer und selektiver antibakterieller Beschichtung.",
+    subtext: "Es wurde für kontrollierte interne Stabilität während der Übergangsphase der stufenweisen Extremitätenrekonstruktion entwickelt.",
+    imageAlt: "CITadel System — modulares intramedulläres Stabilisierungssystem",
+  },
+
+  // Core Principle
+  corePrinciple: {
+    label: "Kernprinzip",
+    title: "Management von",
+    titleHighlight: "Unsicherheit",
+    text: "CITadel versucht nicht, die Rekonstruktion zu ersetzen. Es schafft ein kontrolliertes Intervall, in dem die Rekonstruktion vorhersagbarer wird.",
+    subtext: "Mehr als nur ein Implantat — ein System, das die instabilste Phase der Behandlung strukturiert.",
+  },
+
+  // What Changes
+  whatChanges: {
+    label: "Was sich ändert",
+    title: "Was wird",
+    titleHighlight: "vorhersagbarer",
+    subtitle: "Nach Anwendung von CITadel",
     items: [
-      "Keine dedizierte interne Lösung für stufenweises Defektmanagement",
-      "Externe Fixation erhöht Komplikationen und Belastung für den Patienten",
-      "Standardimplantate sind nicht für Spacer-gestützte Konstrukte ausgelegt",
-      "Rekonstruktionspfade bleiben mechanisch suboptimal",
+      "Achsausrichtung und Länge der Extremität bleiben erhalten",
+      "Lokale Infektionskontrolle wird unterstützt",
+      "Bedingungen für kontrollierte frühe funktionelle Belastung werden ermöglicht",
+      "Patientencompliance verbessert sich",
+      "Die zweite Rekonstruktionsstufe wird vorhersagbarer",
     ],
   },
 
-  // Solution
-  solution: {
-    label: "Die Lösung",
-    title: "CITadel: ein modulares temporäres",
-    titleHighlight: "internes Stabilisierungssystem",
-    features: [
-      { title: "Modulare Architektur", description: "Zweikomponentensystem, anpassbar an Defektgröße und Anatomie." },
-      { title: "Mechanische Achsunterstützung", description: "Intramedulläre Ausrichtung für stabile temporäre Fixation." },
-      { title: "PMMA-Spacer-Kompatibilität", description: "Entwickelt für den Einsatz mit antibiotikabeladenen Spacern." },
-      { title: "HA-Ag antibakterielle Grenzfläche", description: "Selektive Beschichtung in Knochenkontaktzonen." },
+  // Portfolio Fit
+  portfolioFit: {
+    label: "Portfolio-Integration",
+    title: "Integration in",
+    titleHighlight: "orthopädische Portfolios",
+    fitsLabel: "CITadel passt in die Bereiche",
+    fitsItems: ["Trauma", "Infektionsmanagement", "Extremitätenrekonstruktion"],
+    extendsLabel: "Es erweitert",
+    extendsItems: [
+      "Intramedulläre Fixationssysteme",
+      "Antibiotika-Spacer-basierte Workflows",
     ],
-    imageAlt: "CITadel-System — modularer intramedullärer Fixateur mit Beschriftungen",
   },
 
-  // How It Works
-  howItWorks: {
-    label: "So funktioniert es",
-    title: "Wie CITadel bei der",
-    titleHighlight: "stufenweisen Rekonstruktion eingesetzt wird",
-    steps: [
-      { title: "Débridement", description: "Débridement und Defektbildung", detail: "Vorbereitung" },
-      { title: "PMMA-Spacer", description: "PMMA-Spacer-Einlage", detail: "Infektionsmanagement" },
-      { title: "CITadel-Fixation", description: "Interne Fixation mit dem CITadel-System", detail: "Stabilisierung" },
-      { title: "Rekonstruktion", description: "Definitive Knochenrekonstruktion", detail: "Abschlussphase" },
-    ],
-    footerNote: "Konzipiert für stufenweise Behandlung, nicht für einzeitigen Defektersatz.",
-  },
-
-  // Use Cases
-  useCases: {
-    label: "Anwendungsfälle",
-    title: "Primäre klinische",
-    titleHighlight: "Anwendungsfälle",
+  // Market Relevance
+  marketRelevance: {
+    label: "Marktrelevanz",
+    title: "Ein Bedarf jenseits",
+    titleHighlight: "spezifischer Szenarien",
+    text: "Der klinische Bedarf an CITadel beschränkt sich nicht auf konfliktbedingte Verletzungen.",
+    subtitle: "Er ist bei einem breiten Spektrum von Indikationen vorhanden",
     items: [
-      { title: "Infizierte kritische Knochendefekte", description: "Osteomyelitis-Fälle, die stufenweises Débridement, Antibiotika-Spacer-Unterstützung und verzögerte Rekonstruktion erfordern." },
-      { title: "Explosions- und Hochenergietrauma", description: "Komplexe Extremitätenverletzungen mit segmentalem Knochenverlust, die temporäre interne Stabilisierung erfordern." },
-      { title: "Onkologische segmentale Resektion", description: "Postresektionsdefekte, die stabile interne Fixation während der stufenweisen Extremitätenrettung benötigen." },
+      "Infizierte Pseudarthrosen",
+      "Osteomyelitis",
+      "Komplexe Traumata",
+      "Onkologische Knochendefekte",
     ],
-  },
-
-  // Differentiation
-  differentiation: {
-    label: "Differenzierung",
-    title: "Warum CITadel",
-    titleHighlight: "anders ist",
-    currentTitle: "Aktuelle Lösungen",
-    currentItems: [
-      "Abhängigkeit von externer Fixation",
-      "Fehlende Spacer-kompatible Systeme",
-      "Begrenzte interne Optionen für Defekte",
-    ],
-    citadelTitle: "CITadel",
-    citadelItems: [
-      "Interne temporäre Stabilisierung",
-      "Für Spacer-basierte Arbeitsabläufe konzipiert",
-      "Defektfokussierte Konstruktlogik",
-    ],
-    impactTitle: "Klinische und wirtschaftliche Auswirkungen",
-    impactItems: [
-      "Verkürzter Krankenhausaufenthalt",
-      "Schnellere Patientenerholung",
-      "Verbesserte Stabilität gegenüber externer Fixation",
-      "Weniger Komplikationen und Revisionen",
-    ],
-    impactHighlight: "Positioniert als kostensparendes Behandlungsprotokoll",
   },
 
   // Validation
   validation: {
     label: "Validierung",
-    title: "Entwicklung und",
-    titleHighlight: "Validierungsstatus",
-    badges: ["TRL 4–5", "Labortests abgeschlossen", "Frühe klinische Anwendung", "Prototyp validiert"],
-    description: "CITadel hat biomechanische Tests und frühe klinische Anwendung durchlaufen. Weitere Entwicklung und Pilotimplementierung sind mit Industriepartnern geplant.",
-    trlNote: "Aktueller TRL: 4–5 → Ziel: TRL 6 (klinischer Pilot)",
+    title: "Entwicklungs-",
+    titleHighlight: "status",
+    badges: [
+      "Erste klinische Anwendungen durchgeführt",
+      "Biomechanische Validierung läuft",
+      "EFORT 2026 Präsentation",
+    ],
+    description: "CITadel hat frühe klinische Anwendungen und biomechanische Validierung durchlaufen. Die Ergebnisse werden auf der EFORT 2026 präsentiert.",
   },
 
-  // Partnership
+  // Partnership / CTA
   partnership: {
     label: "Partnerschaft",
     title: "Partnerschaft und",
-    titleHighlight: "Kooperationsmöglichkeiten",
-    items: [
-      { title: "Industrielle Lizenzierung", description: "Lizenzieren Sie das CITadel-System für Fertigung und Vertrieb in Ihrem Produktportfolio." },
-      { title: "Gemeinsame Entwicklung", description: "Gemeinsame Ingenieurleistung und regulatorische Pfadentwicklung in Richtung CE/MDR-Konformität." },
-      { title: "Klinische Pilotzentren", description: "Partnerschaft als Referenzzentrum für strukturierte klinische Validierung und Piloteinsatz." },
-      { title: "Strategische Investition", description: "Beschleunigung des Übergangs zur klinischen Anwendung im großen Maßstab durch strategische Finanzierung." },
-    ],
-    ctaText: "Interessiert an einer Zusammenarbeit? Lassen Sie uns ins Gespräch kommen.",
+    titleHighlight: "Weiterentwicklung",
+    description: "CITadel ist offen für strategische Partnerschaften, klinische Validierungsprogramme und die Integration in bestehende orthopädische Portfolios.",
+    ctaText: "Interesse an einer Zusammenarbeit? Beginnen wir das Gespräch.",
   },
 
   // Doctor / About
@@ -160,7 +164,7 @@ export const de = {
     titleHighlight: "Erfinder",
     name: "Maksym Baida, PhD",
     role: "Orthopädischer Unfallchirurg · Entwickler von CITadel",
-    bio: "Über 15 Jahre klinische Praxis in Traumatologie und rekonstruktiver Orthopädie. Außerordentlicher Professor an der Nationalen Medizinischen Universität Bogomolets, Kiew. CITadel entstand aus einem direkten klinischen Bedarf — dem Fehlen einer zuverlässigen internen Stabilisierungsoption für Patienten, die eine stufenweise Rekonstruktion benötigen.",
+    bio: "Über 15 Jahre klinische Praxis in Traumatologie und rekonstruktiver Orthopädie. Dozent an der Nationalen Medizinischen Universität Bogomolets, Kiew. CITadel entstand aus einem direkten klinischen Bedarf — dem Fehlen einer zuverlässigen internen Stabilisierungsoption für Patienten, die eine stufenweise Rekonstruktion benötigen.",
     imageAlt: "Dr. Maksym Baida",
     stats: [
       { value: "15+", label: "Jahre Praxis" },
@@ -185,7 +189,7 @@ export const de = {
     messageLabel: "Nachricht *",
     namePlaceholder: "Ihr Name",
     emailPlaceholder: "email@organisation.com",
-    orgPlaceholder: "Unternehmen, Krankenhaus, Universität...",
+    orgPlaceholder: "Unternehmen, Klinik, Universität...",
     messagePlaceholder: "Beschreiben Sie Ihr Interesse...",
     successTitle: "Nachricht gesendet",
     successText: "Wir melden uns innerhalb eines Werktages bei Ihnen.",
@@ -193,8 +197,8 @@ export const de = {
 
   // Footer
   footer: {
-    description: "Modularer intramedullärer Fixateur mit selektiver HA+Ag-Beschichtung für temporäre interne Stabilisierung kritischer Langknochendefekte.",
-    statusBadge: "TRL 4–5 · Laborvalidiert · EIC Accelerator",
+    description: "Modularer intramedullärer Fixateur mit selektiver HA+Ag-Beschichtung für die temporäre interne Stabilisierung kritischer Langknochendefekte.",
+    statusBadge: "Frühe klinische Anwendung · Biomechanische Validierung · EFORT 2026",
     navTitle: "Navigation",
     contactTitle: "Kontakt",
     collaborationLabel: "Zusammenarbeit",

@@ -1,9 +1,9 @@
 export const es = {
   // Navigation
   nav: {
-    solution: "Solución",
-    howItWorks: "Cómo Funciona",
-    differentiation: "Diferenciación",
+    system: "Sistema",
+    whatChanges: "Qué cambia",
+    portfolioFit: "Integración",
     validation: "Validación",
     partnership: "Colaboración",
     contact: "Contacto",
@@ -27,140 +27,144 @@ export const es = {
 
   // Hero
   hero: {
-    positioningLine: "Una nueva categoría entre la fijación externa y la reconstrucción definitiva",
-    title: "Estabilización Interna Temporal para",
-    titleHighlight: "Defectos Críticos de Huesos Largos",
-    subtitle: "Un sistema intramedular modular diseñado para la reconstrucción por etapas, soporte de espaciadores de PMMA y fijación temporal consciente de infecciones.",
-    badges: ["TRL 4–5", "Validado", "PMMA ready", "Modular"],
+    title: "Estructuración de la fase más inestable en la",
+    titleHighlight: "reconstrucción de extremidades",
+    subtitle: "CITadel es un sistema de estabilización interna temporal diseñado para controlar el intervalo entre el desbridamiento y la reconstrucción definitiva.",
+    supportLine: "Mecánicamente estable. Biológicamente controlado. Funcionalmente habilitante.",
     imageAlt: "CITadel — fijador intramedular modular para defectos críticos de huesos largos",
-    stats: [
-      { num: "12+", label: "configuraciones de longitud y diámetro" },
-      { num: "Antes", label: "progresión hacia la reconstrucción" },
-      { num: "1", label: "fijación interna en lugar de múltiples soluciones temporales" },
-    ],
   },
 
-  // Positioning
-  positioning: {
-    label: "Posicionamiento de CITadel",
-    title: "Dónde se ubica CITadel en la",
-    titleHighlight: "vía de tratamiento",
-    steps: ["Fijación Externa", "CITadel (EIT)", "Reconstrucción Definitiva"],
-    caption: "Diseñado para la estabilización interna temporal en la reconstrucción de extremidades por etapas.",
-  },
-
-  // Problem
-  problem: {
-    label: "El Problema",
-    title: "Limitaciones actuales en el manejo de",
-    titleHighlight: "defectos óseos críticos",
-    items: [
-      "No existe una solución interna dedicada para el manejo por etapas de defectos",
-      "La fijación externa aumenta las complicaciones y la carga para el paciente",
-      "Los implantes estándar no están diseñados para constructos con soporte de espaciadores",
-      "Las vías de reconstrucción siguen siendo mecánicamente subóptimas",
-    ],
-  },
-
-  // Solution
-  solution: {
-    label: "La Solución",
-    title: "CITadel: un sistema modular temporal de",
-    titleHighlight: "estabilización interna",
-    features: [
-      { title: "Arquitectura modular", description: "Sistema de dos componentes adaptable al tamaño del defecto y la anatomía." },
-      { title: "Soporte del eje mecánico", description: "Alineación intramedular para una fijación temporal estable." },
-      { title: "Compatibilidad con espaciadores de PMMA", description: "Diseñado para funcionar con espaciadores cargados de antibióticos." },
-      { title: "Interfaz antibacteriana HA-Ag", description: "Recubrimiento selectivo en zonas de contacto óseo." },
-    ],
-    imageAlt: "Sistema CITadel — fijador intramedular modular con anotaciones",
-  },
-
-  // How It Works
-  howItWorks: {
-    label: "Cómo Funciona",
-    title: "Cómo se utiliza CITadel en la",
+  // The Gap
+  gap: {
+    label: "El problema",
+    title: "La estructura ausente en la",
     titleHighlight: "reconstrucción por etapas",
-    steps: [
-      { title: "Desbridamiento", description: "Desbridamiento y creación del defecto", detail: "Preparación" },
-      { title: "Espaciador de PMMA", description: "Colocación del espaciador de PMMA", detail: "Manejo de infección" },
-      { title: "Fijación con CITadel", description: "Fijación interna con el sistema CITadel", detail: "Estabilización" },
-      { title: "Reconstrucción", description: "Reconstrucción ósea definitiva", detail: "Etapa final" },
+    text: "En la práctica clínica, existe una fase crítica entre el desbridamiento inicial y la reconstrucción definitiva que permanece mal definida y manejada de forma inconsistente.",
+    appliesLabel: "Esto aplica a",
+    appliesItems: [
+      "Defectos infectados de huesos largos",
+      "Osteomielitis tras desbridamiento",
+      "Traumatismos de alta energía con pérdida ósea segmentaria",
+      "Resecciones oncológicas",
     ],
-    footerNote: "Diseñado para tratamiento por etapas, no para reemplazo de defectos en una sola etapa.",
+    keyLine: "Esta fase actualmente carece de una estrategia de estabilización interna claramente definida.",
   },
 
-  // Use Cases
-  useCases: {
-    label: "Casos de Uso",
-    title: "Principales",
-    titleHighlight: "casos clínicos de uso",
+  // Limitations
+  limitations: {
+    label: "Enfoques actuales",
+    title: "Donde las soluciones actuales",
+    titleHighlight: "se quedan cortas",
+    external: {
+      title: "Fijación externa",
+      items: [
+        "Estabilidad decreciente con el tiempo",
+        "Incomodidad del paciente",
+        "Complicaciones en los sitios de los pines",
+      ],
+    },
+    internal: {
+      title: "Fijación interna",
+      items: [
+        "Uso limitado en ambientes infectados",
+      ],
+    },
+    conclusion: "La fase de transición entre las etapas del tratamiento permanece estructuralmente indefinida.",
+  },
+
+  // The System
+  system: {
+    label: "El Sistema",
+    title: "Sistema",
+    titleHighlight: "CITadel",
+    text: "CITadel es un sistema modular de estabilización intramedular combinado con un espaciador PMMA y recubrimiento antibacteriano selectivo.",
+    subtext: "Está diseñado para proporcionar estabilidad interna controlada durante la fase de transición de la reconstrucción por etapas de extremidades.",
+    imageAlt: "Sistema CITadel — sistema modular de estabilización intramedular",
+  },
+
+  // Core Principle
+  corePrinciple: {
+    label: "Principio fundamental",
+    title: "Gestión de la",
+    titleHighlight: "incertidumbre",
+    text: "CITadel no intenta reemplazar la reconstrucción. Crea un intervalo controlado en el que la reconstrucción se vuelve más predecible.",
+    subtext: "Más que un simple implante, funciona como un sistema que estructura la fase más inestable del tratamiento.",
+  },
+
+  // What Changes
+  whatChanges: {
+    label: "Qué cambia",
+    title: "Qué se vuelve más",
+    titleHighlight: "predecible",
+    subtitle: "Tras la aplicación de CITadel",
     items: [
-      { title: "Defectos óseos críticos infectados", description: "Casos de osteomielitis que requieren desbridamiento por etapas, soporte de espaciadores antibióticos y reconstrucción diferida." },
-      { title: "Trauma por explosión y alta energía", description: "Lesiones complejas de extremidades con pérdida ósea segmentaria que requieren estabilización interna temporal." },
-      { title: "Resección segmentaria oncológica", description: "Defectos posresección que necesitan fijación interna estable durante el salvamento de extremidades por etapas." },
+      "Se preservan la alineación y longitud de la extremidad",
+      "Se apoya el control local de la infección",
+      "Se habilitan condiciones para la carga funcional temprana controlada",
+      "Mejora el cumplimiento del paciente",
+      "La segunda etapa de reconstrucción se vuelve más predecible",
     ],
   },
 
-  // Differentiation
-  differentiation: {
-    label: "Diferenciación",
-    title: "Por qué CITadel es",
-    titleHighlight: "diferente",
-    currentTitle: "Soluciones actuales",
-    currentItems: [
-      "Dependencia de la fijación externa",
-      "Falta de sistemas compatibles con espaciadores",
-      "Opciones internas limitadas para defectos",
+  // Portfolio Fit
+  portfolioFit: {
+    label: "Integración en portafolio",
+    title: "Integración en",
+    titleHighlight: "portafolios ortopédicos",
+    fitsLabel: "CITadel se integra en",
+    fitsItems: ["Trauma", "Manejo de infecciones", "Reconstrucción de extremidades"],
+    extendsLabel: "Amplía",
+    extendsItems: [
+      "Sistemas de fijación intramedular",
+      "Flujos de trabajo basados en espaciadores antibióticos",
     ],
-    citadelTitle: "CITadel",
-    citadelItems: [
-      "Estabilización interna temporal",
-      "Diseñado para flujos de trabajo con espaciadores",
-      "Lógica de constructo enfocada en el defecto",
+  },
+
+  // Market Relevance
+  marketRelevance: {
+    label: "Relevancia de mercado",
+    title: "Una necesidad más allá de",
+    titleHighlight: "escenarios específicos",
+    text: "La necesidad clínica que aborda CITadel no se limita a lesiones relacionadas con conflictos.",
+    subtitle: "Está presente en un amplio rango de indicaciones",
+    items: [
+      "Pseudoartrosis infectadas",
+      "Osteomielitis",
+      "Traumatismos complejos",
+      "Defectos óseos oncológicos",
     ],
-    impactTitle: "Impacto Clínico y Económico",
-    impactItems: [
-      "Reducción de la estancia hospitalaria",
-      "Recuperación más rápida del paciente",
-      "Mejor estabilidad frente a la fijación externa",
-      "Menos complicaciones y revisiones",
-    ],
-    impactHighlight: "Posicionado como un protocolo de tratamiento que reduce costos",
   },
 
   // Validation
   validation: {
     label: "Validación",
-    title: "Estado de desarrollo y",
-    titleHighlight: "validación",
-    badges: ["TRL 4–5", "Pruebas de banco completadas", "Aplicación clínica temprana", "Prototipo validado"],
-    description: "CITadel ha sido sometido a pruebas biomecánicas y uso clínico temprano. Se planea un mayor desarrollo e implementación piloto con socios industriales.",
-    trlNote: "TRL actual: 4–5 → Objetivo: TRL 6 (piloto clínico)",
+    title: "Estado de",
+    titleHighlight: "desarrollo",
+    badges: [
+      "Primeras aplicaciones clínicas realizadas",
+      "Validación biomecánica en curso",
+      "Presentación EFORT 2026",
+    ],
+    description: "CITadel ha pasado por aplicaciones clínicas tempranas y validación biomecánica. Los resultados se presentarán en EFORT 2026.",
   },
 
-  // Partnership
+  // Partnership / CTA
   partnership: {
     label: "Colaboración",
-    title: "Oportunidades de colaboración y",
-    titleHighlight: "asociación",
-    items: [
-      { title: "Licenciamiento industrial", description: "Licencie el sistema CITadel para fabricación y distribución dentro de su cartera de productos." },
-      { title: "Co-desarrollo", description: "Desarrollo conjunto de ingeniería y vía regulatoria hacia el cumplimiento CE/MDR." },
-      { title: "Centros piloto clínicos", description: "Asóciese como centro de referencia para validación clínica estructurada e implementación piloto." },
-      { title: "Inversión estratégica", description: "Acelere la transición a la adopción a escala clínica mediante financiación estratégica." },
-    ],
-    ctaText: "¿Le interesa trabajar con nosotros? Iniciemos la conversación.",
+    title: "Colaboración y",
+    titleHighlight: "desarrollo futuro",
+    description: "CITadel está abierto a alianzas estratégicas, programas de validación clínica e integración en portafolios ortopédicos existentes.",
+    ctaText: "¿Interesado en explorar oportunidades? Iniciemos la conversación.",
   },
 
   // Doctor / About
   doctor: {
     label: "Acerca de",
-    title: "Acerca del",
+    title: "Sobre el",
     titleHighlight: "inventor",
     name: "Maksym Baida, PhD",
-    role: "Cirujano de Trauma Ortopédico · Desarrollador de CITadel",
-    bio: "Más de 15 años de práctica clínica en traumatología y ortopedia reconstructiva. Profesor Asociado en la Universidad Nacional de Medicina Bogomolets, Kiev. CITadel nació de una necesidad clínica directa: la ausencia de una opción fiable de estabilización interna para pacientes que requieren reconstrucción por etapas.",
+    role: "Cirujano Ortopédico Traumatólogo · Desarrollador de CITadel",
+    bio: "Más de 15 años de práctica clínica en traumatología y ortopedia reconstructiva. Profesor Asociado en la Universidad Nacional de Medicina Bogomolets, Kiev. CITadel nació de una necesidad clínica directa — la ausencia de una opción fiable de estabilización interna para pacientes que requieren reconstrucción por etapas.",
     imageAlt: "Dr. Maksym Baida",
     stats: [
       { value: "15+", label: "Años de práctica" },
@@ -175,16 +179,16 @@ export const es = {
     title: "Contacto y",
     titleHighlight: "consultas",
     description: "CITadel está abierto a la colaboración con socios industriales, centros clínicos y partes interesadas estratégicas.",
-    emailLabel: "Correo electrónico",
+    emailLabel: "Email",
     phoneLabel: "Teléfono",
     formTitle: "Envíenos un mensaje",
     formSubtitle: "Describa su interés — respondemos en un día hábil",
     nameLabel: "Nombre *",
-    emailFieldLabel: "Correo electrónico *",
+    emailFieldLabel: "Email *",
     orgLabel: "Organización",
     messageLabel: "Mensaje *",
     namePlaceholder: "Su nombre",
-    emailPlaceholder: "email@organisation.com",
+    emailPlaceholder: "email@organización.com",
     orgPlaceholder: "Empresa, hospital, universidad...",
     messagePlaceholder: "Describa su interés...",
     successTitle: "Mensaje enviado",
@@ -193,12 +197,12 @@ export const es = {
 
   // Footer
   footer: {
-    description: "Fijador intramedular modular con recubrimiento selectivo de HA+Ag para la estabilización interna temporal de defectos críticos de huesos largos.",
-    statusBadge: "TRL 4–5 · Validado en Banco · EIC Accelerator",
+    description: "Fijador intramedular modular con recubrimiento selectivo HA+Ag para estabilización interna temporal de defectos críticos de huesos largos.",
+    statusBadge: "Aplicación clínica temprana · Validación biomecánica · EFORT 2026",
     navTitle: "Navegación",
     contactTitle: "Contacto",
     collaborationLabel: "Colaboración",
-    collaborationValue: "Asociación · Licenciamiento · Co-desarrollo",
+    collaborationValue: "Alianza · Licenciamiento · Co-desarrollo",
     copyright: "CITadel · Maksym Baida, PhD. Todos los derechos reservados.",
     institution: "Universidad Nacional de Medicina Bogomolets · Kiev, Ucrania",
   },

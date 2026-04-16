@@ -19,22 +19,17 @@ export function ValidationSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-6xl mx-auto mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto mb-8">
             {t.validation.badges.map((badge, i) => (
-              <motion.div key={badge} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                className="flex items-center justify-center text-center bg-teal-50 border border-teal-200 rounded-xl px-3 py-3">
-                <span className="text-[11px] sm:text-xs font-semibold text-teal-700 leading-tight">{badge}</span>
+                className="flex items-center justify-center text-center bg-teal-50 border border-teal-200 rounded-xl px-4 py-4">
+                <span className="text-xs sm:text-sm font-semibold text-teal-700 leading-tight">{badge}</span>
               </motion.div>
             ))}
           </div>
 
           <p className="text-center text-sm sm:text-base text-slate-500 leading-relaxed max-w-3xl mx-auto">{t.validation.description}</p>
-
-          <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.5 }} className="text-center text-sm font-semibold text-teal-600 mt-6">
-            {t.validation.trlNote}
-          </motion.p>
         </AnimatedSection>
       </div>
     </section>
