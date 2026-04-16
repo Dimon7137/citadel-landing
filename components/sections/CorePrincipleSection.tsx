@@ -19,7 +19,7 @@ export function CorePrincipleSection() {
             title={<>{t.corePrinciple.title}{" "}<span className="text-teal-400">{t.corePrinciple.titleHighlight}</span></>} light />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
           {/* Left — Core Principle */}
           <AnimatedSection direction="left">
             <div className="border-l-4 border-teal-500 pl-6 py-2">
