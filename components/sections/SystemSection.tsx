@@ -21,11 +21,11 @@ export function SystemSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center max-w-6xl mx-auto">
           <AnimatedSection direction="left">
-            <div className="max-w-lg">
-              <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-4">
+            <div>
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-800 leading-relaxed font-medium mb-5">
                 {t.system.text}
               </p>
-              <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+              <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
                 {t.system.subtext}
               </p>
             </div>
