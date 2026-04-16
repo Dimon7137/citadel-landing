@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionHeader } from "@/components/shared/SectionHeader";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { useI18n } from "@/lib/i18n";
 
@@ -9,27 +8,30 @@ export function ValidationSection() {
   const { t } = useI18n();
 
   return (
-    <section id="validation" className="relative z-0 py-20 md:py-28 bg-white overflow-hidden">
-      <div className="absolute inset-0 bg-grid-slate pointer-events-none" />
+    <section id="validation" className="relative z-0 py-12 md:py-16 bg-[#0f172a] overflow-hidden">
+      <div className="absolute inset-0 bg-surgical-grid pointer-events-none" />
 
       <div className="section-container relative z-10">
         <AnimatedSection>
-          <SectionHeader label={t.validation.label}
-            title={<>{t.validation.title}{" "}<span className="text-teal-600">{t.validation.titleHighlight}</span></>} />
-        </AnimatedSection>
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 max-w-5xl mx-auto">
+            <p className="text-xs font-semibold text-teal-400 uppercase tracking-widest whitespace-nowrap shrink-0">
+              {t.validation.label}
+            </p>
 
-        <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto mb-8">
-            {t.validation.badges.map((badge, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                className="flex items-center justify-center text-center bg-teal-50 border border-teal-200 rounded-xl px-4 py-4">
-                <span className="text-xs sm:text-sm font-semibold text-teal-700 leading-tight">{badge}</span>
-              </motion.div>
-            ))}
+            <div className="flex flex-wrap justify-center gap-3">
+              {t.validation.badges.map((badge, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ delay: 0.05 + i * 0.08, duration: 0.4 }}
+                  className="bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-2">
+                  <span className="text-xs sm:text-sm font-medium text-teal-300">{badge}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <p className="text-sm text-slate-400 text-center md:text-left shrink">
+              {t.validation.description}
+            </p>
           </div>
-
-          <p className="text-center text-sm sm:text-base text-slate-500 leading-relaxed max-w-3xl mx-auto">{t.validation.description}</p>
         </AnimatedSection>
       </div>
     </section>

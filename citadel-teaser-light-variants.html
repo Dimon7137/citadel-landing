@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — Teaser Light Variants</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Rubik', system-ui, sans-serif;
+    background: #050d1a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .variant-label {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ===================== BASE PAGE ===================== */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 32mm 24mm 24mm 24mm;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 14mm 24mm;
+    z-index: 10;
+  }
+  .logo-group { display: flex; align-items: center; gap: 10px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: #14b8a6;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; color: white;
+  }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-size: 14px; font-weight: 700; color: white; }
+  .logo-tagline { font-size: 8px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
+  .header-badge {
+    font-size: 9px; color: #5eead4;
+    border-radius: 20px; padding: 5px 14px;
+    font-weight: 600; letter-spacing: 0.5px;
+  }
+  .content { position: relative; z-index: 5; }
+  .subtitle-line { font-size: 10px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 12px; }
+  h1 { font-size: 28px; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 16px; }
+  .description { font-size: 12px; line-height: 1.7; margin-bottom: 24px; }
+  .badges { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+  .badge { font-size: 9px; font-weight: 600; border-radius: 20px; padding: 5px 12px; }
+  .section-label {
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before, .section-label::after { content: ''; width: 20px; height: 1px; }
+  .hero-layout { display: grid; grid-template-columns: 1fr 150px; gap: 16px; align-items: center; margin-bottom: 0; }
+  .hero-bone { display: flex; align-items: center; justify-content: center; }
+  .hero-bone img {
+    width: 100%; max-height: 210px; object-fit: contain;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+    filter: drop-shadow(0 0 18px rgba(14,165,169,0.25));
+  }
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+  .feature-card { border-radius: 12px; padding: 14px; }
+  .feature-icon {
+    width: 30px; height: 30px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 8px; font-size: 13px;
+  }
+  .feature-title { font-size: 11px; font-weight: 700; color: white; margin-bottom: 3px; }
+  .feature-desc { font-size: 9px; line-height: 1.5; }
+  .steps-flow { display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+  .step-box { padding: 9px 14px; border-radius: 10px; font-size: 10px; font-weight: 600; text-align: center; min-width: 110px; }
+  .step-arrow { font-size: 16px; margin: 0 6px; }
+  .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .comp-col { border-radius: 12px; padding: 14px; }
+  .comp-title { font-size: 11px; font-weight: 700; color: white; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .comp-list { list-style: none; }
+  .comp-list li { font-size: 9px; padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; line-height: 1.4; }
+  .comp-list li::before { content: attr(data-icon); font-size: 10px; flex-shrink: 0; margin-top: 1px; }
+  .accent-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, #1e40af, #14b8a6, #0ea5e9); }
+
+
+  /* ===================== VARIANT A — LIGHTER NAVY ===================== */
+  .va .page {
+    background: linear-gradient(160deg, #0e1f3d 55%, #112548 100%);
+    color: #e2e8f0;
+  }
+  .va .page::before {
+    background-image:
+      linear-gradient(to right, rgba(14,165,169,0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14,165,169,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .va .header { background: #0e1f3d; }
+  .va .logo-tagline { color: #7a8fa6; }
+  .va .header-badge { background: rgba(14,165,169,0.15); border: 1px solid rgba(14,165,169,0.3); }
+  .va .subtitle-line { color: rgba(94,234,212,0.7); }
+  .va h1 span { color: #2dd4bf; }
+  .va .description { color: #a8bbd0; }
+  .va .badge { color: #5eead4; border: 1px solid rgba(14,165,169,0.35); background: rgba(14,165,169,0.12); }
+  .va .section-label { color: #14b8a6; }
+  .va .section-label::before, .va .section-label::after { background: #14b8a6; }
+  .va .feature-card { background: rgba(20,45,80,0.6); border: 1px solid rgba(60,90,130,0.5); }
+  .va .feature-icon { background: rgba(14,165,169,0.12); border: 1px solid rgba(14,165,169,0.25); }
+  .va .feature-desc { color: #a8bbd0; }
+  .va .step-box.step-normal { background: rgba(20,45,80,0.5); border: 1px solid rgba(60,90,130,0.5); color: #a8bbd0; }
+  .va .step-box.step-highlight { background: rgba(14,165,169,0.15); border: 2px solid rgba(14,165,169,0.5); color: #2dd4bf; box-shadow: 0 0 20px rgba(14,165,169,0.15); }
+  .va .step-arrow { color: rgba(14,165,169,0.6); }
+  .va .comp-current { background: rgba(20,45,80,0.5); border: 1px solid rgba(60,90,130,0.4); }
+  .va .comp-citadel { background: rgba(14,165,169,0.08); border: 1px solid rgba(14,165,169,0.25); }
+  .va .comp-icon-bad { color: #f87171; }
+  .va .comp-icon-good { color: #2dd4bf; }
+  .va .comp-list li { color: #a8bbd0; }
+  .va .variant-label { color: #5eead4; }
+
+
+  /* ===================== VARIANT B — FROSTED GLASS ===================== */
+  .vb .page {
+    background: linear-gradient(135deg, #0a1628 50%, #0c1e38 100%);
+    color: #e2e8f0;
+  }
+  .vb .page::before {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .vb .header { background: rgba(10,22,40,0.95); backdrop-filter: blur(8px); }
+  .vb .logo-tagline { color: #64748b; }
+  .vb .header-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #5eead4; }
+  .vb .subtitle-line { color: rgba(94,234,212,0.65); }
+  .vb h1 span { color: #2dd4bf; }
+  .vb .description { color: #b0bec8; }
+  .vb .badge { color: rgba(94,234,212,0.9); border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); }
+  .vb .section-label { color: #14b8a6; }
+  .vb .section-label::before, .vb .section-label::after { background: rgba(14,165,169,0.6); }
+  .vb .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(4px); }
+  .vb .feature-icon { background: rgba(14,165,169,0.1); border: 1px solid rgba(14,165,169,0.2); }
+  .vb .feature-desc { color: #94a3b8; }
+  .vb .step-box.step-normal { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; }
+  .vb .step-box.step-highlight { background: rgba(14,165,169,0.12); border: 2px solid rgba(14,165,169,0.4); color: #2dd4bf; box-shadow: 0 0 24px rgba(14,165,169,0.12); }
+  .vb .step-arrow { color: rgba(255,255,255,0.3); }
+  .vb .comp-current { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); }
+  .vb .comp-citadel { background: rgba(14,165,169,0.07); border: 1px solid rgba(14,165,169,0.2); }
+  .vb .comp-icon-bad { color: #f87171; }
+  .vb .comp-icon-good { color: #2dd4bf; }
+  .vb .comp-list li { color: #94a3b8; }
+  .vb .variant-label { color: #94a3b8; }
+
+
+  /* ===================== VARIANT C — BRIGHT TEXT + TEAL WARMTH ===================== */
+  .vc .page {
+    background: linear-gradient(150deg, #0a1628 40%, #071e30 70%, #0a2035 100%);
+    color: #e2e8f0;
+  }
+  .vc .page::before {
+    background-image:
+      linear-gradient(to right, rgba(14,165,169,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14,165,169,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  /* subtle teal radial glow in top-right corner */
+  .vc .page::after {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(14,165,169,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .vc .header { background: rgba(10,22,40,0.98); }
+  .vc .logo-tagline { color: #64748b; }
+  .vc .header-badge { background: rgba(14,165,169,0.12); border: 1px solid rgba(14,165,169,0.25); color: #5eead4; }
+  .vc .subtitle-line { color: rgba(94,234,212,0.75); }
+  .vc h1 span { color: #2dd4bf; }
+  .vc .description { color: #cbd5e1; }
+  .vc .badge { color: #5eead4; border: 1px solid rgba(14,165,169,0.3); background: rgba(14,165,169,0.1); }
+  .vc .section-label { color: #2dd4bf; }
+  .vc .section-label::before, .vc .section-label::after { background: #2dd4bf; opacity: 0.6; }
+  .vc .feature-card { background: rgba(14,165,169,0.06); border: 1px solid rgba(14,165,169,0.18); }
+  .vc .feature-icon { background: rgba(14,165,169,0.12); border: 1px solid rgba(14,165,169,0.25); }
+  .vc .feature-desc { color: #cbd5e1; }
+  .vc .step-box.step-normal { background: rgba(14,165,169,0.05); border: 1px solid rgba(14,165,169,0.15); color: #94a3b8; }
+  .vc .step-box.step-highlight { background: rgba(14,165,169,0.14); border: 2px solid rgba(14,165,169,0.5); color: #2dd4bf; box-shadow: 0 0 24px rgba(14,165,169,0.18); }
+  .vc .step-arrow { color: rgba(14,165,169,0.65); }
+  .vc .comp-current { background: rgba(30,41,59,0.35); border: 1px solid rgba(51,65,85,0.5); }
+  .vc .comp-citadel { background: rgba(14,165,169,0.08); border: 1px solid rgba(14,165,169,0.25); }
+  .vc .comp-icon-bad { color: #f87171; }
+  .vc .comp-icon-good { color: #2dd4bf; }
+  .vc .comp-list li { color: #cbd5e1; }
+  .vc .variant-label { color: #2dd4bf; }
+</style>
+</head>
+<body>
+
+<!-- ====== VARIANT A ====== -->
+<div class="va">
+  <div class="variant-label">— Variant A: Lighter Navy —</div>
+  <div class="page">
+    <div class="header">
+      <div class="logo-group">
+        <div class="logo-icon">CT</div>
+        <div class="logo-text">
+          <div class="logo-name">CITadel</div>
+          <div class="logo-tagline">Intramedullary System</div>
+        </div>
+      </div>
+      <div class="header-badge">TRL 4-5 &middot; Bench Validated</div>
+    </div>
+    <div class="content">
+      <div class="hero-layout">
+        <div>
+          <div class="subtitle-line">A new category between external fixation and definitive reconstruction</div>
+          <h1>Temporary Internal Stabilisation for <span>Critical Long-Bone Defects</span></h1>
+          <p class="description">A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.</p>
+          <div class="badges">
+            <span class="badge">TRL 4-5</span>
+            <span class="badge">Validated</span>
+            <span class="badge">PMMA Ready</span>
+            <span class="badge">Modular</span>
+            <span class="badge">HA-Ag Coating</span>
+          </div>
+        </div>
+        <div class="hero-bone">
+          <img src="public/hero-bone.png" alt="CITadel bone">
+        </div>
+      </div>
+      <div class="section-label"><span>Treatment Pathway</span></div>
+      <div class="steps-flow">
+        <div class="step-box step-normal">External Fixation</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-highlight">CITadel (TIS)</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-normal">Definitive Reconstruction</div>
+      </div>
+      <div class="section-label"><span>Key Features</span></div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">&#9881;</div><div class="feature-title">Modular Architecture</div><div class="feature-desc">Two-component system adaptable to defect size and anatomy.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#8982;</div><div class="feature-title">Mechanical-Axis Support</div><div class="feature-desc">Intramedullary alignment for stable temporary fixation.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9830;</div><div class="feature-title">PMMA Spacer Compatibility</div><div class="feature-desc">Designed to function with antibiotic-loaded spacers.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9738;</div><div class="feature-title">HA-Ag Antibacterial Interface</div><div class="feature-desc">Selective coating in bone-contact zones.</div></div>
+      </div>
+      <div class="section-label"><span>Differentiation</span></div>
+      <div class="comparison">
+        <div class="comp-col comp-current"><div class="comp-title"><span class="comp-icon-bad">&#10005;</span> Current Solutions</div><ul class="comp-list"><li data-icon="✕">External fixation dependency</li><li data-icon="✕">Lack of spacer-compatible systems</li><li data-icon="✕">Limited internal options</li></ul></div>
+        <div class="comp-col comp-citadel"><div class="comp-title"><span class="comp-icon-good">&#10003;</span> CITadel</div><ul class="comp-list"><li data-icon="✓">Internal temporary stabilisation</li><li data-icon="✓">Designed for spacer-based workflows</li><li data-icon="✓">Defect-focused construct logic</li></ul></div>
+      </div>
+    </div>
+    <div class="accent-bar"></div>
+  </div>
+</div>
+
+<!-- ====== VARIANT B ====== -->
+<div class="vb">
+  <div class="variant-label">— Variant B: Frosted Glass —</div>
+  <div class="page">
+    <div class="header">
+      <div class="logo-group">
+        <div class="logo-icon">CT</div>
+        <div class="logo-text">
+          <div class="logo-name">CITadel</div>
+          <div class="logo-tagline">Intramedullary System</div>
+        </div>
+      </div>
+      <div class="header-badge">TRL 4-5 &middot; Bench Validated</div>
+    </div>
+    <div class="content">
+      <div class="hero-layout">
+        <div>
+          <div class="subtitle-line">A new category between external fixation and definitive reconstruction</div>
+          <h1>Temporary Internal Stabilisation for <span>Critical Long-Bone Defects</span></h1>
+          <p class="description">A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.</p>
+          <div class="badges">
+            <span class="badge">TRL 4-5</span>
+            <span class="badge">Validated</span>
+            <span class="badge">PMMA Ready</span>
+            <span class="badge">Modular</span>
+            <span class="badge">HA-Ag Coating</span>
+          </div>
+        </div>
+        <div class="hero-bone">
+          <img src="public/hero-bone.png" alt="CITadel bone">
+        </div>
+      </div>
+      <div class="section-label"><span>Treatment Pathway</span></div>
+      <div class="steps-flow">
+        <div class="step-box step-normal">External Fixation</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-highlight">CITadel (TIS)</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-normal">Definitive Reconstruction</div>
+      </div>
+      <div class="section-label"><span>Key Features</span></div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">&#9881;</div><div class="feature-title">Modular Architecture</div><div class="feature-desc">Two-component system adaptable to defect size and anatomy.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#8982;</div><div class="feature-title">Mechanical-Axis Support</div><div class="feature-desc">Intramedullary alignment for stable temporary fixation.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9830;</div><div class="feature-title">PMMA Spacer Compatibility</div><div class="feature-desc">Designed to function with antibiotic-loaded spacers.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9738;</div><div class="feature-title">HA-Ag Antibacterial Interface</div><div class="feature-desc">Selective coating in bone-contact zones.</div></div>
+      </div>
+      <div class="section-label"><span>Differentiation</span></div>
+      <div class="comparison">
+        <div class="comp-col comp-current"><div class="comp-title"><span class="comp-icon-bad">&#10005;</span> Current Solutions</div><ul class="comp-list"><li data-icon="✕">External fixation dependency</li><li data-icon="✕">Lack of spacer-compatible systems</li><li data-icon="✕">Limited internal options</li></ul></div>
+        <div class="comp-col comp-citadel"><div class="comp-title"><span class="comp-icon-good">&#10003;</span> CITadel</div><ul class="comp-list"><li data-icon="✓">Internal temporary stabilisation</li><li data-icon="✓">Designed for spacer-based workflows</li><li data-icon="✓">Defect-focused construct logic</li></ul></div>
+      </div>
+    </div>
+    <div class="accent-bar"></div>
+  </div>
+</div>
+
+<!-- ====== VARIANT C ====== -->
+<div class="vc">
+  <div class="variant-label">— Variant C: Teal Warmth —</div>
+  <div class="page">
+    <div class="header">
+      <div class="logo-group">
+        <div class="logo-icon">CT</div>
+        <div class="logo-text">
+          <div class="logo-name">CITadel</div>
+          <div class="logo-tagline">Intramedullary System</div>
+        </div>
+      </div>
+      <div class="header-badge">TRL 4-5 &middot; Bench Validated</div>
+    </div>
+    <div class="content">
+      <div class="hero-layout">
+        <div>
+          <div class="subtitle-line">A new category between external fixation and definitive reconstruction</div>
+          <h1>Temporary Internal Stabilisation for <span>Critical Long-Bone Defects</span></h1>
+          <p class="description">A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.</p>
+          <div class="badges">
+            <span class="badge">TRL 4-5</span>
+            <span class="badge">Validated</span>
+            <span class="badge">PMMA Ready</span>
+            <span class="badge">Modular</span>
+            <span class="badge">HA-Ag Coating</span>
+          </div>
+        </div>
+        <div class="hero-bone">
+          <img src="public/hero-bone.png" alt="CITadel bone">
+        </div>
+      </div>
+      <div class="section-label"><span>Treatment Pathway</span></div>
+      <div class="steps-flow">
+        <div class="step-box step-normal">External Fixation</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-highlight">CITadel (TIS)</div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step-box step-normal">Definitive Reconstruction</div>
+      </div>
+      <div class="section-label"><span>Key Features</span></div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">&#9881;</div><div class="feature-title">Modular Architecture</div><div class="feature-desc">Two-component system adaptable to defect size and anatomy.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#8982;</div><div class="feature-title">Mechanical-Axis Support</div><div class="feature-desc">Intramedullary alignment for stable temporary fixation.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9830;</div><div class="feature-title">PMMA Spacer Compatibility</div><div class="feature-desc">Designed to function with antibiotic-loaded spacers.</div></div>
+        <div class="feature-card"><div class="feature-icon">&#9738;</div><div class="feature-title">HA-Ag Antibacterial Interface</div><div class="feature-desc">Selective coating in bone-contact zones.</div></div>
+      </div>
+      <div class="section-label"><span>Differentiation</span></div>
+      <div class="comparison">
+        <div class="comp-col comp-current"><div class="comp-title"><span class="comp-icon-bad">&#10005;</span> Current Solutions</div><ul class="comp-list"><li data-icon="✕">External fixation dependency</li><li data-icon="✕">Lack of spacer-compatible systems</li><li data-icon="✕">Limited internal options</li></ul></div>
+        <div class="comp-col comp-citadel"><div class="comp-title"><span class="comp-icon-good">&#10003;</span> CITadel</div><ul class="comp-list"><li data-icon="✓">Internal temporary stabilisation</li><li data-icon="✓">Designed for spacer-based workflows</li><li data-icon="✓">Defect-focused construct logic</li></ul></div>
+      </div>
+    </div>
+    <div class="accent-bar"></div>
+  </div>
+</div>
+
+</body>
+</html>

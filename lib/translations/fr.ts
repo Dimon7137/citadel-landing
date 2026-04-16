@@ -3,7 +3,7 @@ export const fr = {
   nav: {
     system: "Système",
     howItWorks: "Comment ça fonctionne",
-    whatChanges: "Ce qui change",
+    portfolioFit: "Intégration",
     validation: "Validation",
     partnership: "Partenariat",
     contact: "Contact",

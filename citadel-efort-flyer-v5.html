@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — EFORT 2026 Flyer A5 v5 (dark front)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 148mm 210mm; margin: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #999;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 148mm;
+    height: 210mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; }
+  }
+
+  /* ============ FRONT (DARK) ============ */
+  .front {
+    background: #0f2b46;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 7mm 11mm 0;
+  }
+
+  /* Top accent bar */
+  .front::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1.5mm;
+    background: linear-gradient(90deg, #2dd4bf, #0d9488);
+  }
+
+  /* Subtle grid pattern */
+  .front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(45,212,191,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,212,191,0.03) 1px, transparent 1px);
+    background-size: 10mm 10mm;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Background product image — faded on dark */
+  .fl-bg-image {
+    position: absolute;
+    right: -8mm;
+    top: 15mm;
+    bottom: 20mm;
+    width: 85mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .fl-bg-image img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    opacity: 1;
+    filter: drop-shadow(0 0 8mm rgba(45,212,191,0.15));
+  }
+  .fl-bg-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0f2b46 0%, rgba(15,43,70,0.4) 25%, rgba(15,43,70,0) 50%);
+    pointer-events: none;
+  }
+
+  /* Swooshes — lighter on dark */
+  .fl-swoosh-1 {
+    position: absolute;
+    top: -18mm; right: -12mm;
+    width: 70mm; height: 50mm;
+    border: 0.6mm solid rgba(45,212,191,0.1);
+    border-radius: 0 0 0 50mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+  }
+  .fl-swoosh-2 {
+    position: absolute;
+    top: -12mm; right: -6mm;
+    width: 55mm; height: 40mm;
+    border: 0.5mm solid rgba(255,255,255,0.04);
+    border-radius: 0 0 0 40mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+  }
+  .fl-deco-circle {
+    position: absolute;
+    bottom: 30mm; left: -12mm;
+    width: 30mm; height: 30mm;
+    border: 0.3mm solid rgba(45,212,191,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .fl-glow {
+    position: absolute;
+    right: 0mm; top: 20%;
+    width: 80mm; height: 100mm;
+    background: radial-gradient(ellipse, rgba(45,212,191,0.08) 0%, rgba(45,212,191,0.02) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .front > *:not([class^="fl-swoosh"]):not(.fl-deco-circle):not(.fl-bg-image):not(.fl-glow) {
+    position: relative; z-index: 1;
+  }
+
+  /* Logo — white on dark */
+  .fl-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8mm;
+    padding-top: 1mm;
+  }
+  .fl-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 22pt;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  .fl-logo span { color: #2dd4bf; }
+  .fl-logo-sub {
+    font-size: 7pt;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  /* Headline — white */
+  .fl-headline h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20pt;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 4mm;
+    max-width: 100mm;
+  }
+  .fl-headline h1 em {
+    font-style: normal;
+    color: #2dd4bf;
+  }
+
+  .fl-sub {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+    margin-bottom: 5mm;
+    max-width: 90mm;
+  }
+
+  .fl-divider {
+    width: 22mm;
+    height: 0.6mm;
+    background: #2dd4bf;
+    border-radius: 1mm;
+    margin-bottom: 6mm;
+  }
+
+  /* Features — light text */
+  .fl-features {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5mm;
+    margin-bottom: auto;
+    max-width: 90mm;
+  }
+  .fl-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5mm;
+  }
+  .fl-feat-icon {
+    width: 5.5mm; height: 5.5mm;
+    background: rgba(45,212,191,0.12);
+    border: 0.3mm solid rgba(45,212,191,0.25);
+    border-radius: 1.5mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.3mm;
+  }
+  .fl-feat-icon svg { width: 4mm; height: 4mm; stroke: #2dd4bf; }
+  .fl-feat-text {}
+  .fl-feat-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  .fl-feat-desc {
+    font-size: 7pt;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+    margin-top: 0.3mm;
+  }
+
+  /* Badges — teal on dark */
+  .fl-badges {
+    display: flex;
+    gap: 2mm;
+    margin: 5mm 0 3.5mm;
+  }
+  .fl-badge {
+    display: flex;
+    align-items: center;
+    gap: 1.2mm;
+    font-size: 7pt;
+    padding: 1.2mm 3mm;
+    background: rgba(45,212,191,0.1);
+    border: 0.2mm solid rgba(45,212,191,0.25);
+    border-radius: 1.5mm;
+    color: #2dd4bf;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .fl-badge::before {
+    content: '';
+    width: 1.5mm; height: 1.5mm;
+    border-radius: 50%;
+    background: #2dd4bf;
+    flex-shrink: 0;
+  }
+
+  /* EFORT — slightly lighter navy */
+  .fl-efort {
+    background: #0a1f33;
+    border-radius: 3mm 3mm 0 0;
+    padding: 3.5mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 0 -11mm;
+    padding-left: 15mm;
+    padding-right: 15mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .fl-efort::before {
+    content: '';
+    position: absolute;
+    left: 11mm; top: 0; bottom: 0;
+    width: 1mm;
+    background: #2dd4bf;
+  }
+  .fl-efort-icon {
+    width: 9mm; height: 9mm;
+    background: rgba(45,212,191,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fl-efort-icon svg { width: 4.5mm; height: 4.5mm; }
+  .fl-efort-text { flex: 1; }
+  .fl-efort-label {
+    font-size: 7pt;
+    color: #2dd4bf;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .fl-efort-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #fff;
+    margin-top: 0.3mm;
+  }
+  .fl-efort-info {
+    font-size: 7pt;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.4;
+    margin-top: 0.3mm;
+  }
+  .fl-efort-date {
+    text-align: center;
+    flex-shrink: 0;
+    background: rgba(45,212,191,0.1);
+    border-radius: 2mm;
+    padding: 1.5mm 3mm;
+  }
+  .fl-efort-day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13pt;
+    color: #2dd4bf;
+    line-height: 1;
+  }
+  .fl-efort-month {
+    font-size: 7pt;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .fl-efort-time {
+    font-size: 7pt;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.3mm;
+  }
+
+
+  /* ============ BACK ============ */
+  .back {
+    background: #f5f7f6;
+    padding: 0 13mm 8mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1.5mm;
+    background: linear-gradient(90deg, #2dd4bf, #0f2b46);
+  }
+
+  .back::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40mm; height: 40mm;
+    background: radial-gradient(circle at 0% 100%, rgba(45,212,191,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .back > *:not([class^="bk-swoosh"]):not(.bk-deco-circle) {
+    position: relative; z-index: 1;
+  }
+
+  .bk-swoosh-1 {
+    position: absolute;
+    top: -10mm; left: -15mm;
+    width: 60mm; height: 45mm;
+    border: 0.5mm solid rgba(45,212,191,0.12);
+    border-radius: 0 0 45mm 0;
+    transform: rotate(10deg);
+    pointer-events: none; z-index: 0;
+  }
+  .bk-swoosh-2 {
+    position: absolute;
+    bottom: -8mm; right: -10mm;
+    width: 50mm; height: 38mm;
+    border: 0.4mm solid rgba(15,43,70,0.06);
+    border-radius: 38mm 0 0 0;
+    transform: rotate(10deg);
+    pointer-events: none; z-index: 0;
+  }
+  .bk-deco-circle {
+    position: absolute;
+    bottom: 50mm; right: -8mm;
+    width: 22mm; height: 22mm;
+    border: 0.3mm solid rgba(45,212,191,0.08);
+    border-radius: 50%;
+    pointer-events: none; z-index: 0;
+  }
+
+  .bk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9mm 0 3mm;
+    margin-bottom: 5mm;
+    border-bottom: 0.5mm solid #0f2b46;
+  }
+  .bk-header-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 14pt;
+    color: #0f2b46;
+  }
+  .bk-header-logo span { color: #2dd4bf; }
+  .bk-header-sub {
+    font-size: 6pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  .bk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm 6mm;
+    margin-bottom: 5mm;
+  }
+
+  .bk-block {
+    padding-left: 3mm;
+    border-left: 0.6mm solid #2dd4bf;
+  }
+  .bk-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    color: #0f2b46;
+    margin-bottom: 2mm;
+  }
+  .bk-block ul { list-style: none; padding: 0; }
+  .bk-block li {
+    font-size: 7pt;
+    color: #475569;
+    line-height: 1.6;
+    padding-left: 3mm;
+    position: relative;
+    margin-bottom: 0.5mm;
+  }
+  .bk-block li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 1.6mm;
+    width: 1mm; height: 1mm;
+    border-radius: 50%;
+    background: #2dd4bf;
+  }
+
+  .bk-tagline {
+    text-align: center;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: #0f2b46;
+    font-style: italic;
+    padding: 3.5mm 5mm;
+    margin-bottom: 4mm;
+    background: rgba(45,212,191,0.05);
+    border-radius: 2mm;
+    border-left: 0.7mm solid #2dd4bf;
+    border-right: 0.7mm solid #2dd4bf;
+  }
+
+  .bk-qr {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6mm;
+    margin-bottom: 4mm;
+  }
+  .bk-qr-wrap {
+    border: 0.4mm solid #d1d5db;
+    padding: 2.5mm;
+    border-radius: 2.5mm;
+    display: flex;
+    background: #fff;
+  }
+  .bk-qr-wrap img { width: 30mm; height: 30mm; }
+  .bk-qr-text {}
+  .bk-qr-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    color: #0f2b46;
+    line-height: 1.3;
+  }
+  .bk-qr-cta em { font-style: normal; color: #0d9488; }
+  .bk-qr-url {
+    font-size: 9pt;
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 2mm;
+  }
+
+  .bk-contact {
+    border-top: 0.3mm solid #d1d5db;
+    padding-top: 4mm;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .bk-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    color: #0f2b46;
+  }
+  .bk-role {
+    font-size: 6pt;
+    color: #64748b;
+    line-height: 1.45;
+    margin-top: 0.5mm;
+  }
+  .bk-email {
+    font-size: 7pt;
+    color: #0d9488;
+    font-weight: 600;
+    text-align: right;
+  }
+  .bk-phone {
+    font-size: 6pt;
+    color: #64748b;
+    text-align: right;
+    margin-top: 0.5mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== FRONT (DARK) ========== -->
+<div class="page front">
+
+  <div class="fl-swoosh-1"></div>
+  <div class="fl-swoosh-2"></div>
+  <div class="fl-deco-circle"></div>
+  <div class="fl-glow"></div>
+
+  <div class="fl-bg-image">
+    <img src="public/hero-bone.png" alt="">
+  </div>
+
+  <div class="fl-top">
+    <div>
+      <div class="fl-logo">CITadel<span>.</span></div>
+      <div class="fl-logo-sub">Intramedullary System</div>
+    </div>
+  </div>
+
+  <div class="fl-headline">
+    <h1>Temporary Internal<br><em>Stabilisation</em> (TIS)<br>for Critical Long-Bone<br>Defects</h1>
+  </div>
+
+  <div class="fl-sub">
+    A modular intramedullary system designed for staged reconstruction with PMMA spacer compatibility
+  </div>
+
+  <div class="fl-divider"></div>
+
+  <div class="fl-features">
+    <div class="fl-feat">
+      <div class="fl-feat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="fl-feat-text">
+        <div class="fl-feat-title">PMMA spacer compatible</div>
+        <div class="fl-feat-desc">Full compatibility with cement spacers</div>
+      </div>
+    </div>
+    <div class="fl-feat">
+      <div class="fl-feat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="fl-feat-text">
+        <div class="fl-feat-title">Modular design</div>
+        <div class="fl-feat-desc">Adaptable to various defect lengths</div>
+      </div>
+    </div>
+    <div class="fl-feat">
+      <div class="fl-feat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="fl-feat-text">
+        <div class="fl-feat-title">HA-Ag antibacterial coating</div>
+        <div class="fl-feat-desc">Selective interface for infection control</div>
+      </div>
+    </div>
+    <div class="fl-feat">
+      <div class="fl-feat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="fl-feat-text">
+        <div class="fl-feat-title">Mechanical-axis alignment</div>
+        <div class="fl-feat-desc">Internal stabilisation on anatomical axis</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl-badges">
+    <div class="fl-badge">TRL 4-5</div>
+    <div class="fl-badge">Bench validated</div>
+  </div>
+
+  <div class="fl-efort">
+    <div class="fl-efort-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    </div>
+    <div class="fl-efort-text">
+      <div class="fl-efort-label">Meet us at</div>
+      <div class="fl-efort-title">EFORT Congress 2026</div>
+      <div class="fl-efort-info">Poster — Temporary Stabilisation of Critical Bone Defects</div>
+    </div>
+    <div class="fl-efort-date">
+      <div class="fl-efort-day">5</div>
+      <div class="fl-efort-month">May</div>
+      <div class="fl-efort-time">13:00 - 14:30</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== BACK ========== -->
+<div class="page back">
+
+  <div class="bk-swoosh-1"></div>
+  <div class="bk-swoosh-2"></div>
+  <div class="bk-deco-circle"></div>
+
+  <div class="bk-header">
+    <div class="bk-header-logo">CITadel<span>.</span></div>
+    <div class="bk-header-sub">Intramedullary System</div>
+  </div>
+
+  <div class="bk-grid">
+    <div class="bk-block">
+      <div class="bk-title">Current limitations</div>
+      <ul>
+        <li>No dedicated internal solution for defect management</li>
+        <li>External fixation increases complications and patient burden</li>
+        <li>Lack of systems compatible with PMMA spacers</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">CITadel system</div>
+      <ul>
+        <li>Modular intramedullary design</li>
+        <li>Mechanical-axis internal stabilisation</li>
+        <li>Full PMMA spacer compatibility</li>
+        <li>Selective HA–Ag antibacterial interface</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">Use cases</div>
+      <ul>
+        <li>Infected critical bone defects</li>
+        <li>Blast and high-energy trauma</li>
+        <li>Oncologic segmental resection</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">Why CITadel</div>
+      <ul>
+        <li>Internal stabilisation where external fixation is often the only option</li>
+        <li>Designed specifically for staged reconstruction</li>
+        <li>Defect-focused construct logic</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bk-tagline">Internal stability where external fixation used to be the only option</div>
+
+  <div class="bk-qr">
+    <div class="bk-qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://citadelimplant.com&color=0f2b46" alt="QR">
+    </div>
+    <div class="bk-qr-text">
+      <div class="bk-qr-cta"><em>Explore</em><br>CITadel</div>
+      <div class="bk-qr-url">citadelimplant.com</div>
+    </div>
+  </div>
+
+  <div class="bk-contact">
+    <div>
+      <div class="bk-name">Maksym Baida, PhD</div>
+      <div class="bk-role">Founder & Developer, CITadel<br>Orthopaedic Trauma Surgeon</div>
+    </div>
+    <div>
+      <div class="bk-email">partnership@citadelimplant.com</div>
+      <div class="bk-phone">+380 66 766 7094</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

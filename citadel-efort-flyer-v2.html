@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — EFORT 2026 Flyer A5 v2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 148mm 210mm; margin: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #888;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 148mm;
+    height: 210mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; }
+  }
+
+  /* ============ FRONT ============ */
+  .front {
+    background: #f5f7f6;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Decorative swoosh curves top-right */
+  .front .swoosh-1 {
+    position: absolute;
+    top: -15mm;
+    right: -10mm;
+    width: 70mm;
+    height: 50mm;
+    border: 2.5mm solid rgba(45,212,191,0.15);
+    border-radius: 0 0 0 50mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+  }
+  .front .swoosh-2 {
+    position: absolute;
+    top: -10mm;
+    right: -5mm;
+    width: 55mm;
+    height: 40mm;
+    border: 1.5mm solid rgba(15,43,70,0.07);
+    border-radius: 0 0 0 40mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+  }
+
+  /* Decorative accent strip — diagonal */
+  .front .accent-strip {
+    position: absolute;
+    top: 8mm;
+    right: 25mm;
+    width: 3mm;
+    height: 30mm;
+    background: linear-gradient(180deg, #2dd4bf, rgba(45,212,191,0.1));
+    transform: rotate(-20deg);
+    border-radius: 2mm;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .front .accent-strip-2 {
+    position: absolute;
+    top: 5mm;
+    right: 20mm;
+    width: 1.5mm;
+    height: 22mm;
+    background: linear-gradient(180deg, rgba(15,43,70,0.15), rgba(15,43,70,0.02));
+    transform: rotate(-20deg);
+    border-radius: 2mm;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Bottom-left decorative circle */
+  .front .deco-circle {
+    position: absolute;
+    bottom: 35mm;
+    left: -12mm;
+    width: 30mm;
+    height: 30mm;
+    border: 0.4mm solid rgba(45,212,191,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .front > *:not([class^="swoosh"]):not([class^="accent"]):not(.deco-circle) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo */
+  .f-logo-row {
+    padding: 6mm 10mm 0;
+  }
+  .f-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 13pt;
+    color: #0f2b46;
+    letter-spacing: -0.3px;
+  }
+  .f-logo span { color: #2dd4bf; }
+  .f-logo-sub {
+    font-size: 5pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 0.5mm;
+  }
+
+  /* Main content: left text + right image */
+  .f-main {
+    display: flex;
+    padding: 3mm 0 0 10mm;
+    min-height: 0;
+    flex: 1;
+  }
+
+  /* Left column — text */
+  .f-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 4mm;
+    padding-top: 1mm;
+  }
+
+  /* Headline */
+  .f-headline h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14pt;
+    color: #0f2b46;
+    line-height: 1.2;
+    margin-bottom: 2.5mm;
+  }
+  .f-headline h1 em {
+    font-style: normal;
+    color: #2dd4bf;
+    display: block;
+  }
+
+  /* Subtitle with left accent bar */
+  .f-subtitle {
+    display: flex;
+    gap: 2.5mm;
+    margin-bottom: 3mm;
+  }
+  .f-subtitle-bar {
+    width: 0.7mm;
+    background: #2dd4bf;
+    border-radius: 1mm;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+  .f-subtitle p {
+    font-size: 6.5pt;
+    color: #64748b;
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  /* Badge row */
+  .f-badges {
+    display: flex;
+    gap: 2mm;
+    margin-bottom: 3mm;
+  }
+  .f-badge {
+    font-size: 5pt;
+    padding: 1mm 2.5mm;
+    background: rgba(45,212,191,0.08);
+    border: 0.3mm solid rgba(45,212,191,0.25);
+    border-radius: 1.5mm;
+    color: #0d9488;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  /* Features section */
+  .f-features-label {
+    font-size: 5pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 2mm;
+  }
+  .f-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5mm;
+    margin-bottom: 0;
+  }
+  .f-feat {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+  .f-feat-icon {
+    width: 5mm;
+    height: 5mm;
+    background: #0f2b46;
+    border-radius: 1.2mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .f-feat-icon svg {
+    width: 3mm;
+    height: 3mm;
+  }
+  .f-feat span {
+    font-size: 6pt;
+    color: #334155;
+    font-weight: 500;
+  }
+
+  /* Right column — product image */
+  .f-right {
+    width: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .f-right img {
+    max-height: 90mm;
+    max-width: 85%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 3mm 8mm rgba(15,43,70,0.12));
+  }
+  /* Soft glow behind product */
+  .f-right::before {
+    content: '';
+    position: absolute;
+    width: 55mm;
+    height: 55mm;
+    background: radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  /* EFORT card — styled like a quote/CTA card */
+  .f-efort {
+    margin: auto 7mm 5mm;
+    background: #0f2b46;
+    border-radius: 3mm;
+    padding: 3.5mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    z-index: 10;
+    box-shadow: 0 1mm 6mm rgba(15,43,70,0.2);
+  }
+  .f-efort::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1mm;
+    background: #2dd4bf;
+    border-radius: 3mm 0 0 3mm;
+  }
+  .f-efort-icon {
+    width: 9mm;
+    height: 9mm;
+    background: rgba(45,212,191,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .f-efort-icon svg {
+    width: 4.5mm;
+    height: 4.5mm;
+  }
+  .f-efort-body { flex: 1; }
+  .f-efort-label {
+    font-size: 4.5pt;
+    color: #2dd4bf;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .f-efort-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7.5pt;
+    color: #fff;
+    margin-top: 0.3mm;
+  }
+  .f-efort-detail {
+    font-size: 5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.3mm;
+  }
+  .f-efort-date {
+    text-align: center;
+    flex-shrink: 0;
+    background: rgba(45,212,191,0.1);
+    border-radius: 2mm;
+    padding: 1.5mm 3mm;
+  }
+  .f-efort-day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13pt;
+    color: #2dd4bf;
+    line-height: 1;
+  }
+  .f-efort-month {
+    font-size: 5.5pt;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .f-efort-time {
+    font-size: 4.5pt;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.3mm;
+  }
+
+
+  /* ============ BACK ============ */
+  .back {
+    background: #f5f7f6;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Swoosh decorations */
+  .back .swoosh-b1 {
+    position: absolute;
+    top: -10mm;
+    left: -15mm;
+    width: 60mm;
+    height: 45mm;
+    border: 2mm solid rgba(45,212,191,0.1);
+    border-radius: 0 0 45mm 0;
+    transform: rotate(10deg);
+    pointer-events: none;
+  }
+  .back .swoosh-b2 {
+    position: absolute;
+    bottom: -10mm;
+    right: -10mm;
+    width: 50mm;
+    height: 40mm;
+    border: 1.5mm solid rgba(15,43,70,0.05);
+    border-radius: 40mm 0 0 0;
+    transform: rotate(10deg);
+    pointer-events: none;
+  }
+
+  .back > *:not([class^="swoosh"]) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .b-header {
+    padding: 7mm 10mm 4mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 0.4mm solid #0f2b46;
+    margin: 0 10mm;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .b-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 13pt;
+    color: #0f2b46;
+  }
+  .b-logo span { color: #2dd4bf; }
+  .b-header-sub {
+    font-size: 5.5pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  /* Content */
+  .b-content {
+    flex: 1;
+    padding: 4mm 10mm 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Grid — 2×2 */
+  .b-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5mm 5mm;
+    margin-bottom: 4mm;
+  }
+
+  .b-block {
+    position: relative;
+    padding-left: 3mm;
+  }
+  .b-block::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.6mm;
+    background: #2dd4bf;
+    border-radius: 1mm;
+  }
+  .b-block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7pt;
+    color: #0f2b46;
+    margin-bottom: 1.5mm;
+  }
+  .b-block ul { list-style: none; padding: 0; }
+  .b-block li {
+    font-size: 6pt;
+    color: #475569;
+    line-height: 1.55;
+    padding-left: 2.5mm;
+    position: relative;
+  }
+  .b-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.4mm;
+    width: 0.8mm;
+    height: 0.8mm;
+    border-radius: 50%;
+    background: #94a3b8;
+  }
+
+  /* Positioning text */
+  .b-positioning {
+    text-align: center;
+    font-size: 6.5pt;
+    font-style: italic;
+    font-weight: 500;
+    color: #0f2b46;
+    padding: 3mm 5mm;
+    margin-bottom: 4mm;
+    background: rgba(45,212,191,0.06);
+    border-radius: 2mm;
+    border-left: 0.7mm solid #2dd4bf;
+    border-right: 0.7mm solid #2dd4bf;
+  }
+
+  /* QR section */
+  .b-qr {
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+    margin-bottom: auto;
+  }
+  .b-qr-wrap {
+    border: 0.4mm solid #d1d5db;
+    padding: 2mm;
+    border-radius: 2mm;
+    background: #fff;
+  }
+  .b-qr-wrap img {
+    width: 26mm;
+    height: 26mm;
+    display: block;
+  }
+  .b-qr-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #0f2b46;
+    line-height: 1.35;
+  }
+  .b-qr-cta em {
+    font-style: normal;
+    color: #0d9488;
+  }
+  .b-qr-url {
+    font-size: 6.5pt;
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 1.5mm;
+  }
+
+  /* Contact footer */
+  .b-footer {
+    margin: 0 10mm;
+    border-top: 0.3mm solid #d1d5db;
+    padding: 3mm 0 7mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .b-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7.5pt;
+    color: #0f2b46;
+  }
+  .b-role {
+    font-size: 5.5pt;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 0.5mm;
+  }
+  .b-email {
+    font-size: 6.5pt;
+    color: #0d9488;
+    font-weight: 600;
+    text-align: right;
+  }
+  .b-phone {
+    font-size: 5.5pt;
+    color: #64748b;
+    text-align: right;
+    margin-top: 0.5mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== FRONT ========== -->
+<div class="page front">
+
+  <!-- Decorative swooshes -->
+  <div class="swoosh-1"></div>
+  <div class="swoosh-2"></div>
+  <div class="accent-strip"></div>
+  <div class="accent-strip-2"></div>
+  <div class="deco-circle"></div>
+
+  <!-- Logo -->
+  <div class="f-logo-row">
+    <div class="f-logo">CITadel<span>.</span></div>
+    <div class="f-logo-sub">Intramedullary System</div>
+  </div>
+
+  <!-- Main: left text + right image -->
+  <div class="f-main">
+    <div class="f-left">
+
+      <div class="f-headline">
+        <h1>Temporary<br>Internal<br><em>Stabilisation</em></h1>
+      </div>
+
+      <div class="f-subtitle">
+        <div class="f-subtitle-bar"></div>
+        <p>A modular intramedullary system<br>designed for staged reconstruction<br>with PMMA spacer compatibility</p>
+      </div>
+
+      <div class="f-badges">
+        <div class="f-badge">TRL 4-5</div>
+        <div class="f-badge">Bench validated</div>
+      </div>
+
+      <div class="f-features-label">Key advantages</div>
+      <div class="f-features">
+        <div class="f-feat">
+          <div class="f-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span>PMMA spacer compatible</span>
+        </div>
+        <div class="f-feat">
+          <div class="f-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span>Modular design</span>
+        </div>
+        <div class="f-feat">
+          <div class="f-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span>HA-Ag antibacterial coating</span>
+        </div>
+        <div class="f-feat">
+          <div class="f-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span>Mechanical-axis alignment</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="f-right">
+      <img src="public/hero-bone.png" alt="CITadel Intramedullary System">
+    </div>
+  </div>
+
+  <!-- EFORT card -->
+  <div class="f-efort">
+    <div class="f-efort-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    </div>
+    <div class="f-efort-body">
+      <div class="f-efort-label">Meet us at</div>
+      <div class="f-efort-title">EFORT Congress 2026</div>
+      <div class="f-efort-detail">Poster — Temporary Stabilisation of Critical Bone Defects</div>
+    </div>
+    <div class="f-efort-date">
+      <div class="f-efort-day">5</div>
+      <div class="f-efort-month">May</div>
+      <div class="f-efort-time">13:00 - 14:30</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== BACK ========== -->
+<div class="page back">
+
+  <!-- Decorations -->
+  <div class="swoosh-b1"></div>
+  <div class="swoosh-b2"></div>
+
+  <!-- Header -->
+  <div class="b-header">
+    <div class="b-logo">CITadel<span>.</span></div>
+    <div class="b-header-sub">Intramedullary System</div>
+  </div>
+
+  <div class="b-content">
+
+    <!-- Grid -->
+    <div class="b-grid">
+      <div class="b-block">
+        <div class="b-block-title">Current limitations</div>
+        <ul>
+          <li>No dedicated internal solution for defect management</li>
+          <li>External fixation increases complications and patient burden</li>
+          <li>Lack of systems compatible with PMMA spacers</li>
+        </ul>
+      </div>
+      <div class="b-block">
+        <div class="b-block-title">CITadel system</div>
+        <ul>
+          <li>Modular intramedullary design</li>
+          <li>Mechanical-axis internal stabilisation</li>
+          <li>Full PMMA spacer compatibility</li>
+          <li>Selective HA-Ag antibacterial interface</li>
+        </ul>
+      </div>
+      <div class="b-block">
+        <div class="b-block-title">Use cases</div>
+        <ul>
+          <li>Infected critical bone defects</li>
+          <li>Blast and high-energy trauma</li>
+          <li>Oncologic segmental resection</li>
+        </ul>
+      </div>
+      <div class="b-block">
+        <div class="b-block-title">Why CITadel</div>
+        <ul>
+          <li>Internal stabilisation where external fixation is often the only option</li>
+          <li>Designed specifically for staged reconstruction</li>
+          <li>Defect-focused construct logic</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Positioning -->
+    <div class="b-positioning">
+      Internal stability where external fixation used to be the only option
+    </div>
+
+    <!-- QR -->
+    <div class="b-qr">
+      <div class="b-qr-wrap">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://citadelimplant.com&color=0f2b46" alt="QR">
+      </div>
+      <div>
+        <div class="b-qr-cta">Scan to <em>explore</em><br>the technology</div>
+        <div class="b-qr-url">www.citadelimplant.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact -->
+  <div class="b-footer">
+    <div>
+      <div class="b-name">Maksym Baida, PhD</div>
+      <div class="b-role">Founder & Developer, CITadel<br>Orthopaedic Trauma Surgeon</div>
+    </div>
+    <div>
+      <div class="b-email">partnership@citadelimplant.com</div>
+      <div class="b-phone">+380 66 766 7094</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

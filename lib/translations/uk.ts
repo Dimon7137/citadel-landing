@@ -3,7 +3,7 @@ export const uk = {
   nav: {
     system: "Система",
     howItWorks: "Як працює",
-    whatChanges: "Що змiнюється",
+    portfolioFit: "Iнтеграцiя",
     validation: "Валiдацiя",
     partnership: "Партнерство",
     contact: "Контакти",

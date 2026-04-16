@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — Product Teaser</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Rubik', system-ui, sans-serif;
+    color: #e2e8f0;
+    background: #0a1628;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 32mm 24mm 24mm 24mm;
+    background: linear-gradient(160deg, #0a1628 60%, #0d1f3c 100%);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(14,165,169,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14,165,169,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* Header bar */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 14mm 24mm;
+    background: #0a1628;
+    z-index: 10;
+  }
+
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: #14b8a6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    color: white;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .logo-tagline {
+    font-size: 8px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  .header-badge {
+    font-size: 9px;
+    color: #5eead4;
+    background: rgba(14,165,169,0.1);
+    border: 1px solid rgba(14,165,169,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Content */
+  .content { position: relative; z-index: 5; }
+
+  .subtitle-line {
+    font-size: 10px;
+    color: rgba(94,234,212,0.6);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  h1 span { color: #2dd4bf; }
+
+  .description {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 24px;
+  }
+
+  /* Badges row */
+  .badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(94,234,212,0.8);
+    border: 1px solid rgba(14,165,169,0.25);
+    border-radius: 20px;
+    padding: 5px 12px;
+    background: rgba(14,165,169,0.08);
+  }
+
+  /* Features grid */
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #14b8a6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: #14b8a6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .feature-card {
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .feature-icon {
+    width: 32px; height: 32px;
+    background: rgba(14,165,169,0.1);
+    border: 1px solid rgba(14,165,169,0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .feature-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .feature-desc {
+    font-size: 9.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+
+  /* Steps flow */
+  .steps-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .step-box {
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 120px;
+  }
+
+  .step-normal {
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+    color: #94a3b8;
+  }
+
+  .step-highlight {
+    background: rgba(14,165,169,0.1);
+    border: 2px solid rgba(14,165,169,0.4);
+    color: #2dd4bf;
+    box-shadow: 0 0 20px rgba(14,165,169,0.1);
+  }
+
+  .step-arrow {
+    color: rgba(14,165,169,0.5);
+    font-size: 16px;
+    margin: 0 6px;
+  }
+
+  /* Comparison */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .comp-col {
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .comp-current {
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+  }
+
+  .comp-citadel {
+    background: rgba(14,165,169,0.05);
+    border: 1px solid rgba(14,165,169,0.2);
+  }
+
+  .comp-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .comp-icon-bad { color: #f87171; font-size: 14px; }
+  .comp-icon-good { color: #2dd4bf; font-size: 14px; }
+
+  .comp-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comp-list li {
+    font-size: 9.5px;
+    color: #94a3b8;
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+  }
+
+  .comp-list li::before {
+    content: attr(data-icon);
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Impact row */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .impact-item {
+    text-align: center;
+    background: rgba(14,165,169,0.05);
+    border: 1px solid rgba(14,165,169,0.15);
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+
+  .impact-icon { font-size: 16px; margin-bottom: 4px; }
+  .impact-text { font-size: 8.5px; color: #94a3b8; line-height: 1.4; }
+
+  /* Validation */
+  .validation-badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .val-badge {
+    font-size: 9px;
+    font-weight: 600;
+    color: #0d9488;
+    background: rgba(14,165,169,0.08);
+    border: 1px solid rgba(14,165,169,0.2);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: center;
+  }
+
+  /* About / Doctor */
+  .about-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 32px;
+  }
+
+  .about-photo {
+    width: 80px; height: 80px;
+    border-radius: 12px;
+    background: #1e293b;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .about-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .about-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .about-role {
+    font-size: 9px;
+    color: #14b8a6;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .about-bio {
+    font-size: 9.5px;
+    color: #94a3b8;
+    line-height: 1.6;
+  }
+
+  /* Contact footer */
+  .contact-bar {
+    background: rgba(14,165,169,0.05);
+    border: 1px solid rgba(14,165,169,0.2);
+    border-radius: 14px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .contact-text {
+    font-size: 10px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+  }
+
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 10px;
+    color: #e2e8f0;
+    font-weight: 500;
+  }
+
+  .contact-details span {
+    color: #64748b;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+
+  /* Hero two-col */
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .hero-bone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-bone img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+    filter: drop-shadow(0 0 18px rgba(14,165,169,0.25));
+  }
+
+/* Bottom accent */
+  .accent-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #1e40af, #14b8a6, #0ea5e9);
+  }
+
+  /* Page 2 specific */
+  .use-cases {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .use-case {
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .uc-icon {
+    width: 36px; height: 36px;
+    background: rgba(14,165,169,0.1);
+    border: 1px solid rgba(14,165,169,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .uc-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .uc-desc {
+    font-size: 9.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+
+  .partnership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .partner-card {
+    background: rgba(30,41,59,0.3);
+    border: 1px solid rgba(51,65,85,0.4);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .partner-icon {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .partner-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .partner-desc {
+    font-size: 9px;
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+
+  .confidential {
+    position: absolute;
+    bottom: 12mm;
+    left: 24mm;
+    right: 24mm;
+    text-align: center;
+    font-size: 7px;
+    color: #475569;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: none; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="header">
+    <div class="logo-group">
+      <div class="logo-icon">CT</div>
+      <div class="logo-text">
+        <div class="logo-name">CITadel</div>
+        <div class="logo-tagline">Intramedullary System</div>
+      </div>
+    </div>
+    <div class="header-badge">TRL 4-5 &middot; Bench Validated</div>
+  </div>
+
+  <div class="content">
+    <div class="hero-layout">
+      <div>
+        <div class="subtitle-line">A new category between external fixation and definitive reconstruction</div>
+        <h1>Temporary Internal Stabilisation for <span>Critical Long-Bone Defects</span></h1>
+        <p class="description">
+          A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.
+        </p>
+        <div class="badges">
+          <span class="badge">TRL 4-5</span>
+          <span class="badge">Validated</span>
+          <span class="badge">PMMA Ready</span>
+          <span class="badge">Modular</span>
+          <span class="badge">HA-Ag Coating</span>
+        </div>
+      </div>
+      <div class="hero-bone">
+        <img src="public/hero-bone.png" alt="CITadel bone implant">
+      </div>
+    </div>
+
+    <!-- Treatment Pathway -->
+    <div class="section-label"><span>Treatment Pathway</span></div>
+    <div class="steps-flow">
+      <div class="step-box step-normal">External Fixation</div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="step-box step-highlight">CITadel (TIS)</div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="step-box step-normal">Definitive Reconstruction</div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="section-label"><span>Key Features</span></div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#9881;</div>
+        <div class="feature-title">Modular Architecture</div>
+        <div class="feature-desc">Two-component system adaptable to defect size and anatomy.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#8982;</div>
+        <div class="feature-title">Mechanical-Axis Support</div>
+        <div class="feature-desc">Intramedullary alignment for stable temporary fixation.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9830;</div>
+        <div class="feature-title">PMMA Spacer Compatibility</div>
+        <div class="feature-desc">Designed to function with antibiotic-loaded spacers.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9738;</div>
+        <div class="feature-title">HA-Ag Antibacterial Interface</div>
+        <div class="feature-desc">Selective coating in bone-contact zones.</div>
+      </div>
+    </div>
+
+    <!-- Comparison -->
+    <div class="section-label"><span>Differentiation</span></div>
+    <div class="comparison">
+      <div class="comp-col comp-current">
+        <div class="comp-title"><span class="comp-icon-bad">&#10005;</span> Current Solutions</div>
+        <ul class="comp-list">
+          <li data-icon="&#10005;">External fixation dependency</li>
+          <li data-icon="&#10005;">Lack of spacer-compatible systems</li>
+          <li data-icon="&#10005;">Limited internal options for defects</li>
+        </ul>
+      </div>
+      <div class="comp-col comp-citadel">
+        <div class="comp-title"><span class="comp-icon-good">&#10003;</span> CITadel</div>
+        <ul class="comp-list">
+          <li data-icon="&#10003;">Internal temporary stabilisation</li>
+          <li data-icon="&#10003;">Designed for spacer-based workflows</li>
+          <li data-icon="&#10003;">Defect-focused construct logic</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="accent-bar"></div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <div class="header">
+    <div class="logo-group">
+      <div class="logo-icon">CT</div>
+      <div class="logo-text">
+        <div class="logo-name">CITadel</div>
+        <div class="logo-tagline">Intramedullary System</div>
+      </div>
+    </div>
+    <div class="header-badge">Product Teaser &middot; 2026</div>
+  </div>
+
+  <div class="content">
+    <!-- Use Cases -->
+    <div class="section-label"><span>Clinical Use Cases</span></div>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="uc-icon">&#9888;</div>
+        <div>
+          <div class="uc-title">Infected Critical Bone Defects</div>
+          <div class="uc-desc">Osteomyelitis cases requiring staged debridement, antibiotic spacer support, and delayed reconstruction.</div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">&#9889;</div>
+        <div>
+          <div class="uc-title">Blast & High-Energy Trauma</div>
+          <div class="uc-desc">Complex limb injuries with segmental bone loss requiring temporary internal stabilisation.</div>
+        </div>
+      </div>
+      <div class="use-case">
+        <div class="uc-icon">&#9986;</div>
+        <div>
+          <div class="uc-title">Oncologic Segmental Resection</div>
+          <div class="uc-desc">Post-resection defects needing stable internal fixation during staged limb salvage.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact -->
+    <div class="section-label"><span>Clinical & Economic Impact</span></div>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-icon">&#128337;</div>
+        <div class="impact-text">Reduced hospital stay</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-icon">&#10084;</div>
+        <div class="impact-text">Faster patient recovery</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-icon">&#9878;</div>
+        <div class="impact-text">Improved stability</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-icon">&#10003;</div>
+        <div class="impact-text">Fewer complications</div>
+      </div>
+    </div>
+
+    <!-- Validation -->
+    <div class="section-label"><span>Validation Status</span></div>
+    <div class="validation-badges">
+      <span class="val-badge">TRL 4-5</span>
+      <span class="val-badge">Bench Testing Completed</span>
+      <span class="val-badge">Early Clinical Application</span>
+      <span class="val-badge">Prototype Validated</span>
+    </div>
+    <p style="text-align:center; font-size:10px; color:#94a3b8; margin-bottom:8px;">
+      CITadel has undergone biomechanical testing and early clinical use.
+    </p>
+    <p style="text-align:center; font-size:10px; font-weight:600; color:#14b8a6; margin-bottom:32px;">
+      Current TRL: 4-5 &rarr; Target: TRL 6 (clinical pilot)
+    </p>
+
+    <!-- Partnership -->
+    <div class="section-label"><span>Partnership Opportunities</span></div>
+    <div class="partnership-grid">
+      <div class="partner-card">
+        <div class="partner-icon">&#128273;</div>
+        <div class="partner-title">Industrial Licensing</div>
+        <div class="partner-desc">License for manufacturing and distribution within your product portfolio.</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-icon">&#128736;</div>
+        <div class="partner-title">Co-Development</div>
+        <div class="partner-desc">Joint engineering and regulatory pathway towards CE/MDR compliance.</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-icon">&#127975;</div>
+        <div class="partner-title">Clinical Pilot Sites</div>
+        <div class="partner-desc">Reference centre for structured clinical validation and pilot deployment.</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-icon">&#128200;</div>
+        <div class="partner-title">Strategic Investment</div>
+        <div class="partner-desc">Accelerate transition to clinical-scale adoption through strategic funding.</div>
+      </div>
+    </div>
+
+    <!-- About + Contact -->
+    <div class="about-card">
+      <div class="about-photo">
+        <img src="public/doctor-photo.png" alt="Dr. Maksym Baida">
+      </div>
+      <div>
+        <div class="about-name">Maksym Baida, PhD</div>
+        <div class="about-role">Orthopaedic Trauma Surgeon &middot; Developer of CITadel</div>
+        <div class="about-bio">Over 15 years of clinical practice in traumatology and reconstructive orthopaedics. Associate Professor at Bogomolets National Medical University, Kyiv.</div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <div class="contact-title">Let's Start the Conversation</div>
+      <div class="contact-text">CITadel is open for collaboration with industry partners, clinical centres, and strategic stakeholders.</div>
+      <div class="contact-details">
+        <div><span>Email</span>meredian18@gmail.com</div>
+        <div><span>Phone</span>+380 66 766 7094</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confidential">Confidential &middot; CITadel Product Teaser &middot; &copy; 2026 Maksym Baida, PhD</div>
+  <div class="accent-bar"></div>
+</div>
+
+</body>
+</html>

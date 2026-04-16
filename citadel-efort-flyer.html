@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CITadel — EFORT 2026 Flyer A5</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: 148mm 210mm; margin: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #999;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 148mm;
+    height: 210mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; }
+  }
+
+  /* ============ FRONT ============ */
+  .front {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 9mm 11mm 7mm;
+    position: relative;
+  }
+
+  /* Декоративна смуга зверху */
+  .front::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2mm;
+    background: linear-gradient(90deg, #0f2b46, #2dd4bf);
+  }
+
+  /* Декоративний кут — removed for print */
+
+  /* Swoosh curves top-right */
+  .fl-swoosh-1 {
+    position: absolute;
+    top: -18mm;
+    right: -12mm;
+    width: 70mm;
+    height: 50mm;
+    border: 0.6mm solid rgba(45,212,191,0.15);
+    border-radius: 0 0 0 50mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .fl-swoosh-2 {
+    position: absolute;
+    top: -12mm;
+    right: -6mm;
+    width: 55mm;
+    height: 40mm;
+    border: 0.5mm solid rgba(15,43,70,0.07);
+    border-radius: 0 0 0 40mm;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Diagonal accent strip — removed */
+
+  /* Bottom-left decorative circle */
+  .fl-deco-circle {
+    position: absolute;
+    bottom: 35mm;
+    left: -12mm;
+    width: 30mm;
+    height: 30mm;
+    border: 0.3mm solid rgba(45,212,191,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .front > *:not([class^="fl-swoosh"]):not(.fl-deco-circle) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Top bar */
+  .fl-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4mm;
+    padding-top: 1mm;
+  }
+  .fl-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 22pt;
+    color: #0f2b46;
+    letter-spacing: -0.5px;
+  }
+  .fl-logo span { color: #2dd4bf; }
+
+  .fl-badge-row { display: flex; gap: 2mm; }
+  .fl-badge {
+    font-size: 5pt;
+    padding: 1mm 2.5mm;
+    background: #f0fdf9;
+    border: 0.2mm solid #ccfbf1;
+    border-radius: 1.5mm;
+    color: #0f766e;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  /* Headline */
+  .fl-headline {
+    text-align: center;
+    margin-bottom: 1.5mm;
+  }
+  .fl-headline h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    color: #0f2b46;
+    line-height: 1.25;
+  }
+  .fl-headline h1 em {
+    font-style: normal;
+    color: #0d9488;
+  }
+  .fl-sub {
+    font-size: 7pt;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.45;
+    margin-bottom: 2mm;
+  }
+
+  /* Тонка лінія-розділювач */
+  .fl-line {
+    width: 20mm;
+    height: 0.4mm;
+    background: linear-gradient(90deg, transparent, #2dd4bf, transparent);
+    margin: 0 auto 2mm;
+  }
+
+  /* Illustration */
+  .fl-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 1mm 5mm;
+    position: relative;
+  }
+  .fl-image::before {
+    content: '';
+    position: absolute;
+    width: 65mm;
+    height: 65mm;
+    border: 0.3mm solid rgba(45,212,191,0.12);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .fl-image::after {
+    content: '';
+    position: absolute;
+    width: 85mm;
+    height: 85mm;
+    border: 0.2mm dashed rgba(45,212,191,0.07);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* Radial glow — removed for print */
+  .fl-image img {
+    max-height: 100%;
+    max-width: 75%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    /* drop-shadow removed for print */
+  }
+
+  /* Positioning */
+  .fl-pos {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 6.5pt;
+    color: #0f2b46;
+    margin: 2.5mm 0 2mm;
+  }
+
+  /* Badges */
+  .fl-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2mm;
+    margin-bottom: 3mm;
+  }
+  .fl-badges span {
+    display: flex;
+    align-items: center;
+    gap: 1.2mm;
+    font-size: 5pt;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    background: #f0fdfa;
+    border: 0.2mm solid #ccfbf1;
+    border-radius: 1.5mm;
+    padding: 1.2mm 2.5mm;
+  }
+  .fl-badges span::before {
+    content: '';
+    width: 1.5mm;
+    height: 1.5mm;
+    border-radius: 50%;
+    background: #2dd4bf;
+    flex-shrink: 0;
+  }
+
+  /* EFORT */
+  .fl-efort {
+    background: #0f2b46;
+    border-radius: 3mm;
+    padding: 3.5mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    /* box-shadow removed for print */
+  }
+  .fl-efort::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1mm;
+    background: #2dd4bf;
+    border-radius: 3mm 0 0 3mm;
+  }
+  .fl-efort-icon {
+    width: 9mm;
+    height: 9mm;
+    background: rgba(45,212,191,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fl-efort-icon svg {
+    width: 4.5mm;
+    height: 4.5mm;
+  }
+  .fl-efort-text { flex: 1; }
+  .fl-efort-label {
+    font-size: 4.5pt;
+    color: #2dd4bf;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .fl-efort-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7.5pt;
+    color: #fff;
+    margin-top: 0.3mm;
+  }
+  .fl-efort-info {
+    font-size: 5pt;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+    margin-top: 0.3mm;
+  }
+  .fl-efort-date {
+    text-align: center;
+    flex-shrink: 0;
+    background: rgba(45,212,191,0.1);
+    border-radius: 2mm;
+    padding: 1.5mm 3mm;
+  }
+  .fl-efort-day {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13pt;
+    color: #2dd4bf;
+    line-height: 1;
+  }
+  .fl-efort-month {
+    font-size: 5.5pt;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .fl-efort-time {
+    font-size: 4.5pt;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.3mm;
+  }
+
+  /* ============ BACK ============ */
+  .back {
+    background: #f5f7f6;
+    padding: 0 13mm 8mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Декоративна смуга зверху */
+  .back::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1.5mm;
+    background: linear-gradient(90deg, #2dd4bf, #0f2b46);
+  }
+
+  /* Декоративний кут зліва внизу */
+  .back::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40mm;
+    height: 40mm;
+    background: radial-gradient(circle at 0% 100%, rgba(45,212,191,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .back > *:not([class^="bk-swoosh"]):not(.bk-deco-circle) {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Back swoosh decorations */
+  .bk-swoosh-1 {
+    position: absolute;
+    top: -10mm;
+    left: -15mm;
+    width: 60mm;
+    height: 45mm;
+    border: 0.5mm solid rgba(45,212,191,0.12);
+    border-radius: 0 0 45mm 0;
+    transform: rotate(10deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bk-swoosh-2 {
+    position: absolute;
+    bottom: -8mm;
+    right: -10mm;
+    width: 50mm;
+    height: 38mm;
+    border: 0.4mm solid rgba(15,43,70,0.06);
+    border-radius: 38mm 0 0 0;
+    transform: rotate(10deg);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bk-deco-circle {
+    position: absolute;
+    bottom: 50mm;
+    right: -8mm;
+    width: 22mm;
+    height: 22mm;
+    border: 0.3mm solid rgba(45,212,191,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Header */
+  .bk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9mm 0 3mm;
+    margin-bottom: 5mm;
+    border-bottom: 0.5mm solid #0f2b46;
+  }
+  .bk-header-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 14pt;
+    color: #0f2b46;
+  }
+  .bk-header-logo span { color: #2dd4bf; }
+  .bk-header-sub {
+    font-size: 6pt;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+  }
+
+  /* Grid */
+  .bk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm 6mm;
+    margin-bottom: 5mm;
+  }
+
+  .bk-block {
+    padding-left: 3mm;
+    border-left: 0.6mm solid #2dd4bf;
+  }
+
+  .bk-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    color: #0f2b46;
+    margin-bottom: 2mm;
+  }
+
+  .bk-block ul { list-style: none; padding: 0; }
+  .bk-block li {
+    font-size: 7pt;
+    color: #475569;
+    line-height: 1.6;
+    padding-left: 3mm;
+    position: relative;
+    margin-bottom: 0.5mm;
+  }
+  .bk-block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.6mm;
+    width: 1mm;
+    height: 1mm;
+    border-radius: 50%;
+    background: #2dd4bf;
+  }
+
+  /* Tagline */
+  .bk-tagline {
+    text-align: center;
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: #0f2b46;
+    font-style: italic;
+    padding: 3.5mm 5mm;
+    margin-bottom: 4mm;
+    background: rgba(45,212,191,0.05);
+    border-radius: 2mm;
+    border-left: 0.7mm solid #2dd4bf;
+    border-right: 0.7mm solid #2dd4bf;
+  }
+
+  /* QR */
+  .bk-qr {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6mm;
+    margin-bottom: 4mm;
+  }
+  .bk-qr-wrap {
+    border: 0.4mm solid #d1d5db;
+    padding: 2.5mm;
+    border-radius: 2.5mm;
+    display: flex;
+    background: #fff;
+  }
+  .bk-qr-wrap img {
+    width: 30mm;
+    height: 30mm;
+  }
+  .bk-qr-text {}
+  .bk-qr-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12pt;
+    color: #0f2b46;
+    line-height: 1.35;
+  }
+  .bk-qr-cta em {
+    font-style: normal;
+    color: #0d9488;
+  }
+  .bk-qr-url {
+    font-size: 9pt;
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 2mm;
+  }
+
+  /* Contact */
+  .bk-contact {
+    border-top: 0.3mm solid #d1d5db;
+    padding-top: 4mm;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .bk-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 8pt;
+    color: #0f2b46;
+  }
+  .bk-role {
+    font-size: 6pt;
+    color: #64748b;
+    line-height: 1.45;
+    margin-top: 0.5mm;
+  }
+  .bk-email {
+    font-size: 7pt;
+    color: #0d9488;
+    font-weight: 600;
+    text-align: right;
+  }
+  .bk-phone {
+    font-size: 6pt;
+    color: #64748b;
+    text-align: right;
+    margin-top: 0.5mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== FRONT ========== -->
+<div class="page front">
+
+  <!-- Decorative elements -->
+  <div class="fl-swoosh-1"></div>
+  <div class="fl-swoosh-2"></div>
+
+  <div class="fl-deco-circle"></div>
+
+  <div class="fl-top">
+    <div class="fl-logo">CITadel<span>.</span></div>
+    <div class="fl-badge-row">
+      <div class="fl-badge">TRL 4–5</div>
+      <div class="fl-badge">Bench validated</div>
+    </div>
+  </div>
+
+  <div class="fl-headline">
+    <h1>Temporary Internal <em>Stabilisation</em> (TIS)<br>for Critical Long-Bone Defects</h1>
+  </div>
+  <div class="fl-sub">
+    A modular intramedullary system designed for staged reconstruction<br>with PMMA spacer compatibility
+  </div>
+
+  <div class="fl-line"></div>
+
+  <div class="fl-image">
+    <div class="fl-image-glow"></div>
+    <img src="public/hero-bone.png" alt="CITadel Intramedullary System">
+  </div>
+
+  <div class="fl-pos">A new category between external fixation and definitive reconstruction</div>
+
+  <div class="fl-badges">
+    <span>PMMA compatible</span>
+    <span>Modular design</span>
+    <span>HA-Ag coating</span>
+    <span>Mechanical axis</span>
+  </div>
+
+  <div class="fl-efort">
+    <div class="fl-efort-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    </div>
+    <div class="fl-efort-text">
+      <div class="fl-efort-label">Meet us at</div>
+      <div class="fl-efort-title">EFORT Congress 2026</div>
+      <div class="fl-efort-info">Poster — Temporary Stabilisation of Critical Bone Defects</div>
+    </div>
+    <div class="fl-efort-date">
+      <div class="fl-efort-day">5</div>
+      <div class="fl-efort-month">May</div>
+      <div class="fl-efort-time">13:00 - 14:30</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== BACK ========== -->
+<div class="page back">
+
+  <!-- Decorative elements -->
+  <div class="bk-swoosh-1"></div>
+  <div class="bk-swoosh-2"></div>
+  <div class="bk-deco-circle"></div>
+
+  <div class="bk-header">
+    <div class="bk-header-logo">CITadel<span>.</span></div>
+    <div class="bk-header-sub">Intramedullary System</div>
+  </div>
+
+  <div class="bk-grid">
+    <div class="bk-block">
+      <div class="bk-title">Current limitations</div>
+      <ul>
+        <li>No dedicated internal solution for defect management</li>
+        <li>External fixation increases complications and patient burden</li>
+        <li>Lack of systems compatible with PMMA spacers</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">CITadel system</div>
+      <ul>
+        <li>Modular intramedullary design</li>
+        <li>Mechanical-axis internal stabilisation</li>
+        <li>Full PMMA spacer compatibility</li>
+        <li>Selective HA–Ag antibacterial interface</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">Use cases</div>
+      <ul>
+        <li>Infected critical bone defects</li>
+        <li>Blast and high-energy trauma</li>
+        <li>Oncologic segmental resection</li>
+      </ul>
+    </div>
+    <div class="bk-block">
+      <div class="bk-title">Why CITadel</div>
+      <ul>
+        <li>Internal stabilisation where external fixation is often the only option</li>
+        <li>Designed specifically for staged reconstruction</li>
+        <li>Defect-focused construct logic</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bk-tagline">Internal stability where external fixation used to be the only option</div>
+
+  <div class="bk-qr">
+    <div class="bk-qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://citadelimplant.com&color=0f2b46" alt="QR">
+    </div>
+    <div class="bk-qr-text">
+      <div class="bk-qr-cta"><em>Explore</em><br>CITadel</div>
+      <div class="bk-qr-url">citadelimplant.com</div>
+    </div>
+  </div>
+
+  <div class="bk-contact">
+    <div>
+      <div class="bk-name">Maksym Baida, PhD</div>
+      <div class="bk-role">Founder & Developer, CITadel<br>Orthopaedic Trauma Surgeon</div>
+    </div>
+    <div>
+      <div class="bk-email">partnership@citadelimplant.com</div>
+      <div class="bk-phone">+380 66 766 7094</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
