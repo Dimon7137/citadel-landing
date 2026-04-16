@@ -32,7 +32,7 @@ export function SystemSection() {
           </AnimatedSection>
 
           <AnimatedSection direction="right">
-            <div className="relative flex items-center justify-end">
+            <div className="relative flex items-center justify-center">
               <img src="/section4-nobg.png" alt={t.system.imageAlt}
                 className="max-h-[550px] object-contain drop-shadow-[0_0_40px_rgba(14,165,169,0.15)]" />
             </div>
