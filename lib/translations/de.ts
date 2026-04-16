@@ -2,8 +2,8 @@ export const de = {
   // Navigation
   nav: {
     system: "System",
+    howItWorks: "So funktioniert es",
     whatChanges: "Was sich ändert",
-    portfolioFit: "Portfolio-Integration",
     validation: "Validierung",
     partnership: "Partnerschaft",
     contact: "Kontakt",
@@ -32,6 +32,15 @@ export const de = {
     subtitle: "CITadel ist ein temporäres internes Stabilisierungssystem zur Kontrolle des Intervalls zwischen Débridement und definitiver Rekonstruktion.",
     supportLine: "Mechanisch stabil. Biologisch kontrolliert. Funktionell ermöglichend.",
     imageAlt: "CITadel — modularer intramedullärer Fixateur für kritische Langknochendefekte",
+  },
+
+  // Positioning
+  positioning: {
+    label: "Einordnung",
+    title: "Wo CITadel in den",
+    titleHighlight: "Behandlungspfad passt",
+    steps: ["Externe Fixation", "CITadel (TIS)", "Definitive Rekonstruktion"],
+    caption: "Entwickelt für die temporäre interne Stabilisierung bei der stufenweisen Extremitätenrekonstruktion.",
   },
 
   // The Gap
@@ -80,6 +89,20 @@ export const de = {
     text: "CITadel ist ein modulares intramedulläres Stabilisierungssystem in Kombination mit einem PMMA-Spacer und selektiver antibakterieller Beschichtung.",
     subtext: "Es wurde für kontrollierte interne Stabilität während der Übergangsphase der stufenweisen Extremitätenrekonstruktion entwickelt.",
     imageAlt: "CITadel System — modulares intramedulläres Stabilisierungssystem",
+  },
+
+  // How It Works
+  howItWorks: {
+    label: "So funktioniert es",
+    title: "Wie CITadel in der",
+    titleHighlight: "stufenweisen Rekonstruktion eingesetzt wird",
+    steps: [
+      { title: "Débridement", description: "Débridement und Defektbildung", detail: "Vorbereitung" },
+      { title: "PMMA-Spacer", description: "PMMA-Spacer-Platzierung", detail: "Infektionsmanagement" },
+      { title: "CITadel-Fixation", description: "Interne Fixation mit CITadel-System", detail: "Stabilisierung" },
+      { title: "Rekonstruktion", description: "Definitive Knochenrekonstruktion", detail: "Finales Stadium" },
+    ],
+    footerNote: "Entwickelt für stufenweise Behandlung, nicht für einzeitige Defektrekonstruktion.",
   },
 
   // Core Principle
@@ -154,6 +177,12 @@ export const de = {
     title: "Partnerschaft und",
     titleHighlight: "Weiterentwicklung",
     description: "CITadel ist offen für strategische Partnerschaften, klinische Validierungsprogramme und die Integration in bestehende orthopädische Portfolios.",
+    items: [
+      { title: "Industrielle Lizenzierung", description: "Lizenzieren Sie das CITadel-System für Herstellung und Vertrieb in Ihrem Produktportfolio." },
+      { title: "Gemeinsame Entwicklung", description: "Gemeinsame Ingenieur- und Regulierungswege zur CE/MDR-Konformität." },
+      { title: "Klinische Pilotzentren", description: "Werden Sie Referenzzentrum für strukturierte klinische Validierung und Pilotimplementierung." },
+      { title: "Strategische Investition", description: "Beschleunigung des Übergangs zur klinischen Skalierung durch strategische Finanzierung." },
+    ],
     ctaText: "Interesse an einer Zusammenarbeit? Beginnen wir das Gespräch.",
   },
 

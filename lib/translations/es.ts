@@ -2,8 +2,8 @@ export const es = {
   // Navigation
   nav: {
     system: "Sistema",
+    howItWorks: "Cómo Funciona",
     whatChanges: "Qué cambia",
-    portfolioFit: "Integración",
     validation: "Validación",
     partnership: "Colaboración",
     contact: "Contacto",
@@ -32,6 +32,15 @@ export const es = {
     subtitle: "CITadel es un sistema de estabilización interna temporal diseñado para controlar el intervalo entre el desbridamiento y la reconstrucción definitiva.",
     supportLine: "Mecánicamente estable. Biológicamente controlado. Funcionalmente habilitante.",
     imageAlt: "CITadel — fijador intramedular modular para defectos críticos de huesos largos",
+  },
+
+  // Positioning
+  positioning: {
+    label: "Posicionamiento",
+    title: "Dónde se ubica CITadel en la",
+    titleHighlight: "vía de tratamiento",
+    steps: ["Fijación externa", "CITadel (TIS)", "Reconstrucción definitiva"],
+    caption: "Diseñado para la estabilización interna temporal en la reconstrucción por etapas de extremidades.",
   },
 
   // The Gap
@@ -80,6 +89,20 @@ export const es = {
     text: "CITadel es un sistema modular de estabilización intramedular combinado con un espaciador PMMA y recubrimiento antibacteriano selectivo.",
     subtext: "Está diseñado para proporcionar estabilidad interna controlada durante la fase de transición de la reconstrucción por etapas de extremidades.",
     imageAlt: "Sistema CITadel — sistema modular de estabilización intramedular",
+  },
+
+  // How It Works
+  howItWorks: {
+    label: "Cómo Funciona",
+    title: "Cómo se utiliza CITadel en la",
+    titleHighlight: "reconstrucción por etapas",
+    steps: [
+      { title: "Desbridamiento", description: "Desbridamiento y creación del defecto", detail: "Preparación" },
+      { title: "Espaciador PMMA", description: "Colocación del espaciador PMMA", detail: "Manejo de infección" },
+      { title: "Fijación CITadel", description: "Fijación interna con sistema CITadel", detail: "Estabilización" },
+      { title: "Reconstrucción", description: "Reconstrucción ósea definitiva", detail: "Etapa final" },
+    ],
+    footerNote: "Diseñado para tratamiento por etapas, no para reemplazo de defecto en una sola etapa.",
   },
 
   // Core Principle
@@ -154,6 +177,12 @@ export const es = {
     title: "Colaboración y",
     titleHighlight: "desarrollo futuro",
     description: "CITadel está abierto a alianzas estratégicas, programas de validación clínica e integración en portafolios ortopédicos existentes.",
+    items: [
+      { title: "Licenciamiento industrial", description: "Licencie el sistema CITadel para fabricación y distribución dentro de su portafolio de productos." },
+      { title: "Co-desarrollo", description: "Desarrollo conjunto de ingeniería y vía regulatoria hacia el cumplimiento CE/MDR." },
+      { title: "Centros piloto clínicos", description: "Asóciese como centro de referencia para validación clínica estructurada y despliegue piloto." },
+      { title: "Inversión estratégica", description: "Acelere la transición a la adopción a escala clínica mediante financiación estratégica." },
+    ],
     ctaText: "¿Interesado en explorar oportunidades? Iniciemos la conversación.",
   },
 

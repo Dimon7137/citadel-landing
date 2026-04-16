@@ -2,8 +2,8 @@ export const en = {
   // Navigation
   nav: {
     system: "System",
+    howItWorks: "How It Works",
     whatChanges: "What Changes",
-    portfolioFit: "Portfolio Fit",
     validation: "Validation",
     partnership: "Partnership",
     contact: "Contact",
@@ -32,6 +32,15 @@ export const en = {
     subtitle: "CITadel is a temporary internal stabilisation system designed to control the interval between debridement and definitive reconstruction.",
     supportLine: "Mechanically stable. Biologically controlled. Functionally enabling.",
     imageAlt: "CITadel — modular intramedullary fixator for critical long-bone defects",
+  },
+
+  // Positioning
+  positioning: {
+    label: "Where CITadel Fits",
+    title: "Where CITadel fits in the",
+    titleHighlight: "treatment pathway",
+    steps: ["External Fixation", "CITadel (TIS)", "Definitive Reconstruction"],
+    caption: "Designed for temporary internal stabilisation in staged limb reconstruction.",
   },
 
   // The Gap
@@ -80,6 +89,20 @@ export const en = {
     text: "CITadel is a modular intramedullary stabilisation system combined with a PMMA spacer and selective antibacterial coating.",
     subtext: "It is designed to provide controlled internal stability during the transition phase of staged limb reconstruction.",
     imageAlt: "CITadel system — modular intramedullary stabilisation system",
+  },
+
+  // How It Works
+  howItWorks: {
+    label: "How It Works",
+    title: "How CITadel is used in",
+    titleHighlight: "staged reconstruction",
+    steps: [
+      { title: "Debridement", description: "Debridement and defect creation", detail: "Preparation" },
+      { title: "PMMA Spacer", description: "PMMA spacer placement", detail: "Infection management" },
+      { title: "CITadel Fixation", description: "Internal fixation with CITadel system", detail: "Stabilisation" },
+      { title: "Reconstruction", description: "Definitive bone reconstruction", detail: "Final stage" },
+    ],
+    footerNote: "Designed for staged treatment, not single-stage defect replacement.",
   },
 
   // Core Principle
@@ -154,6 +177,12 @@ export const en = {
     title: "Partnership and",
     titleHighlight: "further development",
     description: "CITadel is open to strategic partnerships, clinical validation programs, and integration into existing orthopaedic portfolios.",
+    items: [
+      { title: "Industrial licensing", description: "License the CITadel system for manufacturing and distribution within your product portfolio." },
+      { title: "Co-development", description: "Joint engineering and regulatory pathway development towards CE/MDR compliance." },
+      { title: "Clinical pilot sites", description: "Partner as a reference centre for structured clinical validation and pilot deployment." },
+      { title: "Strategic investment", description: "Accelerate transition to clinical-scale adoption through strategic funding." },
+    ],
     ctaText: "Interested in exploring opportunities? Let's start the conversation.",
   },
 
