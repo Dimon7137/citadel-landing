@@ -27,10 +27,11 @@ export const de = {
 
   // Hero
   hero: {
+    positioningLine: "Eine neue Kategorie zwischen externer Fixation und definitiver Rekonstruktion bei kritischen Defekten langer Röhrenknochen",
     title: "Strukturierung der instabilsten Phase der",
     titleHighlight: "Extremitätenrekonstruktion",
     subtitle: "CITadel ist ein temporäres internes Stabilisierungssystem zur Kontrolle des Intervalls zwischen Débridement und definitiver Rekonstruktion.",
-    supportLine: "Mechanisch stabil. Biologisch kontrolliert. Funktionell ermöglichend.",
+    badges: ["TRL 4–5", "Validiert", "PMMA-kompatibel", "Modular"],
     imageAlt: "CITadel — modularer intramedullärer Fixateur für kritische Langknochendefekte",
   },
 

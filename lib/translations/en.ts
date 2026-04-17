@@ -27,10 +27,11 @@ export const en = {
 
   // Hero
   hero: {
+    positioningLine: "A new category between external fixation and definitive reconstruction for critical long-bone defects",
     title: "Structuring the most unstable phase in",
     titleHighlight: "limb reconstruction",
     subtitle: "CITadel is a temporary internal stabilisation system designed to control the interval between debridement and definitive reconstruction.",
-    supportLine: "Mechanically stable. Biologically controlled. Functionally enabling.",
+    badges: ["TRL 4–5", "Validated", "PMMA ready", "Modular"],
     imageAlt: "CITadel — modular intramedullary fixator for critical long-bone defects",
   },
 

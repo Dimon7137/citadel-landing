@@ -27,10 +27,11 @@ export const es = {
 
   // Hero
   hero: {
+    positioningLine: "Una nueva categoría entre fijación externa y reconstrucción definitiva de defectos críticos de huesos largos tubulares",
     title: "Estructuración de la fase más inestable en la",
     titleHighlight: "reconstrucción de extremidades",
     subtitle: "CITadel es un sistema de estabilización interna temporal diseñado para controlar el intervalo entre el desbridamiento y la reconstrucción definitiva.",
-    supportLine: "Mecánicamente estable. Biológicamente controlado. Funcionalmente habilitante.",
+    badges: ["TRL 4–5", "Validado", "PMMA compatible", "Modular"],
     imageAlt: "CITadel — fijador intramedular modular para defectos críticos de huesos largos",
   },
 
