@@ -33,11 +33,11 @@ export function ValidationSection() {
               {t.validation.badges.map((badge, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.12, duration: 0.5 }}
-                  className="flex flex-col items-center text-center">
+                  className="flex flex-col items-center text-center h-full">
                   <div className="w-14 h-14 rounded-full bg-[#0f172a] border-2 border-teal-500/40 flex items-center justify-center mb-4 relative z-10">
                     <span className="text-sm font-bold text-teal-400 font-mono">{stepNumbers[i]}</span>
                   </div>
-                  <div className="bg-slate-800/40 border border-slate-700/50 rounded-xl px-4 py-4 w-full hover:border-teal-500/30 transition-colors">
+                  <div className="bg-slate-800/40 border border-slate-700/50 rounded-xl px-4 py-4 w-full h-full flex items-center justify-center hover:border-teal-500/30 transition-colors">
                     <span className="text-sm font-medium text-slate-200 leading-snug">{badge}</span>
                   </div>
                 </motion.div>
