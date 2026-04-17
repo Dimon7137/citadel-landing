@@ -28,9 +28,9 @@ export const fr = {
   // Hero
   hero: {
     positioningLine: "Une nouvelle catégorie entre fixation externe et reconstruction définitive des défauts critiques des os longs tubulaires",
-    title: "Structuration de la phase la plus instable de la",
-    titleHighlight: "reconstruction des membres",
-    subtitle: "CITadel est un système de stabilisation interne temporaire conçu pour contrôler l'intervalle entre le débridement et la reconstruction définitive.",
+    title: "Stabilisation interne temporaire pour les",
+    titleHighlight: "défauts critiques des os longs",
+    subtitle: "Un système intramédullaire modulaire conçu pour la reconstruction par étapes, le support de spacers en PMMA et la fixation temporaire adaptée aux contextes infectieux.",
     badges: ["TRL 4–5", "Validé", "PMMA compatible", "Modulaire"],
     imageAlt: "CITadel — fixateur intramédullaire modulaire pour les défauts critiques des os longs",
   },
@@ -159,17 +159,41 @@ export const fr = {
     ],
   },
 
+  // Differentiation
+  differentiation: {
+    label: "Différenciation",
+    title: "Pourquoi CITadel est",
+    titleHighlight: "différent",
+    currentTitle: "Solutions actuelles",
+    currentItems: [
+      "Dépendance à la fixation externe",
+      "Absence de systèmes compatibles avec les spacers",
+      "Options internes limitées pour les défauts",
+    ],
+    citadelTitle: "CITadel",
+    citadelItems: [
+      "Stabilisation interne temporaire",
+      "Conçu pour les protocoles à base de spacers",
+      "Logique de construction centrée sur le défaut",
+    ],
+    impactTitle: "Impact clinique et économique",
+    impactItems: [
+      "Réduction de la durée d'hospitalisation",
+      "Récupération plus rapide du patient",
+      "Meilleure stabilité par rapport à la fixation externe",
+      "Moins de complications et de reprises chirurgicales",
+    ],
+    impactHighlight: "Positionné comme un protocole de traitement permettant des économies",
+  },
+
   // Validation
   validation: {
     label: "Validation",
-    title: "État de",
-    titleHighlight: "développement",
-    badges: [
-      "Premières applications cliniques réalisées",
-      "Validation biomécanique terminée",
-      "Présentation EFORT 2026",
-    ],
-    description: "CITadel a fait l'objet d'applications cliniques précoces et d'une validation biomécanique. Les résultats seront présentés à l'EFORT 2026.",
+    title: "Développement et",
+    titleHighlight: "état de validation",
+    badges: ["TRL 4–5", "Tests en laboratoire terminés", "Application clinique précoce", "Prototype validé"],
+    description: "CITadel a fait l'objet de tests biomécaniques et d'une utilisation clinique préliminaire. Un développement complémentaire et une mise en œuvre pilote sont prévus avec des partenaires industriels.",
+    trlNote: "TRL actuel : 4–5 → Objectif : TRL 6 (pilote clinique)",
   },
 
   // Partnership / CTA

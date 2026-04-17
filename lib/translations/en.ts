@@ -28,9 +28,9 @@ export const en = {
   // Hero
   hero: {
     positioningLine: "A new category between external fixation and definitive reconstruction for critical long-bone defects",
-    title: "Structuring the most unstable phase in",
-    titleHighlight: "limb reconstruction",
-    subtitle: "CITadel is a temporary internal stabilisation system designed to control the interval between debridement and definitive reconstruction.",
+    title: "Temporary Internal Stabilisation for",
+    titleHighlight: "Critical Long-Bone Defects",
+    subtitle: "A modular intramedullary system designed for staged reconstruction, PMMA spacer support, and infection-conscious temporary fixation.",
     badges: ["TRL 4–5", "Validated", "PMMA ready", "Modular"],
     imageAlt: "CITadel — modular intramedullary fixator for critical long-bone defects",
   },
@@ -159,17 +159,41 @@ export const en = {
     ],
   },
 
+  // Differentiation
+  differentiation: {
+    label: "Differentiation",
+    title: "Why CITadel is",
+    titleHighlight: "different",
+    currentTitle: "Current solutions",
+    currentItems: [
+      "External fixation dependency",
+      "Lack of spacer-compatible systems",
+      "Limited internal options for defects",
+    ],
+    citadelTitle: "CITadel",
+    citadelItems: [
+      "Internal temporary stabilisation",
+      "Designed for spacer-based workflows",
+      "Defect-focused construct logic",
+    ],
+    impactTitle: "Clinical & Economic Impact",
+    impactItems: [
+      "Reduced hospital stay",
+      "Faster patient recovery",
+      "Improved stability vs external fixation",
+      "Fewer complications and revisions",
+    ],
+    impactHighlight: "Positioned as a cost-saving treatment protocol",
+  },
+
   // Validation
   validation: {
     label: "Validation",
-    title: "Development",
-    titleHighlight: "status",
-    badges: [
-      "Early clinical applications performed",
-      "Biomechanical validation completed",
-      "EFORT 2026 presentation",
-    ],
-    description: "CITadel has undergone early clinical application and biomechanical validation. Results will be presented at EFORT 2026.",
+    title: "Development and",
+    titleHighlight: "validation status",
+    badges: ["TRL 4–5", "Bench testing completed", "Early clinical application", "Prototype validated"],
+    description: "CITadel has undergone biomechanical testing and early clinical use. Further development and pilot implementation are planned with industrial partners.",
+    trlNote: "Current TRL: 4–5 → Target: TRL 6 (clinical pilot)",
   },
 
   // Partnership / CTA

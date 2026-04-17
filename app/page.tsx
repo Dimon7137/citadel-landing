@@ -9,6 +9,7 @@ import { SystemSection } from "@/components/sections/SystemSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { CorePrincipleSection } from "@/components/sections/CorePrincipleSection";
 import { PortfolioFitSection } from "@/components/sections/PortfolioFitSection";
+import { DifferentiationSection } from "@/components/sections/DifferentiationSection";
 import { ValidationSection } from "@/components/sections/ValidationSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { DoctorSection } from "@/components/sections/DoctorSection";
@@ -28,6 +29,7 @@ export default function Home() {
         <HowItWorksSection />
         <CorePrincipleSection />
         <PortfolioFitSection />
+        <DifferentiationSection />
         <ValidationSection />
         <CTASection />
         <DoctorSection />

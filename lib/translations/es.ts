@@ -28,9 +28,9 @@ export const es = {
   // Hero
   hero: {
     positioningLine: "Una nueva categoría entre fijación externa y reconstrucción definitiva de defectos críticos de huesos largos tubulares",
-    title: "Estructuración de la fase más inestable en la",
-    titleHighlight: "reconstrucción de extremidades",
-    subtitle: "CITadel es un sistema de estabilización interna temporal diseñado para controlar el intervalo entre el desbridamiento y la reconstrucción definitiva.",
+    title: "Estabilización Interna Temporal para",
+    titleHighlight: "Defectos Críticos de Huesos Largos",
+    subtitle: "Un sistema intramedular modular diseñado para la reconstrucción por etapas, soporte de espaciadores de PMMA y fijación temporal consciente de infecciones.",
     badges: ["TRL 4–5", "Validado", "PMMA compatible", "Modular"],
     imageAlt: "CITadel — fijador intramedular modular para defectos críticos de huesos largos",
   },
@@ -159,17 +159,41 @@ export const es = {
     ],
   },
 
+  // Differentiation
+  differentiation: {
+    label: "Diferenciación",
+    title: "Por qué CITadel es",
+    titleHighlight: "diferente",
+    currentTitle: "Soluciones actuales",
+    currentItems: [
+      "Dependencia de la fijación externa",
+      "Falta de sistemas compatibles con espaciadores",
+      "Opciones internas limitadas para defectos",
+    ],
+    citadelTitle: "CITadel",
+    citadelItems: [
+      "Estabilización interna temporal",
+      "Diseñado para flujos de trabajo con espaciadores",
+      "Lógica de constructo enfocada en el defecto",
+    ],
+    impactTitle: "Impacto Clínico y Económico",
+    impactItems: [
+      "Reducción de la estancia hospitalaria",
+      "Recuperación más rápida del paciente",
+      "Mejor estabilidad frente a la fijación externa",
+      "Menos complicaciones y revisiones",
+    ],
+    impactHighlight: "Posicionado como un protocolo de tratamiento que reduce costos",
+  },
+
   // Validation
   validation: {
     label: "Validación",
-    title: "Estado de",
-    titleHighlight: "desarrollo",
-    badges: [
-      "Primeras aplicaciones clínicas realizadas",
-      "Validación biomecánica completada",
-      "Presentación EFORT 2026",
-    ],
-    description: "CITadel ha pasado por aplicaciones clínicas tempranas y validación biomecánica. Los resultados se presentarán en EFORT 2026.",
+    title: "Estado de desarrollo y",
+    titleHighlight: "validación",
+    badges: ["TRL 4–5", "Pruebas de banco completadas", "Aplicación clínica temprana", "Prototipo validado"],
+    description: "CITadel ha sido sometido a pruebas biomecánicas y uso clínico temprano. Se planea un mayor desarrollo e implementación piloto con socios industriales.",
+    trlNote: "TRL actual: 4–5 → Objetivo: TRL 6 (piloto clínico)",
   },
 
   // Partnership / CTA
